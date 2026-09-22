@@ -1,21 +1,26 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import type { PricingPlan } from "@/lib/data/pricing";
 
 export default function PricingCard({
   plan,
-  isLast,
 }: {
   plan: PricingPlan;
-  isLast: boolean;
+  isLast?: boolean;
 }) {
   return (
-    <div
-      className={`flex flex-col gap-6 rounded-[24px] border border-white/[0.08] px-6 py-8 md:px-8 mx-4 my-4 ${
-        plan.featured ? "relative bg-white/[0.03]" : "bg-white/[0.02]"
+    <motion.div
+      whileHover={{ y: -6, transition: { duration: 0.25 } }}
+      className={`relative flex flex-col gap-6 rounded-[24px] border px-6 py-8 md:px-8 mx-2 my-2 transition-all duration-300 ${
+        plan.featured
+          ? "bg-gradient-to-b from-white/[0.08] to-white/[0.02] border-accent-to/40 shadow-[0_0_30px_rgba(255,0,54,0.15)]"
+          : "bg-white/[0.02] border-white/[0.08] hover:border-white/20"
       }`}
     >
       {plan.badge && (
-        <span className="absolute top-6 right-6 rounded-full bg-white px-3 py-1 font-tag text-[11px] font-medium text-black">
+        <span className="absolute top-6 right-6 rounded-full bg-gradient-to-r from-[var(--accent-from)] to-[var(--accent-to)] px-3.5 py-1 font-tag text-[11px] font-semibold text-white shadow-md animate-pulse">
           {plan.badge}
         </span>
       )}
@@ -38,16 +43,16 @@ export default function PricingCard({
 
         <button
           type="button"
-          className="flex items-center gap-2 rounded-full bg-white py-2 pr-2 pl-4 font-heading text-sm font-semibold text-black"
+          className="group flex items-center gap-2 rounded-full bg-white py-2 pr-2 pl-4 font-heading text-sm font-semibold text-black transition-all hover:bg-white/90 hover:scale-105"
         >
           Start Now
-          <span className="flex size-6 items-center justify-center rounded-full bg-black">
+          <span className="flex size-6 items-center justify-center rounded-full bg-black transition-transform duration-300 group-hover:rotate-45">
             <Image
               src="/icons/Arrow_Right.png"
               alt=""
               width={12}
               height={12}
-              className="size-3"
+              className="size-3 invert"
             />
           </span>
         </button>
@@ -69,6 +74,6 @@ export default function PricingCard({
           </li>
         ))}
       </ul>
-    </div>
+    </motion.div>
   );
 }

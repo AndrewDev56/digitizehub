@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 import type { Testimonial } from "@/lib/data/testimonials";
 
 export default function TestimonialCard({
@@ -9,11 +12,13 @@ export default function TestimonialCard({
   active: boolean;
 }) {
   return (
-    <div
-      className={`relative flex shrink-0 snap-center flex-col justify-between gap-8 overflow-hidden rounded-[24px] p-6 transition-all duration-300 md:p-8 ${
+    <motion.div
+      layout
+      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+      className={`relative flex shrink-0 snap-center flex-col justify-between gap-8 overflow-hidden rounded-[24px] p-6 transition-all duration-300 md:p-8 cursor-pointer ${
         active
-          ? "w-[500px] opacity-100 md:w-[600px]"
-          : "w-[280px] opacity-60 md:w-[320px]"
+          ? "w-[500px] opacity-100 md:w-[600px] shadow-2xl scale-[1.02]"
+          : "w-[280px] opacity-60 md:w-[320px] hover:opacity-85"
       }`}
       style={{
         background: active
@@ -23,7 +28,7 @@ export default function TestimonialCard({
     >
       <div className="flex items-center gap-3">
         <span
-          className="flex size-9 shrink-0 items-center justify-center rounded-full font-tag text-xs font-semibold text-black"
+          className="flex size-9 shrink-0 items-center justify-center rounded-full font-tag text-xs font-semibold text-black shadow-inner"
           style={{ backgroundColor: testimonial.avatarColor }}
         >
           {testimonial.initials}
@@ -78,11 +83,11 @@ export default function TestimonialCard({
       <span
         aria-hidden
         className={`pointer-events-none absolute right-6 bottom-6 font-heading text-6xl select-none ${
-          active ? "text-white/15" : "text-white/5"
+          active ? "text-white/20" : "text-white/5"
         }`}
       >
         &rdquo;
       </span>
-    </div>
+    </motion.div>
   );
 }
