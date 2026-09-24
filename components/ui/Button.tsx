@@ -45,7 +45,7 @@ export default function Button({
           alt=""
           width={18}
           height={18}
-          className="h-[45%] w-[45%] invert"
+          className="h-[45%] w-[45%] "
         />
       </span>
     </>
