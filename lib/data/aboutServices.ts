@@ -5,7 +5,7 @@ export type AboutService = {
   description: string;
   features: string[];
   duration: string;
-  image: string;
+  video: string;
   imagePosition: "left" | "right";
 };
 
@@ -24,7 +24,7 @@ export const aboutServices: AboutService[] = [
       "30 Days Support",
     ],
     duration: "Typically 3 to 6 Weeks",
-    image: "/images/website-that-sell.png",
+    video: "/videos/website-that-sell.mp4",
     imagePosition: "left",
   },
   {
@@ -42,7 +42,7 @@ export const aboutServices: AboutService[] = [
       "Updates",
     ],
     duration: "Typically 8 to 16 Weeks",
-    image: "/images/the-home-screen.png",
+    video: "/videos/home-screen-app.mp4",
     imagePosition: "right",
   },
   {
@@ -64,7 +64,7 @@ export const aboutServices: AboutService[] = [
       "Social Media Brand Assets",
     ],
     duration: "Typically 2 to 4 Weeks",
-    image: "/images/branding-logo-design.png",
+    video: "/videos/branding-logo-design.mp4",
     imagePosition: "left",
   },
   {
@@ -79,7 +79,7 @@ export const aboutServices: AboutService[] = [
       "Monthly Performance Reporting",
     ],
     duration: "Ongoing Monthly Service.",
-    image: "/images/social-media-marketing.png",
+    video: "/videos/Social Media.mp4",
     imagePosition: "right",
   },
   {
@@ -96,7 +96,7 @@ export const aboutServices: AboutService[] = [
       "Monthly Performance Reporting",
     ],
     duration: "Ongoing Monthly Service.",
-    image: "/images/search-engine-optimization.png",
+    video: "/videos/seo.mp4",
     imagePosition: "left",
   },
 ];

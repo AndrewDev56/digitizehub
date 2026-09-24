@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Button from "@/components/ui/Button";
 import ServiceFeatureList from "@/components/ui/ServiceFeatureList";
 import type { AboutService } from "@/lib/data/aboutServices";
@@ -6,24 +5,15 @@ import type { AboutService } from "@/lib/data/aboutServices";
 export default function ServiceRow({ service }: { service: AboutService }) {
   const mediaBlock = (
     <div className="relative aspect-[766/806] w-full overflow-hidden rounded-[32px] md:rounded-[60px]">
-      {service.mediaType === "video" ? (
-        <video
-          src={service.media}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 size-full object-cover"
-        />
-      ) : (
-        <Image
-          src={service.media}
-          alt=""
-          fill
-          sizes="(min-width: 768px) 766px, 100vw"
-          className="object-cover"
-        />
-      )}
+      <video
+        src={service.video}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 size-full object-cover"
+      />
     </div>
   );
 
