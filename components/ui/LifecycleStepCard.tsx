@@ -3,29 +3,39 @@ import type { LifecycleStep } from "@/lib/data/lifecycleSteps";
 
 export default function LifecycleStepCard({
   step,
+  isFirst,
   isLast,
 }: {
   step: LifecycleStep;
+  isFirst: boolean;
   isLast: boolean;
 }) {
   return (
-    <div className=" p-6">
-      <h3 className="font-accent text-3xl text-white italic md:text-5xl">
-        {step.title}
-      </h3>
-      <p className="mt-2 max-w-xs font-body text-sm text-white/60 italic md:text-base">
-        {step.description}
-      </p>
-
-      {!isLast && (
-        <Image
-          src="/images/lifecycle-arrow.png"
-          alt=""
-          width={35}
-          height={35}
-          className="mt-3 ml-2 opacity-70 h-[100px] w-[100px]"
-        />
+    <div className="flex items-start">
+      {!isFirst && (
+        <div className="flex w-[190px] shrink-0 justify-start pt-1">
+          <Image
+            src="/icons/lifecycle-arrow.svg"
+            alt=""
+            width={90}
+            height={90}
+            className="size-[70px] rotate-2 opacity-80 md:size-[90px]"
+          />
+        </div>
       )}
+
+      <div className="max-w-[390px]">
+        <h3 className="font-accent text-4xl text-white italic md:text-6xl">
+          {step.title}
+        </h3>
+        <p className="mt-2 font-body text-lg leading-[1.3] text-white/80 italic">
+          {step.description}
+        </p>
+
+        {!isLast && (
+          <div aria-hidden className="mt-6 h-px w-full bg-[#222]" />
+        )}
+      </div>
     </div>
   );
 }
