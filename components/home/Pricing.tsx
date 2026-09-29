@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import PricingCard from "@/components/ui/PricingCard";
 import { pricingPlans } from "@/lib/data/pricing";
 import FadeIn from "@/components/animation/FadeIn";
@@ -44,10 +43,8 @@ export default function Pricing() {
                 }
                 className="relative h-6 w-11 rounded-full bg-white/20 transition-colors"
               >
-                <motion.span
-                  animate={{ x: billing === "quarterly" ? 20 : 2 }}
-                  transition={{ type: "spring", stiffness: 500, damping: 30 }}
-                  className="absolute top-0.5 size-5 rounded-full bg-white shadow-md"
+                <span
+                  className={`absolute top-0.5 left-0 size-5 rounded-full bg-white shadow-md transition-transform duration-200 ${billing === "quarterly" ? "translate-x-5" : "translate-x-0.5"}`}
                 />
               </button>
               <span

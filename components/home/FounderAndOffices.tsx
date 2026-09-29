@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { founder } from "@/lib/data/founder";
 import { offices } from "@/lib/data/offices";
 import OfficeCard from "@/components/ui/OfficeCard";
@@ -21,10 +20,8 @@ export default function FounderAndOffices() {
               {founder.intro}
             </p>
 
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-              className="relative mt-8 aspect-[4/3] overflow-hidden rounded-2xl md:aspect-[16/11] shadow-2xl cursor-pointer"
+            <div
+              className="relative mt-8 aspect-[4/3] overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-[1.02] md:aspect-[16/11] shadow-2xl cursor-pointer"
               style={{
                 background: "linear-gradient(160deg, #ffd9e5 0%, #ff5277 100%)",
               }}
@@ -69,7 +66,7 @@ export default function FounderAndOffices() {
                   <span className="size-1.5 rounded-full bg-black/40" />
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </FadeIn>
 

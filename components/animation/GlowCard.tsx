@@ -1,7 +1,6 @@
 "use client";
 
 import { ReactNode, useRef, useState } from "react";
-import { motion } from "framer-motion";
 
 interface GlowCardProps {
   children: ReactNode;
@@ -28,13 +27,12 @@ export default function GlowCard({
   };
 
   return (
-    <motion.div
+    <div
       ref={cardRef}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      whileHover={{ y: -4, transition: { duration: 0.2 } }}
-      className={`relative overflow-hidden transition-all duration-300 ${className}`}
+      className={`relative overflow-hidden transition-all duration-300 hover:-translate-y-1 ${className}`}
     >
       {/* Background Mouse Glow */}
       <div
@@ -45,6 +43,6 @@ export default function GlowCard({
         }}
       />
       {children}
-    </motion.div>
+    </div>
   );
 }

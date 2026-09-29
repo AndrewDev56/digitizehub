@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import type { PricingPlan } from "@/lib/data/pricing";
 
 export default function PricingCard({
@@ -11,9 +10,8 @@ export default function PricingCard({
   isLast?: boolean;
 }) {
   return (
-    <motion.div
-      whileHover={{ y: -6, transition: { duration: 0.25 } }}
-      className={`relative flex flex-col gap-6 rounded-[24px] border px-6 py-8 md:px-8 mx-2 my-2 transition-all duration-300 ${
+    <div
+      className={`relative flex flex-col gap-6 rounded-[24px] border px-6 py-8 md:px-8 mx-2 my-2 transition-all duration-300 hover:-translate-y-1 ${
         plan.featured
           ? "bg-gradient-to-b from-white/[0.08] to-white/[0.02] border-accent-to/40 shadow-[0_0_30px_rgba(255,0,54,0.15)]"
           : "bg-white/[0.02] border-white/[0.08] hover:border-white/20"
@@ -74,6 +72,6 @@ export default function PricingCard({
           </li>
         ))}
       </ul>
-    </motion.div>
+    </div>
   );
 }

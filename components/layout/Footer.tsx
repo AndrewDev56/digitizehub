@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { footerColumns } from "@/lib/data/footer";
 import { offices } from "@/lib/data/offices";
 import FadeIn from "@/components/animation/FadeIn";
@@ -63,13 +62,11 @@ export default function Footer() {
 
               <div className="mt-6 flex gap-3">
                 {socials.map((social) => (
-                  <motion.a
+                  <a
                     key={social}
                     href="#"
                     aria-label={social}
-                    whileHover={{ scale: 1.15, y: -2 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="flex size-9 items-center justify-center rounded-full bg-white/10 transition-colors hover:bg-accent-to"
+                    className="flex size-9 items-center justify-center rounded-full bg-white/10 transition-all hover:scale-110 hover:-translate-y-0.5 active:scale-95 hover:bg-accent-to"
                   >
                     <Image
                       src={socialIcons[social]}
@@ -78,7 +75,7 @@ export default function Footer() {
                       height={16}
                       className="size-4"
                     />
-                  </motion.a>
+                  </a>
                 ))}
               </div>
             </div>

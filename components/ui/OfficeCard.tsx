@@ -1,14 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import type { Office } from "@/lib/data/offices";
 
 export default function OfficeCard({ office }: { office: Office }) {
   return (
-    <motion.div
-      whileHover={{ y: -4, transition: { duration: 0.25 } }}
-      className="group rounded-[24px] border border-white/[0.08] bg-white/5 p-6 md:rounded-[40px] md:p-10 transition-all duration-300 hover:border-white/20 hover:bg-white/[0.07] hover:shadow-2xl"
+    <div
+      className="group rounded-[24px] border border-white/[0.08] bg-white/5 p-6 md:rounded-[40px] md:p-10 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.07] hover:shadow-2xl"
     >
       <h3 className="font-heading text-2xl font-semibold text-white md:text-4xl transition-colors group-hover:text-accent-from">
         {office.city}
@@ -47,6 +45,6 @@ export default function OfficeCard({ office }: { office: Office }) {
         View on map
         <Image src="/icons/Arrow_Right_red.png" alt="" width={18} height={18} className="size-[18px]" />
       </a>
-    </motion.div>
+    </div>
   );
 }

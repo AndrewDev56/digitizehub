@@ -2,28 +2,24 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import FadeIn from "@/components/animation/FadeIn";
 
 export default function CtaBanner() {
   return (
     <section className="bg-background px-6 py-24 md:px-9 md:py-32">
       <FadeIn direction="up">
-        <motion.div
-          whileHover={{ scale: 1.01 }}
-          transition={{ duration: 0.4 }}
-          className="relative overflow-hidden mx-auto max-w-[1400px] rounded-[40px] px-8 py-16 text-center md:rounded-[60px] md:px-16 md:py-24 shadow-2xl"
+        <div
+          className="relative overflow-hidden mx-auto max-w-[1400px] rounded-[40px] px-8 py-16 text-center transition-transform duration-300 hover:scale-[1.01] md:rounded-[60px] md:px-16 md:py-24 shadow-2xl"
           style={{
             background: "linear-gradient(135deg, #ffffff 0%, #ffd9e5 100%)",
           }}
         >
           {/* Animated decorative gradient orb */}
-          <motion.div
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+          <div
+            data-gsap-ambient
+            data-gsap-scale="1.2"
+            data-gsap-opacity="0.6"
+            data-gsap-duration="6"
             className="pointer-events-none absolute -top-24 -right-24 size-[350px] rounded-full bg-accent-from/30 blur-[60px]"
           />
 
@@ -70,7 +66,7 @@ export default function CtaBanner() {
               </span>
             </Link>
           </div>
-        </motion.div>
+        </div>
       </FadeIn>
     </section>
   );

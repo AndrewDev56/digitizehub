@@ -1,16 +1,13 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Tag from "@/components/ui/Tag";
 import { workProjectDescription, type WorkProject } from "@/lib/data/workProjects";
 
 export default function WorkProjectCard({ project }: { project: WorkProject }) {
   return (
-    <motion.div
-      whileHover={{ y: -6 }}
-      transition={{ duration: 0.3 }}
-      className="group cursor-pointer"
+    <div
+      className="group cursor-pointer transition-transform duration-300 hover:-translate-y-1"
     >
       <div className="relative aspect-[504/378] w-full overflow-hidden rounded-[24px] md:rounded-[30px] border border-white/10 shadow-xl bg-neutral-900">
         <Image
@@ -36,6 +33,6 @@ export default function WorkProjectCard({ project }: { project: WorkProject }) {
           <Tag key={tag}>{tag}</Tag>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }

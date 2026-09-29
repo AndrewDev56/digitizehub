@@ -3,15 +3,18 @@
 import Button from "@/components/ui/Button";
 import LogoMarquee from "@/components/home/LogoMarquee";
 import FadeIn from "@/components/animation/FadeIn";
-import { motion } from "framer-motion";
+import RotatingWord from "@/components/animation/RotatingWord";
+import AnimatedCounter from "@/components/animation/AnimatedCounter";
 
 export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-background pt-[160px] pb-16 md:pt-[240px] md:pb-[60px]">
-      <motion.div
+      <div
         aria-hidden
-        animate={{ scale: [1, 1.2, 1], opacity: [0.15, 0.25, 0.15] }}
-        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
+        data-gsap-ambient
+        data-gsap-scale="1.2"
+        data-gsap-opacity="0.25"
+        data-gsap-duration="8"
         className="pointer-events-none absolute -top-[300px] -right-[300px] size-[600px] rounded-full bg-accent-to/15 blur-[120px]"
       />
 
@@ -24,14 +27,14 @@ export default function Hero() {
 
         <FadeIn direction="up" delay={0.15}>
           <h1 className="mx-auto mt-6 font-heading text-[34px] leading-[1.2] font-semibold tracking-[-0.02em] text-white sm:text-5xl lg:text-[64px] lg:leading-[1.15]">
-            Six Years, 200 Projects,{" "}
+            <AnimatedCounter value="6" /> Years, <AnimatedCounter value="200" /> Projects,{" "}
             <span className="font-accent italic text-accent-from">Two Countries, One Team.</span>
           </h1>
         </FadeIn>
 
         <FadeIn direction="up" delay={0.25}>
           <p className="mx-auto mt-6 max-w-lg font-body text-sm text-white/60 md:text-base">
-            DigitizeHub is a full service digital agency with offices in
+            DigitizeHub is a full service <RotatingWord words={["digital agency", "technology partner"]} className="align-baseline" /> with offices in
             Calgary and Georgia.
           </p>
         </FadeIn>

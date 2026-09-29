@@ -1,15 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import type { TimelineStep } from "@/lib/data/projectTimeline";
 
 export default function TimelineStepCard({ step }: { step: TimelineStep }) {
   return (
-    <motion.div
-      whileHover={{ y: -5, scale: 1.02 }}
-      transition={{ duration: 0.25 }}
-      className="group relative flex h-[150px] flex-col justify-between overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-6 transition-all duration-300 hover:border-accent-from/40 hover:bg-white/[0.06] hover:shadow-[0_10px_30px_rgba(255,82,119,0.1)]"
+    <div
+      className="group relative flex h-[150px] flex-col justify-between overflow-hidden rounded-2xl bg-white/[0.03] border border-white/10 p-6 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:border-accent-from/40 hover:bg-white/[0.06] hover:shadow-[0_10px_30px_rgba(255,82,119,0.1)]"
     >
       <span
         aria-hidden
@@ -36,6 +33,6 @@ export default function TimelineStepCard({ step }: { step: TimelineStep }) {
       <span className="relative font-body text-xs font-medium text-white/50 group-hover:text-white/80 transition-colors">
         {step.duration}
       </span>
-    </motion.div>
+    </div>
   );
 }

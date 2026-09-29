@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Tag from "@/components/ui/Tag";
 import type { PortfolioItem } from "@/lib/data/portfolio";
 
@@ -13,13 +12,10 @@ export default function PortfolioCard({
   className?: string;
 }) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
-      whileHover={{ y: -6 }}
-      transition={{ duration: 0.5, ease: [0.21, 0.47, 0.32, 0.98] }}
-      className={`group relative w-full overflow-hidden rounded-[30px] md:rounded-[60px] border border-white/10 bg-neutral-900 shadow-xl cursor-pointer ${className}`}
+    <div
+      data-gsap-reveal
+      data-gsap-distance="30"
+      className={`group relative w-full overflow-hidden rounded-[30px] md:rounded-[60px] border border-white/10 bg-neutral-900 shadow-xl cursor-pointer transition-transform duration-500 hover:-translate-y-1 ${className}`}
       style={{ aspectRatio: `${item.imageWidth} / ${item.imageHeight}` }}
     >
       <Image
@@ -49,6 +45,6 @@ export default function PortfolioCard({
           ↗
         </span>
       </div>
-    </motion.div>
+    </div>
   );
 }

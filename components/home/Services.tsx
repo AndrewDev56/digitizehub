@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion } from "framer-motion";
 import { services } from "@/lib/data/services";
 import FadeIn from "@/components/animation/FadeIn";
 import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerContainer";
@@ -54,10 +53,8 @@ export default function Services() {
           </StaggerContainer>
 
           <FadeIn direction="left" delay={0.2}>
-            <motion.div
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.4 }}
-              className="relative aspect-[4/3] overflow-hidden rounded-[30px] md:rounded-[40px] border border-white/10 shadow-2xl group cursor-pointer"
+            <div
+              className="relative aspect-[4/3] overflow-hidden rounded-[30px] transition-transform duration-300 hover:scale-[1.02] md:rounded-[40px] border border-white/10 shadow-2xl group cursor-pointer"
             >
               <Image
                 src="/images/what-we-do-img.png"
@@ -74,7 +71,7 @@ export default function Services() {
                   ↗
                 </span>
               </div>
-            </motion.div>
+            </div>
           </FadeIn>
         </div>
       </div>

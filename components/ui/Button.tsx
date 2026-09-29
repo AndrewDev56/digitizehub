@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { motion } from "framer-motion";
 
 type CommonProps = {
   children: React.ReactNode;
@@ -51,35 +50,27 @@ export default function Button({
     </>
   );
 
-  const classes = `group inline-flex items-center justify-center rounded-full bg-white transition-all duration-300 hover:bg-white/95 hover:shadow-[0_10px_25px_rgba(255,255,255,0.25)] ${sizeStyles[size]} ${className}`;
+  const classes = `group inline-flex items-center justify-center rounded-full bg-white transition-all duration-300 hover:scale-105 hover:bg-white/95 hover:shadow-[0_10px_25px_rgba(255,255,255,0.25)] active:scale-[0.96] ${sizeStyles[size]} ${className}`;
 
   if (href) {
     return (
-      <motion.div
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.96 }}
-        className="inline-block"
+      <Link
+        href={href}
+        className={classes}
+        onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>}
       >
-        <Link
-          href={href}
-          className={classes}
-          onClick={onClick as React.MouseEventHandler<HTMLAnchorElement>}
-        >
-          {content}
-        </Link>
-      </motion.div>
+        {content}
+      </Link>
     );
   }
 
   return (
-    <motion.button
+    <button
       type={type}
       onClick={onClick as React.MouseEventHandler<HTMLButtonElement>}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.96 }}
       className={classes}
     >
       {content}
-    </motion.button>
+    </button>
   );
 }

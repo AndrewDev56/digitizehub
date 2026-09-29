@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import MobileNav from "@/components/layout/MobileNav";
 import { navLinks } from "@/lib/data/navLinks";
@@ -30,10 +29,8 @@ export default function Header({ active }: HeaderProps) {
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
+    <header
+      data-gsap-enter
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
           ? "bg-[#0a0a0a]/85 backdrop-blur-md border-b border-white/10 shadow-2xl py-3"
@@ -72,10 +69,8 @@ export default function Header({ active }: HeaderProps) {
                   >
                     {link.label}
                     {isActive && (
-                      <motion.div
-                        layoutId="activeNavIndicator"
+                      <div
                         className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[var(--accent-from)] to-[var(--accent-to)] rounded-full"
-                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
                       />
                     )}
                   </Link>
@@ -91,6 +86,6 @@ export default function Header({ active }: HeaderProps) {
 
         <MobileNav links={navLinks} />
       </div>
-    </motion.header>
+    </header>
   );
 }

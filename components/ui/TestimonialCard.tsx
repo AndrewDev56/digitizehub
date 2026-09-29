@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import type { Testimonial } from "@/lib/data/testimonials";
 
 export default function TestimonialCard({
@@ -12,9 +11,7 @@ export default function TestimonialCard({
   active: boolean;
 }) {
   return (
-    <motion.div
-      layout
-      transition={{ type: "spring", stiffness: 300, damping: 30 }}
+    <div
       className={`relative flex shrink-0 snap-center flex-col justify-between gap-8 overflow-hidden rounded-[24px] p-6 transition-all duration-300 md:p-8 cursor-pointer ${
         active
           ? "w-[500px] opacity-100 md:w-[600px] shadow-2xl scale-[1.02]"
@@ -88,6 +85,6 @@ export default function TestimonialCard({
       >
         &rdquo;
       </span>
-    </motion.div>
+    </div>
   );
 }

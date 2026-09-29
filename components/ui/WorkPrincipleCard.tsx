@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import type { WorkPrinciple } from "@/lib/data/howWeWork";
 
 export default function WorkPrincipleCard({
@@ -9,10 +8,8 @@ export default function WorkPrincipleCard({
   principle: WorkPrinciple;
 }) {
   return (
-    <motion.div
-      whileHover={{ y: -4, scale: 1.02 }}
-      transition={{ duration: 0.2 }}
-      className="group relative flex h-[160px] flex-col justify-between overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-6 transition-all duration-300 hover:border-accent-from/40 hover:bg-white/[0.08]"
+    <div
+      className="group relative flex h-[160px] flex-col justify-between overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-6 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:border-accent-from/40 hover:bg-white/[0.08]"
     >
       <span
         aria-hidden
@@ -29,6 +26,6 @@ export default function WorkPrincipleCard({
           {principle.description}
         </p>
       </div>
-    </motion.div>
+    </div>
   );
 }

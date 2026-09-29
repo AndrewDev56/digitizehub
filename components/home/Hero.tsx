@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import Button from "@/components/ui/Button";
 import Tag from "@/components/ui/Tag";
 import LogoMarquee from "@/components/home/LogoMarquee";
@@ -13,30 +12,20 @@ export default function Hero() {
   return (
     <section className="relative isolate overflow-hidden bg-background pt-[140px] pb-16 md:pt-[220px] md:pb-[60px]">
       {/* Animated background ambient glow */}
-      <motion.div
+      <div
         aria-hidden
-        animate={{
-          scale: [1, 1.2, 1],
-          opacity: [0.15, 0.25, 0.15],
-        }}
-        transition={{
-          duration: 8,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        data-gsap-ambient
+        data-gsap-scale="1.2"
+        data-gsap-opacity="0.25"
+        data-gsap-duration="8"
         className="pointer-events-none absolute -top-[300px] -right-[300px] size-[650px] rounded-full bg-accent-to/20 blur-[130px]"
       />
-      <motion.div
+      <div
         aria-hidden
-        animate={{
-          scale: [1.2, 1, 1.2],
-          opacity: [0.15, 0.22, 0.15],
-        }}
-        transition={{
-          duration: 10,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
+        data-gsap-ambient
+        data-gsap-scale="1.1"
+        data-gsap-opacity="0.22"
+        data-gsap-duration="10"
         className="pointer-events-none absolute top-[500px] -left-[300px] size-[650px] rounded-full bg-accent-from/15 blur-[130px]"
       />
 
@@ -124,9 +113,8 @@ export default function Hero() {
         <LogoMarquee />
       </div>
 
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+      <div
+        data-gsap-bob
         className="relative mt-10 flex flex-col items-center gap-2 md:mt-[30px]"
       >
         <span className="font-heading text-sm tracking-[0.1em] text-white/56 uppercase md:text-base">
@@ -139,7 +127,7 @@ export default function Hero() {
           height={40}
           className="size-8 opacity-70 md:size-10"
         />
-      </motion.div>
+      </div>
     </section>
   );
 }

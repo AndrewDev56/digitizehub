@@ -1,58 +1,65 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 interface AnimatedCounterProps {
-  value: string; // e.g. "98%", "$10M+", "500+", "4.9/5", "100%"
+  value: string;
   className?: string;
 }
 
 export default function AnimatedCounter({ value, className = "" }: AnimatedCounterProps) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const isInView = useInView(ref, { once: true, margin: "-20px" });
-  const [displayValue, setDisplayValue] = useState<string>("0");
+  const element = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
-    if (!isInView) return;
+  useGSAP(
+    () => {
+      const match = value.match(/^([^0-9.]*)([0-9][0-9,]*(?:\.[0-9]+)?)(.*)$/);
+      if (!match || !element.current) return;
 
-    // Parse prefix, number, suffix (e.g., "$", "10", "M+", or "", "98", "%")
-    const match = value.match(/^([^0-9.]*)([0-9.]+)(.*)$/);
-    if (!match) {
-      setDisplayValue(value);
-      return;
-    }
+      const [, prefix, number, suffix] = match;
+      const target = Number(number.replace(/,/g, ""));
+      const decimalPlaces = number.includes(".") ? number.split(".")[1].length : 0;
+      const proxy = { value: 0 };
+      const format = (amount: number) =>
+        `${prefix}${amount.toLocaleString("en-US", {
+          minimumFractionDigits: decimalPlaces,
+          maximumFractionDigits: decimalPlaces,
+        })}${suffix}`;
+      const media = gsap.matchMedia();
 
-    const prefix = match[1];
-    const targetNum = parseFloat(match[2]);
-    const suffix = match[3];
-    const isFloat = match[2].includes(".");
-    const duration = 1500; // ms
-    const frameDuration = 1000 / 60;
-    const totalFrames = Math.round(duration / frameDuration);
+      media.add("(prefers-reduced-motion: reduce)", () => {
+        element.current!.textContent = value;
+      });
 
-    let frame = 0;
-    const counter = setInterval(() => {
-      frame++;
-      const progress = frame / totalFrames;
-      // Ease out quad
-      const currentProgress = 1 - Math.pow(1 - progress, 3);
-      const currentNum = targetNum * currentProgress;
+      media.add("(prefers-reduced-motion: no-preference)", () => {
+        element.current!.textContent = format(0);
+        gsap.to(proxy, {
+          value: target,
+          duration: 1.5,
+          ease: "power3.out",
+          onUpdate: () => {
+            element.current!.textContent = format(proxy.value);
+          },
+          scrollTrigger: {
+            trigger: element.current,
+            start: "top 90%",
+            once: true,
+          },
+        });
+      });
 
-      if (frame >= totalFrames) {
-        setDisplayValue(`${prefix}${isFloat ? targetNum.toFixed(1) : Math.round(targetNum)}${suffix}`);
-        clearInterval(counter);
-      } else {
-        setDisplayValue(`${prefix}${isFloat ? currentNum.toFixed(1) : Math.round(currentNum)}${suffix}`);
-      }
-    }, frameDuration);
-
-    return () => clearInterval(counter);
-  }, [isInView, value]);
+      return () => media.revert();
+    },
+    { scope: element, dependencies: [value], revertOnUpdate: true },
+  );
 
   return (
-    <span ref={ref} className={className}>
-      {displayValue}
+    <span ref={element} data-gsap-ignore className={className}>
+      {value}
     </span>
   );
 }
