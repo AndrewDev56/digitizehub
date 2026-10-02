@@ -41,10 +41,10 @@ export default function Footer() {
                   Phone
                 </p>
                 <a
-                  href="tel:+16465807135"
+                  href="tel:+19296216055"
                   className="mt-1 block font-body text-sm text-white/60 hover:text-white transition-colors"
                 >
-                  +1 (646) 580-7135
+                  +1 929-621-6055
                 </a>
               </div>
 
