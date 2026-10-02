@@ -7,7 +7,7 @@ import { testimonials } from "@/lib/data/testimonials";
 import FadeIn from "@/components/animation/FadeIn";
 
 export default function Testimonials() {
-  const [activeIndex, setActiveIndex] = useState(0);
+  const [activeIndex, setActiveIndex] = useState(1);
   const scrollerRef = useRef<HTMLDivElement>(null);
 
   const goTo = (index: number) => {

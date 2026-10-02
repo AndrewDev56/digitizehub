@@ -47,7 +47,7 @@ export default function ServiceRow({ service }: { service: AboutService }) {
       </p>
 
       <div className="mt-8">
-        <Button href="/services">Explore Service</Button>
+        <Button href={service.href ?? "/contact"}>Explore Service</Button>
       </div>
     </div>
   );

@@ -1,13 +1,17 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import { founder } from "@/lib/data/founder";
+import { founders, founderIntro } from "@/lib/data/founder";
 import { offices } from "@/lib/data/offices";
 import OfficeCard from "@/components/ui/OfficeCard";
 import FadeIn from "@/components/animation/FadeIn";
 import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerContainer";
 
 export default function FounderAndOffices() {
+  const [index, setIndex] = useState(0);
+  const active = founders[index];
+
   return (
     <section className="bg-background py-24 md:py-32">
       <div className="mx-auto grid max-w-[1632px] grid-cols-1 gap-16 px-6 md:px-9 lg:grid-cols-2">
@@ -17,7 +21,7 @@ export default function FounderAndOffices() {
               Founder
             </h2>
             <p className="mt-3 max-w-md font-body text-sm text-white/60 md:text-base">
-              {founder.intro}
+              {founderIntro}
             </p>
 
             <div
@@ -27,22 +31,26 @@ export default function FounderAndOffices() {
               }}
             >
               {/* Founder photo */}
-              <div className="absolute bottom-0 right-0 h-[85%] w-[65%]">
+              <div key={active.photo} className="absolute bottom-0 right-0 flex h-[85%] w-[65%] items-end justify-end">
                 <Image
-                  src={founder.photo}
-                  alt={founder.name}
-                  fill
-                  className="object-contain object-bottom left-[30px]"
+                  src={active.photo}
+                  alt={active.name}
+                  width={700}
+                  height={820}
+                  style={{ objectFit: "contain", height: "100%", width: "auto", marginLeft: "auto" }}
                   priority
                 />
               </div>
 
               {/* Name + role top-left */}
-              <div className="absolute top-6 left-6 z-10">
+              <div className="absolute top-6 left-6 z-10 max-w-[70%]">
                 <h3 className="font-heading text-xl font-semibold text-black md:text-2xl">
-                  {founder.name}
+                  {active.name}
                 </h3>
-                <p className="font-body text-sm text-black/70">{founder.role}</p>
+                <p className="font-body text-sm text-black/70">{active.role}</p>
+                {active.bio && (
+                  <p className="mt-3 font-body text-sm text-black/70">{active.bio}</p>
+                )}
               </div>
 
               {/* LinkedIn + dots bottom-left */}
@@ -61,9 +69,16 @@ export default function FounderAndOffices() {
                   />
                 </a>
                 <div className="flex gap-1.5">
-                  <span className="size-1.5 rounded-full bg-black" />
-                  <span className="size-1.5 rounded-full bg-black/40" />
-                  <span className="size-1.5 rounded-full bg-black/40" />
+                  {founders.map((founderItem, i) => (
+                    <button
+                      key={founderItem.photo}
+                      type="button"
+                      aria-label={`Show slide ${i + 1}`}
+                      aria-current={i === index}
+                      onClick={() => setIndex(i)}
+                      className={`size-1.5 rounded-full transition-colors ${i === index ? "bg-black" : "bg-black/40 hover:bg-black/60"}`}
+                    />
+                  ))}
                 </div>
               </div>
             </div>

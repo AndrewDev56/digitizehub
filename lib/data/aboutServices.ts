@@ -7,6 +7,7 @@ export type AboutService = {
   duration: string;
   video: string;
   imagePosition: "left" | "right";
+  href?: string;
 };
 
 // Confirmed via Figma REST API (node 64:1795).
@@ -26,6 +27,7 @@ export const aboutServices: AboutService[] = [
     duration: "Typically 3 to 6 Weeks",
     video: "/videos/website-that-sell.mp4",
     imagePosition: "left",
+    href: "/services/ui-ux-design",
   },
   {
     titleLines: [
@@ -44,6 +46,7 @@ export const aboutServices: AboutService[] = [
     duration: "Typically 8 to 16 Weeks",
     video: "/videos/home-screen-app.mp4",
     imagePosition: "right",
+    href: "/services/mobile-app-design",
   },
   {
     titleLines: [
@@ -66,6 +69,7 @@ export const aboutServices: AboutService[] = [
     duration: "Typically 2 to 4 Weeks",
     video: "/videos/branding-logo-design.mp4",
     imagePosition: "left",
+    href: "/services/branding",
   },
   {
     titleLines: [[{ text: "Social", italic: true }, { text: " Media Marketing" }]],
@@ -81,6 +85,7 @@ export const aboutServices: AboutService[] = [
     duration: "Ongoing Monthly Service.",
     video: "/videos/Social Media.mp4",
     imagePosition: "right",
+    href: "/services/social-media-marketing",
   },
   {
     titleLines: [
@@ -98,5 +103,6 @@ export const aboutServices: AboutService[] = [
     duration: "Ongoing Monthly Service.",
     video: "/videos/seo.mp4",
     imagePosition: "left",
+    href: "/services/seo",
   },
 ];

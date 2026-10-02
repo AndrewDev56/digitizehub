@@ -36,8 +36,7 @@ export default function Hero() {
           </p>
         </FadeIn>
 
-        <FadeIn direction="up" delay={0.25} duration={0.7}>
-          <h1 className="mx-auto mt-6 max-w-[1356px] text-center font-heading text-[38px] leading-[1.15] font-semibold tracking-[-0.02em] text-white sm:text-6xl lg:text-[90px] lg:leading-[104px]">
+        <h1 data-gsap-ignore className="mx-auto mt-6 max-w-[1356px] text-center font-heading text-[38px] leading-[1.15] font-semibold tracking-[-0.02em] text-white sm:text-6xl lg:text-[90px] lg:leading-[104px]">
             We{" "}
             <span className="font-accent font-bold italic bg-gradient-to-r from-white via-pink-200 to-accent-from bg-clip-text text-transparent">
               Design it
@@ -51,8 +50,7 @@ export default function Hero() {
               Launch it
             </span>
             , & Get it Found.
-          </h1>
-        </FadeIn>
+        </h1>
 
         <StaggerContainer staggerChildren={0.15} delayChildren={0.4} className="mt-14 grid grid-cols-1 gap-12 md:mt-[70px] md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {trustColumns.map((column) => (

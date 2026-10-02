@@ -15,7 +15,7 @@ export default function ProjectTimeline() {
           </h2>
         </FadeIn>
 
-        <StaggerContainer staggerChildren={0.15} className="mt-16 grid grid-cols-1 gap-4 md:mt-20 md:grid-cols-3">
+        <StaggerContainer staggerChildren={0.15} className="mt-16 grid grid-cols-1 gap-6 2xl:-mx-9 md:mt-20 md:grid-cols-3">
           {timelineSteps.map((step) => (
             <StaggerItem key={step.number}>
               <TimelineStepCard step={step} />

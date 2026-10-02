@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Tag from "@/components/ui/Tag";
 import type { PortfolioItem } from "@/lib/data/portfolio";
 
@@ -18,12 +17,15 @@ export default function PortfolioCard({
       className={`group relative w-full overflow-hidden rounded-[30px] md:rounded-[60px] border border-white/10 bg-neutral-900 shadow-xl cursor-pointer transition-transform duration-500 hover:-translate-y-1 ${className}`}
       style={{ aspectRatio: `${item.imageWidth} / ${item.imageHeight}` }}
     >
-      <Image
-        src={item.image}
-        alt={item.title}
-        fill
-        sizes="(min-width: 768px) 50vw, 100vw"
-        className="object-cover transition-transform duration-700 ease-out group-hover:scale-108"
+      <video
+        src={item.video}
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        aria-label={`${item.title} preview`}
+        className="absolute inset-0 size-full object-cover transition-transform duration-700 ease-out group-hover:scale-108"
       />
 
       <div

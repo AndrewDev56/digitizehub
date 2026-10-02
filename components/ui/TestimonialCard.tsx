@@ -12,10 +12,10 @@ export default function TestimonialCard({
 }) {
   return (
     <div
-      className={`relative flex shrink-0 snap-center flex-col justify-between gap-8 overflow-hidden rounded-[24px] p-6 transition-all duration-300 md:p-8 cursor-pointer ${
+      className={`relative flex min-w-[260px] snap-center flex-col justify-between gap-8 overflow-hidden rounded-[24px] p-6 transition-all duration-300 md:p-8 cursor-pointer ${
         active
-          ? "w-[500px] opacity-100 md:w-[600px] shadow-2xl scale-[1.02]"
-          : "w-[280px] opacity-60 md:w-[320px] hover:opacity-85"
+          ? "flex-[2] opacity-100 shadow-2xl scale-[1.02]"
+          : "flex-1 opacity-60 hover:opacity-85"
       }`}
       style={{
         background: active

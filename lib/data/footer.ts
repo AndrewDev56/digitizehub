@@ -23,12 +23,11 @@ export const footerColumns: FooterColumn[] = [
   {
     title: "Our Services",
     links: [
-      { label: "Website Design", href: "/services/website-design" },
+      { label: "UI & UX Design", href: "/services/ui-ux-design" },
       { label: "Mobile App Design", href: "/services/mobile-app-design" },
-      { label: "Website Development", href: "/services/website-development" },
-      { label: "Branding", href: "/services/branding" },
-      { label: "Graphic Design", href: "/services/graphic-design" },
-      { label: "Motion Graphics", href: "/services/motion-graphics" },
+      { label: "Branding & Logo Design", href: "/services/branding" },
+      { label: "Social Media Marketing", href: "/services/social-media-marketing" },
+      { label: "Search Engine Optimization", href: "/services/seo" },
     ],
   },
   {

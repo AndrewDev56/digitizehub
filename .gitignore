@@ -12,6 +12,10 @@
 
 # testing
 /coverage
+/test-results/
+/playwright-report/
+buildlog.txt
+*.crdownload
 
 # next.js
 /.next/
@@ -32,6 +36,9 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+
+# VS Code MCP config
+.vscode/mcp.json
 
 # vercel
 .vercel

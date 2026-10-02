@@ -13,7 +13,7 @@ export default function LifecycleStepCard({
   return (
     <div className="flex items-start">
       {!isFirst && (
-        <div className="flex w-[190px] shrink-0 justify-start pt-1">
+        <div className="hidden w-[190px] shrink-0 justify-start pt-1 lg:flex">
           <Image
             src="/icons/lifecycle-arrow.svg"
             alt=""

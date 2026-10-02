@@ -2,7 +2,12 @@ import Image from "next/image";
 import { lifecycleSteps } from "@/lib/data/lifecycleSteps";
 import LifecycleStepCard from "@/components/ui/LifecycleStepCard";
 
-const indents = [0, 350, 700, 1050];
+const indentClasses = [
+  "ml-0",
+  "lg:ml-[50px] xl:ml-[100px] 2xl:ml-[160px]",
+  "lg:ml-[120px] xl:ml-[300px] 2xl:ml-[510px]",
+  "lg:ml-[300px] xl:ml-[500px] 2xl:ml-[860px]",
+];
 
 export default function Lifecycle() {
   return (
@@ -40,10 +45,7 @@ export default function Lifecycle() {
 
           <div className="flex flex-col gap-10">
             {lifecycleSteps.map((step, index) => (
-              <div
-                key={step.title}
-                style={{ marginLeft: `${index === 0 ? 0 : indents[index] - 190}px` }}
-              >
+              <div key={step.title} className={indentClasses[index]}>
                 <LifecycleStepCard
                   step={step}
                   isFirst={index === 0}
