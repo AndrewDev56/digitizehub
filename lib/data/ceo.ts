@@ -15,7 +15,7 @@ export const ceos: Ceo[] = [
     photo: "/images/founder.png",
   },
   {
-    name: "Raheel Karim",
+    name: "Tajdin Modi",
     role: "Founder & CEO",
     photo: "/images/founder2.png",
     bio: "Phasellus posuere ultrices malesuada. Suspendisse nisl nisl, accumsan eu condimentum in, tempus sed quam nulla purus, finibus sit amet pulvinar ac eget lectus elit amet.",

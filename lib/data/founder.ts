@@ -16,7 +16,7 @@ export const founders: Founder[] = [
     photo: "/images/founder.png",
   },
   {
-    name: "Raheel Karim",
+    name: "Tajdin Modi",
     role: "Founder & CEO",
     photo: "/images/founder2.png",
     bio: "Fifteen years in digital product and growth, building teams that ship fast without losing the craft.",
