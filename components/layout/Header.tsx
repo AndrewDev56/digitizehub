@@ -30,8 +30,7 @@ export default function Header({ active }: HeaderProps) {
 
   return (
     <header
-      data-gsap-enter
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 animate-header-fadeIn ${
         scrolled
           ? "bg-background/85 backdrop-blur-md border-b border-white/10 shadow-2xl py-3"
           : "bg-transparent py-6 md:py-8"
