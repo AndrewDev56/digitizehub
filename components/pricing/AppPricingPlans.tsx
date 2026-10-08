@@ -8,7 +8,7 @@ export default function AppPricingPlans() {
   const [billing, setBilling] = useState<"monthly" | "quarterly">("monthly");
 
   return (
-    <section className="bg-background pb-24 md:pb-32">
+    <section className="bg-background pb-section">
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
         <div className="flex justify-end">
           <div className="flex items-center gap-3">

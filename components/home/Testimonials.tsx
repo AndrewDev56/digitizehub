@@ -39,7 +39,7 @@ export default function Testimonials() {
               type="button"
               aria-label="Previous testimonial"
               onClick={() => goTo(activeIndex - 1)}
-              className="flex size-11 items-center justify-center rounded-full border border-white/20 transition-all hover:bg-white/10 hover:scale-105 active:scale-95"
+              className="flex size-11 items-center justify-center rounded-full border border-white/20 transition-all hover:bg-brand-red hover:scale-105 active:scale-95"
             >
               <Image
                 src="/icons/Arrow_Left.png"
@@ -53,7 +53,7 @@ export default function Testimonials() {
               type="button"
               aria-label="Next testimonial"
               onClick={() => goTo(activeIndex + 1)}
-              className="flex size-11 items-center justify-center rounded-full bg-accent-to transition-all hover:bg-accent-from hover:scale-105 active:scale-95 shadow-lg shadow-accent-to/30"
+              className="flex size-11 items-center justify-center rounded-full bg-brand-red transition-all hover:bg-brand-red hover:scale-105 active:scale-95 shadow-lg shadow-brand-red/30"
             >
               <Image
                 src="/icons/arrow-right-white.png"

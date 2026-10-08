@@ -31,7 +31,7 @@ function PillGroup({
               type="button"
               aria-pressed={active}
               onClick={() => onToggle(item)}
-              className={`min-h-[52px] rounded-full px-8 font-body text-[15px] text-white transition-colors ${active ? "bg-accent-to" : "bg-white/4 hover:bg-white/8"}`}
+              className={`min-h-[52px] rounded-full px-8 font-body text-[15px] transition-colors ${active ? "bg-brand-red text-black" : "bg-white/4 text-white hover:bg-brand-red hover:text-black"}`}
             >
               {item}
             </button>

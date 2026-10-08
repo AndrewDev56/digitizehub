@@ -38,35 +38,35 @@ export default function Hero() {
 
         <h1 data-gsap-ignore className="mx-auto mt-6 max-w-[1356px] text-center font-heading text-[38px] leading-[1.15] font-semibold tracking-[-0.02em] text-white sm:text-6xl lg:text-[90px] lg:leading-[104px]">
             We{" "}
-            <span className="font-accent font-bold italic bg-gradient-to-r from-white via-pink-200 to-accent-from bg-clip-text text-transparent">
+            <span className="font-accent font-bold italic text-white">
               Design it
             </span>
             ,{" "}
-            <span className="font-accent font-bold italic bg-gradient-to-r from-white via-pink-200 to-accent-from bg-clip-text text-transparent">
+            <span className="font-accent font-bold italic text-white">
               Build it
             </span>
             ,{" "}
-            <span className="font-accent font-bold italic bg-gradient-to-r from-white via-pink-200 to-accent-from bg-clip-text text-transparent">
+            <span className="font-accent font-bold italic text-white">
               Launch it
             </span>
             , & Get it Found.
         </h1>
 
-        <StaggerContainer staggerChildren={0.15} delayChildren={0.4} className="mt-14 grid grid-cols-1 gap-12 md:mt-[70px] md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <StaggerContainer staggerChildren={0.15} delayChildren={0.4} className="mt-8 grid grid-cols-1 gap-12 md:mt-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {trustColumns.map((column) => (
             <StaggerItem
               key={column.lines[0]}
-              className="flex flex-col items-center gap-6 lg:items-start"
+              className="flex flex-col items-start gap-6"
             >
-              <div className="flex flex-col items-center gap-[18px] lg:items-end lg:self-stretch">
+              <div className="flex items-start gap-2 self-stretch">
                 <Image
                   src="/icons/star.png"
                   alt=""
                   width={18}
                   height={18}
-                  className="size-[18px] self-center lg:self-start animate-pulse"
+                  className="mt-1 size-[18px] shrink-0 animate-pulse"
                 />
-                <p className="text-center font-tag text-sm leading-[1.5] font-medium text-white md:text-[18px] lg:max-w-[390px] lg:text-right">
+                <p className="text-left font-tag text-sm leading-[1.3] font-medium text-white md:text-[18px] lg:max-w-[390px]">
                   {column.lines.map((line) => (
                     <span key={line} className="block">
                       {line}
@@ -75,7 +75,7 @@ export default function Hero() {
                 </p>
               </div>
 
-              <div className="flex flex-wrap justify-center gap-[6px] lg:justify-start">
+              <div className="flex w-full flex-wrap justify-start gap-[6px]">
                 {column.tags.map((tag) => (
                   <Tag key={tag}>{tag}</Tag>
                 ))}
@@ -86,7 +86,7 @@ export default function Hero() {
           <StaggerItem className="flex flex-col items-center gap-10 md:col-span-2 lg:col-span-1 lg:items-end lg:gap-[40px]">
             <div className="flex items-center gap-[18px]">
               <Image
-                src="/images/trustpilot_logo.png"
+                src="/images/Trustpilot_Logo.png"
                 alt="Trustpilot"
                 width={162}
                 height={40}
@@ -94,7 +94,7 @@ export default function Hero() {
               />
               <span aria-hidden className="h-[38px] w-px bg-white/10" />
               <Image
-                src="/images/clutch_logo.png"
+                src="/images/Clutch_Logo.png"
                 alt="Clutch"
                 width={94}
                 height={26}

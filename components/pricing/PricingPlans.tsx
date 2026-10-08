@@ -8,7 +8,7 @@ export default function PricingPlans() {
   const [billing, setBilling] = useState<"monthly" | "quarterly">("monthly");
 
   return (
-    <section className="bg-background pb-24 md:pb-32">
+    <section className="bg-background pb-section">
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
         <div className="flex justify-end">
           <div className="flex items-center gap-3">
@@ -46,7 +46,9 @@ export default function PricingPlans() {
 
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
           {pricingPlans.map((plan) => (
-            <PricingPlanCard key={plan.name} plan={plan} />
+            <div key={plan.name} className={plan.featured ? "md:mx-4 md:my-4" : ""}>
+              <PricingPlanCard plan={plan} />
+            </div>
           ))}
         </div>
       </div>

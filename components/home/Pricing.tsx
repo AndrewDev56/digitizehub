@@ -12,8 +12,8 @@ export default function Pricing() {
   const [billing, setBilling] = useState<"monthly" | "quarterly">("monthly");
 
   return (
-    <section className="bg-background py-24 md:py-32">
-      <div className="mx-auto max-w-[1632px] px-6 py-8 md:px-9 bg-white/[0.02] ring-1 ring-white/10 rounded-[32px]">
+    <section className="bg-background py-section">
+      <div className="mx-auto max-w-[1632px] px-6 py-8 md:px-9 bg-white/[0.02] rounded-[32px]">
         <FadeIn direction="up">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
@@ -28,7 +28,7 @@ export default function Pricing() {
               </p>
             </div>
 
-            <div className="flex shrink-0 items-center gap-3 bg-white/5 p-2 rounded-full border border-white/10">
+            <div className="flex shrink-0 items-center gap-3">
               <span
                 className={`font-tag text-sm transition-colors ${billing === "monthly" ? "text-white font-semibold" : "text-white/40"}`}
               >
@@ -71,7 +71,7 @@ export default function Pricing() {
           <FadeIn direction="up" delay={0.3} className="flex justify-center py-6">
             <Link
               href="/pricing"
-              className="group flex items-center gap-3 rounded-full bg-white py-2.5 pr-3 pl-6 font-heading text-sm font-medium text-black transition-all hover:bg-white/90 hover:scale-105"
+              className="group flex items-center gap-3 rounded-full bg-white py-2.5 pr-3 pl-6 font-heading text-sm font-medium text-black transition-all hover:bg-brand-red hover:scale-105"
             >
               See Full Pricing
               <span className="flex size-7 items-center justify-center rounded-full bg-black transition-transform duration-300 group-hover:rotate-45">

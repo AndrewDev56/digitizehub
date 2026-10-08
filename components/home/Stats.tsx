@@ -38,15 +38,29 @@ export default function Stats() {
         <StaggerContainer staggerChildren={0.2} className="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-8">
           {stats.map((stat) => (
             <StaggerItem key={stat.title} className="flex flex-col items-center text-center group">
-              <div
-                className="relative transition-transform duration-300 group-hover:scale-105 group-hover:rotate-1"
-              >
+              <div className="relative inline-block">
                 <Image
                   src={stat.graphic}
-                  alt={stat.title}
+                  alt=""
+                  aria-hidden="true"
                   width={stat.graphicWidth}
                   height={stat.graphicHeight}
-                  className="h-[100px] w-auto md:h-[140px] drop-shadow-[0_10px_20px_rgba(255,82,119,0.15)]"
+                  className="h-[100px] w-auto opacity-0 md:h-[140px]"
+                />
+                <div
+                  role="img"
+                  aria-label={stat.title}
+                  className="absolute inset-0 bg-white/50 transition-colors duration-200 group-hover:bg-white"
+                  style={{
+                    maskImage: `url("${stat.graphic}")`,
+                    maskRepeat: "no-repeat",
+                    maskPosition: "center",
+                    maskSize: "100% 100%",
+                    WebkitMaskImage: `url("${stat.graphic}")`,
+                    WebkitMaskRepeat: "no-repeat",
+                    WebkitMaskPosition: "center",
+                    WebkitMaskSize: "100% 100%",
+                  }}
                 />
               </div>
               <h3 className="mt-6 font-heading text-xl font-semibold tracking-[-0.01em] text-white group-hover:text-accent-from transition-colors duration-300">

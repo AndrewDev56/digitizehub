@@ -50,7 +50,7 @@ export default function Button({
     </>
   );
 
-  const classes = `group inline-flex items-center justify-center rounded-full bg-white transition-all duration-300 hover:scale-105 hover:bg-white/95 hover:shadow-[0_10px_25px_rgba(255,255,255,0.25)] active:scale-[0.96] ${sizeStyles[size]} ${className}`;
+  const classes = `group inline-flex items-center justify-center rounded-full bg-white transition-all duration-300 hover:scale-105 hover:bg-brand-red active:scale-[0.96] ${sizeStyles[size]} ${className}`;
 
   if (href) {
     return (

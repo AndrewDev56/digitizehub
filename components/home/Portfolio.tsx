@@ -1,5 +1,9 @@
 "use client";
 
+import { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "@/components/ui/Button";
 import PortfolioCard from "@/components/ui/PortfolioCard";
 import FadeIn from "@/components/animation/FadeIn";
@@ -10,9 +14,43 @@ import {
   portfolioHalves,
 } from "@/lib/data/portfolio";
 
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
 export default function Portfolio() {
+  const root = useRef<HTMLElement>(null);
+
+  useGSAP(
+    () => {
+      const cards = root.current?.querySelectorAll<HTMLElement>("[data-work-card]");
+      if (!cards?.length) return;
+
+      const media = gsap.matchMedia();
+      media.add("(prefers-reduced-motion: no-preference)", () => {
+        gsap.set(cards, { autoAlpha: 0, y: 24 });
+        ScrollTrigger.batch(cards, {
+          interval: 0.12,
+          batchMax: 3,
+          start: "top 88%",
+          once: true,
+          onEnter: (batch) =>
+            gsap.to(batch, {
+              autoAlpha: 1,
+              y: 0,
+              duration: 0.65,
+              stagger: 0.08,
+              ease: "power2.out",
+              overwrite: true,
+            }),
+        });
+      });
+
+      return () => media.revert();
+    },
+    { scope: root },
+  );
+
   return (
-    <section className="bg-background py-24 md:py-32">
+    <section ref={root} className="bg-background py-24 md:py-32">
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
         <FadeIn direction="up">
           <div className="flex flex-col items-center gap-4 text-center">

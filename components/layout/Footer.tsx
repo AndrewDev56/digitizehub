@@ -21,8 +21,12 @@ export default function Footer() {
   };
 
   return (
-    <footer className="border-t border-white/10 bg-background relative">
-      <div className="mx-auto max-w-[1632px] px-6 py-16 md:px-9 md:py-20">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-background">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] bg-[radial-gradient(ellipse_at_top,rgba(255,0,54,0.16)_0%,rgba(255,0,54,0.06)_38%,transparent_72%)]"
+      />
+      <div className="relative z-10 mx-auto max-w-[1632px] px-6 py-12 md:px-9 md:py-16">
         <FadeIn direction="up">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">
             <div className="lg:col-span-1">
@@ -37,24 +41,24 @@ export default function Footer() {
               </Link>
 
               <div className="mt-8">
-                <p className="font-heading text-sm font-semibold text-white">
+                <p className="font-heading text-base font-semibold text-white">
                   Phone
                 </p>
                 <a
                   href="tel:+19296216055"
-                  className="mt-1 block font-body text-sm text-white/60 hover:text-white transition-colors"
+                  className="mt-1 block font-body text-sm text-white/60 transition-colors hover:text-brand-red"
                 >
                   +1 929-621-6055
                 </a>
               </div>
 
               <div className="mt-6">
-                <p className="font-heading text-sm font-semibold text-white">
+                <p className="font-heading text-base font-semibold text-white">
                   Drop us a line
                 </p>
                 <a
                   href="mailto:info@digitizehub.net"
-                  className="mt-1 block font-body text-sm text-white/60 hover:text-white transition-colors"
+                  className="mt-1 block font-body text-sm text-white/60 transition-colors hover:text-brand-red"
                 >
                   info@digitizehub.net
                 </a>
@@ -66,7 +70,7 @@ export default function Footer() {
                     key={social}
                     href="#"
                     aria-label={social}
-                    className="flex size-9 items-center justify-center rounded-full bg-white/10 transition-all hover:scale-110 hover:-translate-y-0.5 active:scale-95 hover:bg-accent-to"
+                    className="flex size-9 items-center justify-center rounded-full bg-white/10 transition-all hover:scale-110 hover:-translate-y-0.5 active:scale-95 hover:bg-brand-red"
                   >
                     <Image
                       src={socialIcons[social]}
@@ -82,7 +86,7 @@ export default function Footer() {
 
             {footerColumns.map((column) => (
               <div key={column.title}>
-                <h4 className="font-heading text-sm font-semibold text-white">
+                <h4 className="font-heading text-base font-semibold text-white">
                   {column.title}
                 </h4>
                 <ul className="mt-5 flex flex-col gap-3">
@@ -101,7 +105,7 @@ export default function Footer() {
             ))}
 
             <div>
-              <h4 className="font-heading text-sm font-semibold text-white">
+              <h4 className="font-heading text-base font-semibold text-white">
                 Locations
               </h4>
               <div className="mt-5 flex flex-col gap-6">
@@ -114,15 +118,15 @@ export default function Footer() {
                       href={office.mapUrl}
                       target="_blank"
                       rel="noreferrer"
-                      className="mt-1 inline-flex items-center gap-1 font-body text-sm text-white/80 transition-all hover:text-accent-from hover:translate-x-1"
+                      className="mt-1 inline-flex items-center gap-1 font-body text-sm text-white/80 transition-colors hover:text-brand-red"
                     >
                       View on map
                       <Image
-                        src="/icons/arrow-right.svg"
+                        src="/icons/arrow-right-white.png"
                         alt=""
                         width={10}
                         height={10}
-                        className="size-2.5 invert"
+                        className="size-2.5"
                       />
                     </a>
                   </div>
@@ -131,23 +135,24 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-6 sm:flex-row">
             <p className="font-body text-xs text-white/40">
-              © 2026 <span className="text-accent-to font-semibold">DigitizeHub</span> — All
-              Rights Reserved.
+              All Rights Reserved <span aria-hidden="true">|</span> © 2026{" "}
+              <span className="font-semibold text-brand-red">DigitizeHub</span>.
             </p>
-            <div className="flex items-center gap-6">
-              <Link href="/privacy" className="font-body text-xs text-white/40 hover:text-white transition-colors">
+            <div className="flex items-center gap-4">
+              <Link href="/privacy" className="font-body text-xs text-white/40 transition-colors hover:text-white">
                 Privacy Policy
               </Link>
-              <Link href="/terms" className="font-body text-xs text-white/40 hover:text-white transition-colors">
+              <span aria-hidden="true" className="text-xs text-white/40">|</span>
+              <Link href="/terms" className="font-body text-xs text-white/40 transition-colors hover:text-white">
                 Terms and Conditions
               </Link>
               <button
                 type="button"
                 onClick={scrollToTop}
                 aria-label="Back to top"
-                className="flex size-8 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:bg-accent-to hover:scale-110"
+                className="flex size-8 items-center justify-center rounded-full bg-white/10 text-white transition-all hover:scale-110 hover:bg-brand-red"
               >
                 ↑
               </button>

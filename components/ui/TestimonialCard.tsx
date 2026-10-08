@@ -19,7 +19,7 @@ export default function TestimonialCard({
       }`}
       style={{
         background: active
-          ? "linear-gradient(118deg, #ff5277 2.73%, #ff0036 97.52%)"
+          ? "linear-gradient(118deg, var(--accent-from) 2.73%, var(--color-brand-red) 97.52%)"
           : "rgba(255,255,255,0.05)",
       }}
     >

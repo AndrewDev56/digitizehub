@@ -34,7 +34,7 @@ export default function CtaBanner() {
           <div className="relative z-10 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="group flex items-center gap-3 rounded-full bg-black py-3.5 pr-3.5 pl-7 font-heading text-sm font-semibold text-white shadow-xl transition-all hover:bg-neutral-900 hover:scale-105"
+              className="group flex items-center gap-3 rounded-full bg-black py-3.5 pr-3.5 pl-7 font-heading text-sm font-semibold text-white shadow-xl transition-all hover:bg-brand-red hover:scale-105"
             >
               Book a 20 Minute Call
               <span className="flex size-8 items-center justify-center rounded-full bg-white transition-transform duration-300 group-hover:rotate-45">
@@ -50,7 +50,7 @@ export default function CtaBanner() {
 
             <Link
               href="/work"
-              className="group flex items-center gap-3 rounded-full border border-black/20 bg-white/40 py-3.5 pr-3.5 pl-7 font-heading text-sm font-semibold text-black transition-all hover:bg-black/5 hover:scale-105"
+              className="group flex items-center gap-3 rounded-full border border-black/20 bg-white/40 py-3.5 pr-3.5 pl-7 font-heading text-sm font-semibold text-black transition-all hover:bg-brand-red hover:scale-105"
             >
               Explore Our Portfolio
               <span className="flex size-8 items-center justify-center rounded-full bg-black transition-transform duration-300 group-hover:rotate-45">

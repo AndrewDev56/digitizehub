@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 
 type FloatingChipProps = {
@@ -14,24 +12,22 @@ export default function FloatingChip({
   style,
 }: FloatingChipProps) {
   return (
-    <div
+    <span
       data-gsap-reveal
       data-gsap-scale="0.8"
-      className={`group inline-flex items-center gap-[10px] rounded-full bg-white/90 py-[10px] pr-[24px] pl-[10px] backdrop-blur-[8px] shadow-lg cursor-pointer transition-all duration-200 hover:scale-105 hover:shadow-xl hover:bg-white ${className}`}
+      className={`inline-flex items-center gap-[9px] rounded-full bg-white/90 px-[10px] py-[6px] font-tag text-base font-semibold tracking-[-0.02em] text-black backdrop-blur-[8px] shadow-lg transition-transform duration-300 hover:-translate-y-1 ${className}`}
       style={style}
     >
-      <span className="flex size-[36px] shrink-0 items-center justify-center rounded-full bg-[#111111] transition-transform duration-300 group-hover:rotate-45">
+      <span className="flex size-[34px] shrink-0 items-center justify-center rounded-full bg-black">
         <Image
-          src="/icons/Arrow_Right.png"
+          src="/icons/counter-icon.png"
           alt=""
-          width={18}
-          height={18}
-          className="h-[50%] w-[50%]"
+          width={16}
+          height={16}
+          className="size-4 object-contain brightness-0 invert"
         />
       </span>
-      <span className="whitespace-nowrap font-tag text-[16px] font-semibold tracking-[-0.02em] text-black">
-        {label}
-      </span>
-    </div>
+      {label}
+    </span>
   );
 }

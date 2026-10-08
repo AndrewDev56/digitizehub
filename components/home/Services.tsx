@@ -1,16 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { services } from "@/lib/data/services";
 import FadeIn from "@/components/animation/FadeIn";
 import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerContainer";
 
 export default function Services() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const rest = services.slice(1);
-  const active = services[activeIndex];
+  const listedServices = services.slice(1);
+  const [activeHref, setActiveHref] = useState(listedServices[0].href);
+  const active =
+    listedServices.find((service) => service.href === activeHref) ??
+    listedServices[0];
 
   return (
     <section className="bg-background py-24 md:py-32">
@@ -28,36 +29,23 @@ export default function Services() {
 
         <div className="mt-16 grid grid-cols-1 gap-12 md:mt-20 lg:grid-cols-2 lg:gap-16 items-center">
           <StaggerContainer staggerChildren={0.12} className="flex flex-col">
-            {rest.map((service) => {
-              const index = services.indexOf(service);
-              return (
-                <StaggerItem key={service.href} className="border-b border-white/10">
-                  <Link
-                    href={service.href}
-                    onMouseEnter={() => setActiveIndex(index)}
-                    onFocus={() => setActiveIndex(index)}
-                    onMouseLeave={() => setActiveIndex(0)}
-                    className="group flex items-center justify-between py-6 md:py-8 transition-colors hover:px-4 rounded-xl hover:bg-white/5 duration-300"
-                  >
-                    <div className="flex items-center gap-4">
-                      <span className="size-2 rounded-full bg-accent-to opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                      <span className="font-heading text-xl font-semibold text-white md:text-3xl transition-transform duration-300 group-hover:translate-x-2">
-                        {service.title}
-                      </span>
-                    </div>
-                    <div className="flex size-10 items-center justify-center rounded-full bg-white/5 transition-all duration-300 group-hover:bg-accent-to group-hover:scale-110">
-                      <Image
-                        src="/icons/Arrow_Right.png"
-                        alt=""
-                        width={20}
-                        height={20}
-                        className="size-5 transition-transform group-hover:translate-x-0.5 md:size-6 invert"
-                      />
-                    </div>
-                  </Link>
-                </StaggerItem>
-              );
-            })}
+            {listedServices.map((service) => (
+              <StaggerItem key={service.href} className="border-b border-white/10">
+                <Link
+                  href={service.href}
+                  onMouseEnter={() => setActiveHref(service.href)}
+                  onFocus={() => setActiveHref(service.href)}
+                  className="group flex items-center justify-between py-6 duration-300 md:py-8"
+                >
+                  <span className="text-left font-heading text-xl font-semibold text-white md:text-3xl">
+                    {service.title}
+                  </span>
+                  <span className="ml-4 shrink-0 text-3xl leading-none text-white opacity-50 transition-all duration-300 group-hover:rotate-45 group-hover:opacity-100">
+                    →
+                  </span>
+                </Link>
+              </StaggerItem>
+            ))}
           </StaggerContainer>
 
           <FadeIn direction="left" delay={0.2}>

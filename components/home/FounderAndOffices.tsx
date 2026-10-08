@@ -25,31 +25,36 @@ export default function FounderAndOffices() {
             </p>
 
             <div
-              className="relative mt-8 aspect-[4/3] overflow-hidden rounded-2xl transition-transform duration-300 hover:scale-[1.02] md:aspect-[16/11] shadow-2xl cursor-pointer"
-              style={{
-                background: "linear-gradient(160deg, #ffd9e5 0%, #ff5277 100%)",
-              }}
+              className="relative mt-8 aspect-[4/3] overflow-hidden rounded-2xl bg-white shadow-2xl md:aspect-[16/11]"
             >
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -right-[25%] -top-[30%] h-[125%] w-[100%] rounded-full bg-brand-red/45 blur-[150px]"
+              />
+              <div
+                aria-hidden
+                className="pointer-events-none absolute -bottom-[45%] left-[12%] h-[100%] w-[80%] rounded-full bg-brand-red/30 blur-[120px]"
+              />
               {/* Founder photo */}
-              <div key={active.photo} className="absolute bottom-0 right-0 flex h-[85%] w-[65%] items-end justify-end">
+              <div key={active.photo} className="absolute bottom-0 right-0 flex h-[96%] w-[82%] items-end justify-end">
                 <Image
                   src={active.photo}
                   alt={active.name}
                   width={700}
                   height={820}
-                  style={{ objectFit: "contain", height: "100%", width: "auto", marginLeft: "auto" }}
+                  style={{ objectFit: "contain", height: "100%", width: "auto", marginLeft: "auto", objectPosition: "bottom" }}
                   priority
                 />
               </div>
 
               {/* Name + role top-left */}
               <div className="absolute top-6 left-6 z-10 max-w-[70%]">
-                <h3 className="font-heading text-xl font-semibold text-black md:text-2xl">
+                <h3 className="font-heading text-2xl font-semibold text-black md:text-3xl">
                   {active.name}
                 </h3>
-                <p className="font-body text-sm text-black/70">{active.role}</p>
+                <p className="font-body text-base text-black/70 md:text-lg">{active.role}</p>
                 {active.bio && (
-                  <p className="mt-3 font-body text-sm text-black/70">{active.bio}</p>
+                  <p className="mt-3 font-body text-base text-black/70 md:text-lg">{active.bio}</p>
                 )}
               </div>
 
@@ -58,14 +63,14 @@ export default function FounderAndOffices() {
                 <a
                   href="#"
                   aria-label="LinkedIn"
-                  className="flex size-8 items-center justify-center rounded-full transition-transform hover:scale-110"
+                  className="flex size-10 items-center justify-center rounded-full transition-transform hover:scale-110"
                 >
                   <Image
                     src="/icons/linkedin.png"
                     alt=""
-                    width={18}
-                    height={18}
-                    className="size-8"
+                    width={24}
+                    height={24}
+                    className="size-10"
                   />
                 </a>
                 <div className="flex gap-1.5">
@@ -91,7 +96,7 @@ export default function FounderAndOffices() {
               Offices
             </h2>
             <StaggerContainer staggerChildren={0.2} className="mt-8 flex flex-col gap-4">
-              {offices.map((office) => (
+              {offices.filter((office) => office.city !== "Georgia Office").map((office) => (
                 <StaggerItem key={office.city}>
                   <OfficeCard office={office} />
                 </StaggerItem>

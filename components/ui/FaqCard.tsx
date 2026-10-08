@@ -14,12 +14,7 @@ export default function FaqCard({
 
   return (
     <div
-      className="break-inside-avoid rounded-2xl border border-white/20 p-5 transition-all duration-300 hover:border-white/40"
-      style={{
-        background: open
-          ? "linear-gradient(135deg, rgba(255,255,255,0.18) 0%, rgba(255,82,119,0.1) 100%)"
-          : "linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.02) 100%)",
-      }}
+      className="break-inside-avoid rounded-2xl border border-white/20 bg-white/[0.45] p-4 transition-all duration-300 hover:border-white/40"
     >
       <button
         type="button"
@@ -27,13 +22,13 @@ export default function FaqCard({
         className="flex w-full items-center justify-between gap-3 text-left"
         aria-expanded={open}
       >
-        <span className="font-heading text-[15px] font-semibold text-white md:text-base">
+        <span className="font-heading text-base font-semibold text-white md:text-lg">
           {item.question}
         </span>
         <span
-          className={`flex size-6 shrink-0 items-center justify-center rounded-full bg-white/10 text-white text-lg leading-none transition-transform duration-200 ${open ? "rotate-45" : ""}`}
+          className="flex size-6 shrink-0 items-center justify-center rounded-full bg-black/10 font-heading text-lg leading-none text-white"
         >
-          +
+          {open ? "−" : "+"}
         </span>
       </button>
 
@@ -43,9 +38,9 @@ export default function FaqCard({
         style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
       >
         <div className="overflow-hidden">
-            <p className="mt-3 font-body text-[13px] leading-relaxed text-white/70 md:text-sm">
-              {item.answer}
-            </p>
+          <p className="mt-3 font-body text-sm leading-relaxed text-white/80 md:text-base">
+            {item.answer}
+          </p>
         </div>
       </div>
     </div>

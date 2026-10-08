@@ -49,7 +49,7 @@ export default function AppPricingPlanCard({
         </div>
         <button
           type="button"
-          className="flex h-[52px] w-[170px] shrink-0 items-center justify-between rounded-full bg-white pl-6 pr-2 font-body text-[15.6px] font-semibold tracking-tight text-background transition-opacity hover:opacity-90"
+          className="flex h-[52px] w-[170px] shrink-0 items-center justify-between rounded-full bg-white pl-6 pr-2 font-body text-[15.6px] font-semibold tracking-tight text-background transition-colors hover:bg-brand-red"
         >
           Start Now
           <span className="flex size-[35px] items-center justify-center rounded-full bg-background">
@@ -72,9 +72,9 @@ export default function AppPricingPlanCard({
             <Image
               src="/icons/tick.png"
               alt=""
-              width={20}
-              height={20}
-              className="size-3 shrink-0"
+              width={10}
+              height={10}
+              className="size-2.5 shrink-0"
             />
             <span className="font-body text-lg text-white">{feature}</span>
           </li>

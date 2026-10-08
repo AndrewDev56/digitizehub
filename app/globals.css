@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@config "../tailwind.config.ts";
 
 @font-face {
   font-family: "Aileron";
@@ -41,7 +42,7 @@
   --foreground: #ffffff;
   --muted: #999999;
   --accent-from: #ff5277;
-  --accent-to: #ff0036;
+  --accent-to: var(--color-brand-red);
 }
 
 @theme inline {
@@ -72,4 +73,12 @@ body {
   background: var(--color-background);
   color: var(--color-foreground);
   font-family: var(--font-body);
+}
+
+@layer base {
+  [class*="bg-accent-"][class*="blur-"],
+  [class*="bg-red-"][class*="blur-"],
+  [class*="bg-rose-"][class*="blur-"] {
+    display: none;
+  }
 }

@@ -24,7 +24,7 @@ export default function LogoMarquee() {
       });
       media.add("(prefers-reduced-motion: no-preference)", () => {
         gsap.to(track, {
-          x: () => -firstGroup.offsetWidth,
+          x: () => -(firstGroup.offsetWidth + parseFloat(getComputedStyle(track).columnGap)),
           duration: 32,
           ease: "none",
           repeat: -1,
@@ -37,23 +37,23 @@ export default function LogoMarquee() {
   );
 
   return (
-    <div ref={root} className="relative w-full overflow-hidden py-10 md:h-[150px] md:py-0">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent md:w-40"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent md:w-40"
-      />
-
-      <div data-marquee-track className="flex h-full w-max items-center">
+    <div
+      ref={root}
+      className="relative w-full overflow-hidden py-10 md:h-[150px] md:py-0"
+      style={{
+        maskImage:
+          "linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
+        WebkitMaskImage:
+          "linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
+      }}
+    >
+      <div data-marquee-track className="flex h-full w-max items-center gap-16">
         {[0, 1].map((group) => (
           <div
             key={group}
             data-marquee-group
             aria-hidden={group === 1 ? true : undefined}
-            className="flex shrink-0 items-center gap-16 md:gap-[106px]"
+            className="flex shrink-0 items-center gap-16"
           >
             {clientLogos.map((logo, index) => (
               <Image
@@ -63,7 +63,11 @@ export default function LogoMarquee() {
                 width={logo.width}
                 height={logo.height}
                 aria-hidden
-                className="h-[32px] w-auto shrink-0 opacity-40 md:h-[42px]"
+                className={`h-[32px] shrink-0 opacity-40 md:h-[42px] ${
+                  logo.src === "/images/client-logo-4.png"
+                    ? "w-[44px] object-cover object-left md:w-[60px]"
+                    : "w-auto"
+                }`}
               />
             ))}
           </div>

@@ -5,12 +5,12 @@ import type { PricingPlan } from "@/lib/data/pricingPlans";
 export default function PricingPlanCard({ plan }: { plan: PricingPlan }) {
   return (
     <div
-      className={`relative flex flex-col rounded-[20px] p-6 md:p-10 ${
+      className={`relative flex flex-col rounded-[20px] p-6 ${
         plan.featured
-          ? ""
+          ? "bg-white/[0.04] md:p-8"
           : plan.badge === undefined && plan.name === "Custom"
             ? "bg-white/[0.02]"
-            : "bg-white/5 border border-white/10"
+            : "bg-white/5 md:p-10"
       }`}
       style={
         plan.featured
@@ -22,7 +22,7 @@ export default function PricingPlanCard({ plan }: { plan: PricingPlan }) {
       }
     >
       {plan.badge && (
-        <span className="absolute top-6 right-6 rounded border border-white/24 bg-white/6 px-3 py-1.5 font-heading text-xs text-white md:top-10 md:right-10">
+        <span className="absolute top-6 right-6 rounded bg-white/6 px-3 py-1.5 font-heading text-xs text-white md:top-10 md:right-10">
           {plan.badge}
         </span>
       )}
@@ -42,7 +42,6 @@ export default function PricingPlanCard({ plan }: { plan: PricingPlan }) {
             Starting from
           </p>
           <p className="font-heading text-3xl font-bold text-white md:text-[50px]">
-            <span className="mr-0.5 text-lg font-normal">$</span>
             {plan.price}
           </p>
         </div>
@@ -60,9 +59,9 @@ export default function PricingPlanCard({ plan }: { plan: PricingPlan }) {
             <Image
               src="/icons/tick.png"
               alt=""
-              width={20}
-              height={20}
-              className="size-3 shrink-0"
+              width={10}
+              height={10}
+              className="size-2.5 shrink-0"
             />
             <span className="font-body text-base text-white">{feature}</span>
           </li>

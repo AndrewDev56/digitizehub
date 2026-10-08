@@ -1,6 +1,7 @@
 export type PortfolioItem = {
   title: string;
   tags: string[];
+  mockupTags?: string[];
   image: string;
   video: string;
   /** Real Figma layer dimensions — used to derive the aspect ratio, not for next/image width/height. */
@@ -24,7 +25,8 @@ export const portfolioLarge: PortfolioItem = {
 
 export const portfolioMedium: PortfolioItem = {
   title: "Packsy",
-  tags: ["Mobile App", "UI/UX", "Animation"],
+  tags: ["Motion Graphics", "UI/UX", "Website"],
+  mockupTags: ["Mobile App", "UI/UX", "Animation"],
   image: "/images/portfolio-image-2.png",
   video: "/videos/home-screen-app.mp4",
   imageWidth: 666,

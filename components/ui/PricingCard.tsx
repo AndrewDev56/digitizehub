@@ -11,10 +11,10 @@ export default function PricingCard({
 }) {
   return (
     <div
-      className={`relative flex flex-col gap-6 rounded-[24px] border px-6 py-8 md:px-8 mx-2 my-2 transition-all duration-300 hover:-translate-y-1 ${
+      className={`relative flex flex-col gap-6 rounded-[24px] px-6 py-8 ${
         plan.featured
-          ? "bg-gradient-to-b from-white/[0.08] to-white/[0.02] border-accent-to/40 shadow-[0_0_30px_rgba(255,0,54,0.15)]"
-          : "bg-white/[0.02] border-white/[0.08] hover:border-white/20"
+          ? "mx-5 my-4 bg-gradient-to-b from-white/[0.08] to-white/[0.02]"
+          : "mx-2 my-2 bg-white/[0.02] md:px-8"
       }`}
     >
       {plan.badge && (
@@ -34,14 +34,13 @@ export default function PricingCard({
         <div>
           <p className="font-body text-xs text-white/40">{plan.priceLabel}</p>
           <p className="font-heading text-3xl font-semibold text-white md:text-4xl">
-            <span className="text-lg font-normal text-white/60">$</span>
             {plan.price}
           </p>
         </div>
 
         <button
           type="button"
-          className="group flex items-center gap-2 rounded-full bg-white py-2 pr-2 pl-4 font-heading text-sm font-semibold text-black transition-all hover:bg-white/90 hover:scale-105"
+          className="group flex items-center gap-2 rounded-full bg-white py-2 pr-2 pl-4 font-heading text-sm font-semibold text-black transition-all hover:bg-brand-red hover:scale-105"
         >
           Start Now
           <span className="flex size-6 items-center justify-center rounded-full bg-black transition-transform duration-300 group-hover:rotate-45">
@@ -64,9 +63,9 @@ export default function PricingCard({
             <Image
               src="/icons/tick.png"
               alt=""
-              width={14}
-              height={14}
-              className="size-3.5 shrink-0"
+              width={10}
+              height={10}
+              className="size-2.5 shrink-0"
             />
             <span className="font-body text-sm text-white/80">{feature}</span>
           </li>
