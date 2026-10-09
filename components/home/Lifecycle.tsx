@@ -27,7 +27,7 @@ export default function Lifecycle() {
           muted
           playsInline
           preload="metadata"
-          className="absolute inset-0 size-full object-contain"
+          className="absolute inset-0 size-full rotate-[-91deg] object-contain"
         />
       </div>
 

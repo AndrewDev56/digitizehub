@@ -66,7 +66,7 @@ function ServiceShowcaseRow({ service, reverse }: { service: AboutService; rever
           muted
           playsInline
           preload="metadata"
-          className="absolute inset-0 size-full object-cover"
+          className="absolute inset-0 size-full  object-cover"
         />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
         <Button href="/contact" className="absolute bottom-5 left-5 md:bottom-7 md:left-7">
