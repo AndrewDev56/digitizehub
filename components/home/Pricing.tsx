@@ -80,7 +80,7 @@ export default function Pricing() {
                   alt=""
                   width={12}
                   height={12}
-                  className="size-3 invert"
+                  className="size-3 invert-0"
                 />
               </span>
             </Link>
