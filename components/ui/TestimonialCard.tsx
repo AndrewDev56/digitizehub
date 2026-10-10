@@ -68,9 +68,9 @@ export default function TestimonialCard({
                 key={i}
                 src="/icons/white-star.png"
                 alt=""
-                width={10}
-                height={10}
-                className={active ? "" : "opacity-40"}
+                width={13}
+                height={12}
+                className={`h-2.5 w-auto ${active ? "" : "opacity-40"}`}
               />
             ))}
           </div>

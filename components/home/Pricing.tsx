@@ -12,52 +12,64 @@ export default function Pricing() {
   const [billing, setBilling] = useState<"monthly" | "quarterly">("monthly");
 
   return (
-    <section className="bg-background py-section">
-      <div className="mx-auto max-w-[1632px] px-6 py-8 md:px-9 bg-white/[0.02] rounded-[32px]">
+    <section className="bg-background px-4 py-section md:px-8 lg:px-14">
+      <div className="relative isolate mx-auto max-w-[1632px] overflow-hidden rounded-[32px] border border-white/10 bg-zinc-950 px-8 py-10 md:px-16 md:py-16">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -inset-16 -z-10 bg-[radial-gradient(ellipse_at_80%_10%,rgba(83,70,229,0.2),transparent_42%),radial-gradient(ellipse_at_100%_100%,rgba(127,29,29,0.16),transparent_42%)] blur-3xl"
+        />
+
         <FadeIn direction="up">
-          <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <h2 className="max-w-xl font-heading text-3xl font-semibold tracking-[-0.02em] text-white md:text-5xl">
-                Fixed <span className="font-accent italic text-accent-from">Prices</span>. You
-                see them before we{" "}
-                <span className="font-accent italic text-accent-from">Get Started</span>.
+          <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-start">
+            <div className="max-w-3xl">
+              <h2 className="font-heading text-4xl leading-tight font-medium tracking-[-0.02em] text-white md:text-5xl lg:text-6xl">
+                Fixed <span className="font-accent italic">Prices</span>. You see
+                them
+                <br className="hidden lg:block" /> before we{" "}
+                <span className="font-accent italic">Get Started</span>.
               </h2>
-              <p className="mt-3 font-body text-sm text-white/50 md:text-base">
-                No hourly billing. No lock-in. Every file, account, and
-                password is yours at handover.
+              <p className="mt-3 max-w-2xl font-body text-sm text-white/50 md:text-base">
+                No hourly billing. No lock in. Every file, account, and password
+                is yours at handover.
               </p>
             </div>
 
-            <div className="flex shrink-0 items-center gap-3">
+            <button
+              type="button"
+              role="switch"
+              aria-label="Billing period"
+              aria-checked={billing === "quarterly"}
+              onClick={() =>
+                setBilling((current) =>
+                  current === "monthly" ? "quarterly" : "monthly",
+                )
+              }
+              className="flex shrink-0 items-center gap-2 rounded-full bg-white/10 p-1.5 font-tag text-sm"
+            >
               <span
-                className={`font-tag text-sm transition-colors ${billing === "monthly" ? "text-white font-semibold" : "text-white/40"}`}
+                className={`transition-colors ${billing === "monthly" ? "text-white" : "text-white/50"}`}
               >
                 Monthly
               </span>
-              <button
-                type="button"
-                role="switch"
-                aria-checked={billing === "quarterly"}
-                onClick={() =>
-                  setBilling((b) => (b === "monthly" ? "quarterly" : "monthly"))
-                }
-                className="relative h-6 w-11 rounded-full bg-white/20 transition-colors"
-              >
+              <span className="relative flex h-5 w-10 items-center rounded-full bg-black/30">
                 <span
-                  className={`absolute top-0.5 left-0 size-5 rounded-full bg-white shadow-md transition-transform duration-200 ${billing === "quarterly" ? "translate-x-5" : "translate-x-0.5"}`}
+                  className={`size-4 rounded-full bg-white shadow transition-transform duration-200 ${billing === "quarterly" ? "translate-x-5" : "translate-x-0.5"}`}
                 />
-              </button>
+              </span>
               <span
-                className={`font-tag text-sm transition-colors ${billing === "quarterly" ? "text-white font-semibold" : "text-white/40"}`}
+                className={`transition-colors ${billing === "quarterly" ? "text-white" : "text-white/50"}`}
               >
                 Quarterly
               </span>
-            </div>
+            </button>
           </div>
         </FadeIn>
 
-        <div className="mt-12 overflow-hidden md:mt-16">
-          <StaggerContainer staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-3">
+        <div className="mt-8 md:mt-10">
+          <StaggerContainer
+            staggerChildren={0.15}
+            className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3"
+          >
             {pricingPlans.map((plan, index) => (
               <StaggerItem key={plan.name}>
                 <PricingCard
@@ -68,10 +80,10 @@ export default function Pricing() {
             ))}
           </StaggerContainer>
 
-          <FadeIn direction="up" delay={0.3} className="flex justify-center py-6">
+          <FadeIn direction="up" delay={0.3} className="mt-8 flex justify-center">
             <Link
               href="/pricing"
-              className="group flex items-center gap-3 rounded-full bg-white py-2.5 pr-3 pl-6 font-heading text-sm font-medium text-black transition-all hover:bg-brand-red hover:scale-105"
+              className="group flex items-center gap-2 rounded-full bg-white py-2 pr-2 pl-5 font-heading text-sm font-medium text-black transition-transform hover:scale-105 hover:bg-white/90"
             >
               See Full Pricing
               <span className="flex size-7 items-center justify-center rounded-full bg-black transition-transform duration-300 group-hover:rotate-45">
@@ -80,7 +92,7 @@ export default function Pricing() {
                   alt=""
                   width={12}
                   height={12}
-                  className="size-3 invert-0"
+                  className="size-3 "
                 />
               </span>
             </Link>
