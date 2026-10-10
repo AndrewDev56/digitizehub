@@ -9,11 +9,11 @@ export default function Work() {
   return (
     <>
       <Header active="Work" />
-      <main>
+      <main className="overflow-x-clip">
         <Hero />
         <ProjectsGrid />
         <Testimonials />
-                    <CtaBanner />
+        <CtaBanner />
       </main>
       <Footer />
     </>

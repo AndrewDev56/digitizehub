@@ -14,7 +14,7 @@ export default function FaqCard({
 
   return (
     <div
-      className="break-inside-avoid rounded-2xl border border-white/20 bg-white/[0.45] p-4 transition-all duration-300 hover:border-white/40"
+      className="break-inside-avoid rounded-2xl border border-white/20 bg-white/[0.04] backdrop-blur-md  p-4 transition-all duration-300 hover:border-white/40"
     >
       <button
         type="button"

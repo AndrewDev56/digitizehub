@@ -1,10 +1,28 @@
+import Image from "next/image";
+
 export default function BlogHero() {
   return (
-    <div className="relative isolate overflow-hidden pt-[160px] pb-16 text-center md:pt-[240px]">
+    <div className="relative isolate overflow-visible pt-[140px] pb-16 text-center md:pt-[220px]">
+      {/* Ambient Eclipse Glow - Top Right */}
       <div
-        aria-hidden
-        className="pointer-events-none absolute -top-[300px] -right-[300px] size-[600px] rounded-full bg-accent-to/15 blur-[120px]"
-      />
+        aria-hidden="true"
+        data-gsap-ambient
+        data-gsap-scale="1.12"
+        data-gsap-opacity="0.95"
+        data-gsap-duration="8"
+        className="pointer-events-none absolute -top-[60px] md:-top-[100px] -right-[60px] md:-right-[100px] z-0 w-[420px] sm:w-[580px] md:w-[750px] lg:w-[950px] select-none opacity-85"
+      >
+        <Image
+          src="/images/ellipse-top-right.png"
+          alt=""
+          width={950}
+          height={950}
+          priority
+          className="h-auto w-full object-contain pointer-events-none"
+        />
+      </div>
+
+     
 
       <div className="relative mx-auto max-w-4xl px-6">
         <h1 className="font-heading text-[36px] leading-[1.1] font-normal tracking-[-0.02em] text-white sm:text-6xl lg:text-[90px]">

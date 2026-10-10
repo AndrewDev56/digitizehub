@@ -9,23 +9,25 @@ export default function WorkPrincipleCard({
 }) {
   return (
     <div
-      className="group relative flex h-[160px] flex-col justify-between overflow-hidden rounded-2xl bg-white/[0.04] border border-white/10 p-6 transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:border-accent-from/40 hover:bg-white/[0.08]"
+      className="group relative flex h-[190px] w-[320px] sm:w-[360px] md:w-[400px] flex-col justify-between overflow-hidden rounded-[20px] border border-white/[0.08] bg-[#0e0e11]/90 p-7 shadow-xl backdrop-blur-md transition-all duration-300 hover:border-white/20 hover:bg-[#141418]"
     >
+      {/* Large Watermark Number */}
       <span
         aria-hidden
-        className="pointer-events-none absolute -bottom-4 right-3 font-heading text-7xl font-bold text-white/5 select-none md:text-8xl transition-colors group-hover:text-accent-from/15"
+        className="pointer-events-none absolute -bottom-2 right-4 font-heading text-6xl font-bold text-white/[0.05] select-none md:text-7xl transition-colors duration-300 group-hover:text-white/[0.09]"
       >
         {principle.number}
       </span>
 
+      {/* Card Content */}
       <div className="relative z-10">
-        <h3 className="font-heading text-lg font-semibold text-white md:text-xl transition-colors group-hover:text-accent-from">
+        <h3 className="font-heading text-lg font-semibold text-white md:text-xl">
           {principle.title}
         </h3>
-        <p className="mt-2 max-w-[240px] font-body text-sm text-white/60 group-hover:text-white/80 transition-colors">
+        <p className="mt-3 font-body text-sm leading-relaxed text-white/60 group-hover:text-white/80 transition-colors">
           {principle.description}
         </p>
       </div>
     </div>
   );
-}
+}

@@ -10,12 +10,12 @@ export default function Services() {
   return (
     <>
       <Header active="Services" />
-      <main>
+      <main className="overflow-x-clip">
         <Hero />
         <ServicesShowcase />
         <WhyOneTeam />
-          <Testimonials />
-                    <CtaBanner />
+        <Testimonials />
+        <CtaBanner />
       </main>
       <Footer />
     </>

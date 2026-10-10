@@ -1,15 +1,18 @@
 export type Stat = {
-  graphic: string;
-  graphicWidth: number;
-  graphicHeight: number;
+  value: string;
+  tags: string[];
+  graphic?: string;
+  graphicWidth?: number;
+  graphicHeight?: number;
   title: string;
   description: string;
 };
 
-// Confirmed via Figma REST API (node 86:1789): the numbers are exported
-// graphic assets, not live text — export URLs below (valid ~7 days).
+// Confirmed via Figma REST API (node 86:1789)
 export const stats: Stat[] = [
   {
+    value: "200+",
+    tags: ["Mobile Apps"],
     graphic: "/images/two-hundred.png",
     graphicWidth: 432,
     graphicHeight: 140,
@@ -18,6 +21,8 @@ export const stats: Stat[] = [
       "From startups to enterprise brands, we've crafted digital experiences that deliver measurable results.",
   },
   {
+    value: "06+",
+    tags: ["UI/UX Design", "Apps Development"],
     graphic: "/images/years.png",
     graphicWidth: 317,
     graphicHeight: 140,
@@ -26,6 +31,8 @@ export const stats: Stat[] = [
       "Six years of creating intuitive, high-converting websites and digital products.",
   },
   {
+    value: "99%",
+    tags: ["Web Development", "UI/UX Design"],
     graphic: "/images/client-success.png",
     graphicWidth: 362,
     graphicHeight: 140,

@@ -63,11 +63,7 @@ export default function LogoMarquee() {
                 width={logo.width}
                 height={logo.height}
                 aria-hidden
-                className={`h-[32px] shrink-0 opacity-40 md:h-[42px] ${
-                  logo.src === "/images/client-logo-4.png"
-                    ? "w-[44px] object-cover object-left md:w-[60px]"
-                    : "w-auto"
-                }`}
+                className="h-[32px] w-auto shrink-0 opacity-40 md:h-[42px] object-contain"
               />
             ))}
           </div>

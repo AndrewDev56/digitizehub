@@ -21,7 +21,7 @@ export const pricingPlans: PricingPlan[] = [
     priceLabel: "Starting at",
     featured: false,
     features: [
-      "Up to 3 custom pages",
+      "Up to 5 custom pages",
       "Responsive website design",
       "Basic on-page SEO setup",
       "Contact form integration",
@@ -37,7 +37,7 @@ export const pricingPlans: PricingPlan[] = [
     priceLabel: "Starting at",
     featured: true,
     features: [
-      "Up to 10 custom pages",
+      "Up to 15 custom pages",
       "Custom UI/UX design",
       "Advanced SEO optimization",
       "CMS with easy content editing",

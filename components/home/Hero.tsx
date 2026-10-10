@@ -10,25 +10,43 @@ import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerCon
 
 export default function Hero() {
   return (
-    <section className="relative isolate overflow-hidden bg-background pt-[140px] pb-16 md:pt-[220px] md:pb-[60px]">
-      {/* Animated background ambient glow */}
+    <section className="relative isolate pt-[140px] pb-16 md:pt-[220px] md:pb-[60px]">
+      {/* Animated background ambient glow - Top Right Navbar area */}
       <div
-        aria-hidden
+        aria-hidden="true"
         data-gsap-ambient
-        data-gsap-scale="1.2"
-        data-gsap-opacity="0.25"
+        data-gsap-scale="1.12"
+        data-gsap-opacity="0.95"
         data-gsap-duration="8"
-        className="pointer-events-none absolute -top-[300px] -right-[300px] size-[650px] rounded-full bg-accent-to/20 blur-[130px]"
-      />
+        className="pointer-events-none absolute -top-[60px] md:-top-[100px] -right-[60px] md:-right-[100px] z-0 w-[420px] sm:w-[580px] md:w-[750px] lg:w-[950px] select-none opacity-85"
+      >
+        <Image
+          src="/images/ellipse-top-right.png"
+          alt=""
+          width={950}
+          height={950}
+          priority
+          className="h-auto w-full object-contain pointer-events-none"
+        />
+      </div>
+
+      {/* Animated background ambient glow - Left / Icons & Stats section */}
       <div
-        aria-hidden
+        aria-hidden="true"
         data-gsap-ambient
         data-gsap-scale="1.1"
-        data-gsap-opacity="0.22"
+        data-gsap-opacity="0.9"
         data-gsap-duration="10"
-        className="pointer-events-none absolute top-[500px] -left-[300px] size-[650px] rounded-full bg-accent-from/15 blur-[130px]"
-      />
-
+        className="pointer-events-none absolute top-[420px] sm:top-[460px] md:top-[500px] lg:top-[540px] -left-[80px] sm:-left-[120px] md:-left-[160px] z-0 w-[420px] sm:w-[580px] md:w-[750px] lg:w-[950px] select-none opacity-80"
+      >
+        <Image
+          src="/images/ellipse-left.png"
+          alt=""
+          width={950}
+          height={950}
+          className="h-auto w-full object-contain pointer-events-none"
+        />
+      </div>
       <div className="relative mx-auto max-w-[1632px] px-6 md:px-9">
         <FadeIn direction="down" delay={0.1}>
           <p className="text-center font-body text-sm tracking-[0.01em] text-white/70 md:text-[18px]">
@@ -44,8 +62,8 @@ export default function Hero() {
             ,{" "}
             <span className="font-accent font-bold italic text-white">
               Build it
-            </span>
-            ,{" "}
+            </span>,{" "}<br/>
+            
             <span className="font-accent font-bold italic text-white">
               Launch it
             </span>
@@ -111,11 +129,16 @@ export default function Hero() {
         <LogoMarquee />
       </div>
 
-      <div
+      <button
+        type="button"
+        onClick={() => {
+          document.getElementById("stats-section")?.scrollIntoView({ behavior: "smooth" });
+        }}
         data-gsap-bob
-        className="relative mt-10 flex flex-col items-center gap-2 md:mt-[30px]"
+        aria-label="Scroll to next section"
+        className="group relative mx-auto mt-10 flex flex-col items-center gap-2 cursor-pointer transition-transform duration-300 hover:scale-105 active:scale-95 focus:outline-none md:mt-[30px]"
       >
-        <span className="font-heading text-sm tracking-[0.1em] text-white/56 uppercase md:text-base">
+        <span className="font-heading text-sm tracking-[0.1em] text-white/56 uppercase transition-colors duration-200 group-hover:text-white md:text-base">
           Discover
         </span>
         <Image
@@ -123,9 +146,9 @@ export default function Hero() {
           alt=""
           width={40}
           height={40}
-          className="size-8 opacity-70 md:size-10"
+          className="size-8 opacity-70 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-1 md:size-10"
         />
-      </div>
+      </button>
     </section>
   );
-}
+}

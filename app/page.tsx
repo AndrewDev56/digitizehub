@@ -7,6 +7,7 @@ import Lifecycle from "@/components/home/Lifecycle";
 import Services from "@/components/home/Services";
 import Pricing from "@/components/home/Pricing";
 import ProjectTimeline from "@/components/home/ProjectTimeline";
+import TeamShowcase from "@/components/home/TeamShowcase";
 import Testimonials from "@/components/home/Testimonials";
 import FounderAndOffices from "@/components/home/FounderAndOffices";
 import Faq from "@/components/home/Faq";
@@ -24,6 +25,7 @@ export default function Home() {
         <Services />
         <Pricing />
         <ProjectTimeline />
+        <TeamShowcase />
         <Testimonials />
         <FounderAndOffices />
         <Faq />
@@ -32,4 +34,4 @@ export default function Home() {
       <Footer />
     </>
   );
-}
+}

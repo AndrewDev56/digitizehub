@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import AppPricingPlanCard from "@/components/ui/AppPricingPlanCard";
 import { appPricingPlans } from "@/lib/data/appPricingPlans";
 
@@ -8,7 +9,24 @@ export default function AppPricingPlans() {
   const [billing, setBilling] = useState<"monthly" | "quarterly">("monthly");
 
   return (
-    <section className="bg-background pb-section">
+    <section className="relative isolate overflow-visible pb-section">
+      {/* Ambient Eclipse Glow - Right */}
+      <div
+        aria-hidden="true"
+        data-gsap-ambient
+        data-gsap-scale="1.1"
+        data-gsap-opacity="0.8"
+        data-gsap-duration="10"
+        className="pointer-events-none absolute top-1/4 -right-[100px] sm:-right-[160px] md:-right-[200px] z-0 w-[420px] sm:w-[600px] md:w-[780px] lg:w-[950px] select-none opacity-75"
+      >
+        <Image
+          src="/images/ellipse-right.png"
+          alt=""
+          width={950}
+          height={950}
+          className="h-auto w-full object-contain pointer-events-none"
+        />
+      </div>
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
         <div className="flex justify-end">
           <div className="flex items-center gap-3">

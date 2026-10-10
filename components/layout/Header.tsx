@@ -59,17 +59,36 @@ export default function Header({ active }: HeaderProps) {
                   : pathname.startsWith(link.href);
 
               return (
-                <li key={link.href} className="relative">
+                <li key={link.href} className="relative group">
                   <Link
                     href={link.href}
-                    className={`relative py-1 font-heading text-[17px] whitespace-nowrap text-white transition-colors duration-200 ${
-                      isActive ? "font-semibold text-white" : "font-normal text-white/70 hover:text-white"
+                    className={`relative inline-flex flex-col items-center py-2 font-heading text-[16.5px] tracking-[-0.01em] whitespace-nowrap transition-all duration-300 ${
+                      isActive
+                        ? "font-semibold text-white drop-shadow-[0_0_8px_rgba(255,0,54,0.3)]"
+                        : "font-normal text-white/70 hover:text-white"
                     }`}
                   >
-                    {link.label}
+                    <span>{link.label}</span>
+
+                    {/* Active State: Vibrant Glowing Gradient Line & Center Light Dot */}
                     {isActive && (
-                      <div
-                        className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-[var(--accent-from)] to-[var(--accent-to)] rounded-full"
+                      <>
+                        <span
+                          aria-hidden="true"
+                          className="absolute -bottom-0.5 inset-x-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-brand-red to-transparent shadow-[0_0_10px_rgba(255,0,54,0.9)] animate-pulse"
+                        />
+                        <span
+                          aria-hidden="true"
+                          className="absolute -bottom-1 size-1 rounded-full bg-brand-red shadow-[0_0_8px_rgba(255,0,54,1)]"
+                        />
+                      </>
+                    )}
+
+                    {/* Hover State for Non-Active Links: Center-Expanding Gradient Reveal */}
+                    {!isActive && (
+                      <span
+                        aria-hidden="true"
+                        className="absolute -bottom-0.5 inset-x-0 h-[2px] rounded-full bg-gradient-to-r from-transparent via-brand-red/80 to-transparent scale-x-0 opacity-0 transition-all duration-300 ease-out origin-center group-hover:scale-x-100 group-hover:opacity-100 shadow-[0_0_8px_rgba(255,0,54,0.6)]"
                       />
                     )}
                   </Link>

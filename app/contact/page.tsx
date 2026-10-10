@@ -8,7 +8,7 @@ export default function Contact() {
   return (
     <>
       <Header active="Contact" />
-      <main>
+      <main className="overflow-x-clip">
         <Hero />
         <ContactForm />
         <ContactOffices />

@@ -3,7 +3,7 @@ import { offices } from "@/lib/data/offices";
 
 export default function ContactOffices() {
   return (
-    <section className="bg-background pb-24 md:pb-32">
+    <section className="relative isolate overflow-visible pb-24 md:pb-32">
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
         <h2 className="text-center font-heading text-3xl font-normal text-white italic md:text-6xl">
           Our <span className="font-accent italic">Offices</span> and{" "}

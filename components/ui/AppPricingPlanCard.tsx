@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Button from "@/components/ui/Button";
 import type { AppPricingPlan } from "@/lib/data/appPricingPlans";
 
 export default function AppPricingPlanCard({
@@ -47,21 +48,10 @@ export default function AppPricingPlanCard({
             </span>
           </p>
         </div>
-        <button
-          type="button"
-          className="flex h-[52px] w-[170px] shrink-0 items-center justify-between rounded-full bg-white pl-6 pr-2 font-body text-[15.6px] font-semibold tracking-tight text-background transition-colors hover:bg-brand-red"
-        >
+
+        <Button size="md" href="/contact">
           Start Now
-          <span className="flex size-[35px] items-center justify-center rounded-full bg-background">
-            <Image
-              src="/icons/arrow-right.png"
-              alt=""
-              width={16}
-              height={16}
-              className="size-4"
-            />
-          </span>
-        </button>
+        </Button>
       </div>
 
       <div className="mt-9 h-px w-full bg-white/10" />

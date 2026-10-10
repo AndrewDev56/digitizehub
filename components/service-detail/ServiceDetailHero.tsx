@@ -8,7 +8,43 @@ export default function ServiceDetailHero({
   content: ServiceDetailContent;
 }) {
   return (
-    <section className="relative isolate overflow-hidden bg-background text-white 2xl:h-[3312px]">
+    <section className="relative isolate overflow-visible text-white 2xl:h-[3312px]">
+      {/* Ambient Eclipse Glow - Top Right */}
+      <div
+        aria-hidden="true"
+        data-gsap-ambient
+        data-gsap-scale="1.12"
+        data-gsap-opacity="0.95"
+        data-gsap-duration="8"
+        className="pointer-events-none absolute -top-[60px] md:-top-[100px] -right-[60px] md:-right-[100px] z-0 w-[420px] sm:w-[580px] md:w-[750px] lg:w-[950px] select-none opacity-85"
+      >
+        <Image
+          src="/images/ellipse-top-right.png"
+          alt=""
+          width={950}
+          height={950}
+          priority
+          className="h-auto w-full object-contain pointer-events-none"
+        />
+      </div>
+
+      {/* Ambient Eclipse Glow - Left */}
+      <div
+        aria-hidden="true"
+        data-gsap-ambient
+        data-gsap-scale="1.1"
+        data-gsap-opacity="0.9"
+        data-gsap-duration="10"
+        className="pointer-events-none absolute top-[360px] sm:top-[420px] -left-[80px] sm:-left-[120px] md:-left-[160px] z-0 w-[420px] sm:w-[580px] md:w-[750px] lg:w-[950px] select-none opacity-80"
+      >
+        <Image
+          src="/images/ellipse-left.png"
+          alt=""
+          width={950}
+          height={950}
+          className="h-auto w-full object-contain pointer-events-none"
+        />
+      </div>
       <div className="mx-auto max-w-[1632px] px-6 pt-[112px] pb-24 md:px-9 md:pb-32 lg:pb-20 2xl:px-0 2xl:pb-0 2xl:pt-[500px]">
         <h1 className="font-heading text-[32px] leading-[1.1] font-semibold tracking-[-0.01em] text-white md:text-[56px] 2xl:text-[100px]">
           {content.heroH1.map((line, i) => (

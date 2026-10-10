@@ -16,7 +16,7 @@ export type PortfolioItem = {
 // of these specific client projects. Swap in real project clips when available.
 export const portfolioLarge: PortfolioItem = {
   title: "Sapforce",
-  tags: ["E-commerce", "Web Development"],
+  tags: ["Website", "UI/UX", "Animation"],
   image: "/images/portfolio-image-1.png",
   video: "/videos/website-that-sell.mp4",
   imageWidth: 940,
@@ -25,8 +25,7 @@ export const portfolioLarge: PortfolioItem = {
 
 export const portfolioMedium: PortfolioItem = {
   title: "Packsy",
-  tags: ["Motion Graphics", "UI/UX", "Website"],
-  mockupTags: ["Mobile App", "UI/UX", "Animation"],
+  tags: ["Mobile Apps", "UI/UX", "Animation"],
   image: "/images/portfolio-image-2.png",
   video: "/videos/home-screen-app.mp4",
   imageWidth: 666,
@@ -35,7 +34,7 @@ export const portfolioMedium: PortfolioItem = {
 
 export const portfolioWide: PortfolioItem = {
   title: "Finovate",
-  tags: ["Motion Graphics", "UI/UX", "Website"],
+  tags: ["Products", "UI/UX", "Motion Graphics"],
   image: "/images/portfolio-image-3.png",
   video: "/videos/home-website-design-video.mp4",
   imageWidth: 1632,
@@ -45,7 +44,7 @@ export const portfolioWide: PortfolioItem = {
 export const portfolioHalves: PortfolioItem[] = [
   {
     title: "Orbitly",
-    tags: ["Animation", "UI/UX", "Website"],
+    tags: ["Mobile App", "UI/UX", "Animation"],
     image: "/images/portfolio-image-4.png",
     video: "/videos/home-website-design-video.mp4",
     imageWidth: 804,
@@ -53,7 +52,7 @@ export const portfolioHalves: PortfolioItem[] = [
   },
   {
     title: "Routely",
-    tags: ["Animation", "UI/UX", "Mobile App"],
+    tags: ["Products", "UI/UX", "Interaction"],
     image: "/images/portfolio-image-5.png",
     video: "/videos/home-screen-app.mp4",
     imageWidth: 804,

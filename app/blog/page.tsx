@@ -8,7 +8,7 @@ export default function Blog() {
   return (
     <>
       <Header active="Blog" />
-      <main>
+      <main className="overflow-x-clip">
         <BlogHero />
         <BlogsSection />
         <CtaBanner />

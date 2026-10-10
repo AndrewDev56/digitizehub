@@ -10,12 +10,12 @@ export default function Pricing() {
   return (
     <>
       <Header active="Pricing" />
-      <main>
+      <main className="overflow-x-clip">
         <Hero />
         <PricingPlans />
         <AppPricingPlans />
         <Testimonials />
-                            <CtaBanner />   
+        <CtaBanner />
       </main>
       <Footer />
     </>

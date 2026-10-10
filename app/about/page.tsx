@@ -11,13 +11,13 @@ export default function About() {
   return (
     <>
       <Header active="About" />
-      <main>
+      <main className="overflow-x-clip">
         <Hero />
         <OurStory />
         <HowWeWork />
         <FoundersAndOffices />
-           <Testimonials />
-            <CtaBanner />
+        <Testimonials />
+        <CtaBanner />
       </main>
       <Footer />
     </>

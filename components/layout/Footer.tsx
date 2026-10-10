@@ -22,10 +22,13 @@ export default function Footer() {
 
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-background">
+      {/* Background ambient glow - Bottom Right corner via radial gradient */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-[28rem] bg-[radial-gradient(ellipse_at_top,rgba(255,0,54,0.16)_0%,rgba(255,0,54,0.06)_38%,transparent_72%)]"
+        className="pointer-events-none absolute right-0 bottom-0 h-[28rem] w-[36rem] sm:w-[48rem] max-w-full bg-[radial-gradient(ellipse_at_bottom_right,rgba(255,0,54,0.18)_0%,rgba(255,0,54,0.06)_42%,transparent_75%)]"
       />
+
+
       <div className="relative z-10 mx-auto max-w-[1632px] px-6 py-12 md:px-9 md:py-16">
         <FadeIn direction="up">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-5">

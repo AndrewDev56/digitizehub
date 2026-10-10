@@ -4,13 +4,19 @@ import type { Stat } from "@/lib/data/stats";
 export default function StatCard({ stat }: { stat: Stat }) {
   return (
     <div className="flex flex-col items-center text-center">
-      <Image
-        src={stat.graphic}
-        alt={stat.title}
-        width={stat.graphicWidth}
-        height={stat.graphicHeight}
-        className="h-[100px] w-auto md:h-[140px]"
-      />
+      {stat.graphic ? (
+        <Image
+          src={stat.graphic}
+          alt={stat.title}
+          width={stat.graphicWidth || 400}
+          height={stat.graphicHeight || 140}
+          className="h-[100px] w-auto md:h-[140px]"
+        />
+      ) : (
+        <span className="font-heading text-7xl font-bold tracking-tight text-[#9A9A9A] md:text-8xl lg:text-[130px]">
+          {stat.value}
+        </span>
+      )}
 
       <h3 className="mt-8 font-heading text-xl font-semibold tracking-[-0.01em] text-white md:mt-10 md:text-2xl">
         {stat.title}

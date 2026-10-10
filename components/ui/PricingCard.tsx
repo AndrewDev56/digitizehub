@@ -1,6 +1,5 @@
-"use client";
-
 import Image from "next/image";
+import Link from "next/link";
 import type { PricingPlan } from "@/lib/data/pricing";
 
 export default function PricingCard({
@@ -16,68 +15,81 @@ export default function PricingCard({
   }[plan.name] ?? plan.name;
 
   return (
-    <div className="relative flex h-full flex-col gap-5 rounded-[24px] border border-white/10 bg-zinc-900/60 px-6 py-6 backdrop-blur-sm">
-      <div className="flex items-center justify-between gap-3">
-        <div className="flex min-w-0 items-center">
-          <span className="flex shrink-0 items-center justify-center rounded-lg bg-white/5 p-2">
-            <Image
-              src={plan.icon}
-              alt=""
-              width={32}
-              height={32}
-              className="size-8"
-            />
-          </span>
-          <h3 className="ml-2 truncate font-heading text-sm font-medium text-white">
-            {plan.name}
-          </h3>
-        </div>
-        {plan.badge && (
-          <span className="shrink-0 rounded-full border border-white/15 px-2.5 py-0.5 font-tag text-[11px] text-white/70">
-            {plan.badge}
-          </span>
-        )}
-      </div>
-
-      <div className="flex items-end justify-between gap-4">
-        <p className="font-accent text-3xl italic text-white md:text-4xl">
-          {tier}
-        </p>
-        <button
-          type="button"
-          className="group flex shrink-0 items-center gap-2 rounded-full bg-white py-1.5 pr-1.5 pl-4 font-heading text-sm font-medium text-black transition-transform hover:scale-105 hover:bg-white/90"
-        >
-          Start Now
-          <span className="flex size-7 items-center justify-center rounded-full bg-black transition-transform duration-300 group-hover:rotate-45">
-            <Image
-              src="/icons/Arrow_Right.png"
-              alt=""
-              width={12}
-              height={12}
-              className="size-3"
-            />
-          </span>
-        </button>
-      </div>
-
-      <div aria-hidden className="h-px w-full bg-white/10" />
-
-      <ul className="flex flex-col gap-2.5">
-        {plan.features.map((feature) => (
-          <li
-            key={feature}
-            className="flex items-start gap-2 font-body text-sm text-white/80"
-          >
-            <span
-              aria-hidden
-              className="mt-0.5 shrink-0 text-base leading-4 text-white/60"
-            >
-              ✓
+    <div className="relative flex h-full flex-col justify-between rounded-[24px] sm:rounded-[28px] border border-white/10 bg-[#141414] p-6 sm:p-7 md:p-8 backdrop-blur-md transition-all duration-300 hover:border-white/20">
+      <div>
+        {/* Category Header Row */}
+        <div className="flex items-center justify-between gap-3">
+          <div className="flex items-center gap-2.5">
+            <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-white/5 border border-white/10 p-2">
+              <Image
+                src={plan.icon}
+                alt=""
+                width={20}
+                height={20}
+                className="size-5 object-contain"
+              />
             </span>
-            <span>{feature}</span>
-          </li>
-        ))}
-      </ul>
+            <span className="font-heading text-base font-medium text-white/90">
+              {plan.name}
+            </span>
+          </div>
+          {plan.badge && (
+            <span className="shrink-0 rounded-full border border-white/15 bg-white/5 px-3 py-1 font-tag text-[11px] font-medium text-white/80">
+              {plan.badge}
+            </span>
+          )}
+        </div>
+
+        {/* Tier Name & Start Now CTA */}
+        <div className="mt-6 flex items-center justify-between gap-4">
+          <h3 className="font-heading text-2xl sm:text-3xl font-medium tracking-[-0.01em] text-white">
+            {tier}
+          </h3>
+          <Link
+            href="/contact"
+            className="group relative flex shrink-0 items-center gap-2 overflow-hidden rounded-full bg-white py-1.5 pr-1.5 pl-4 font-heading text-xs sm:text-sm font-semibold text-black transition-all duration-300 hover:scale-105 active:scale-95"
+          >
+            {/* Expanding Red Circle Layer */}
+            <span
+              aria-hidden="true"
+              className="pointer-events-none absolute right-[6px] top-1/2 -translate-y-1/2 size-6 sm:size-7 rounded-full bg-brand-red scale-0 opacity-0 transition-all duration-500 ease-out group-hover:scale-[35] group-hover:opacity-100"
+            />
+            <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
+              Start Now
+            </span>
+            <span className="relative z-10 flex size-6 sm:size-7 items-center justify-center rounded-full bg-black transition-colors duration-300 group-hover:bg-transparent">
+              <Image
+                src="/icons/Arrow_Right.png"
+                alt=""
+                width={10}
+                height={10}
+                className="size-2.5 sm:size-3 transition-transform duration-300 ease-out group-hover:-rotate-45 group-hover:scale-105"
+              />
+            </span>
+          </Link>
+
+        </div>
+
+        <div aria-hidden className="my-5 h-px w-full bg-white/10" />
+
+        {/* Features list */}
+        <ul className="flex flex-col gap-3">
+          {plan.features.map((feature) => (
+            <li
+              key={feature}
+              className="flex items-start gap-3 font-body text-xs sm:text-sm text-white/70"
+            >
+              <span
+                aria-hidden
+                className="mt-0.5 shrink-0 text-xs sm:text-sm font-bold text-white/50"
+              >
+                ✓
+              </span>
+              <span>{feature}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }

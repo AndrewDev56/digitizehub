@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import FormPill from "@/components/ui/FormPill";
 import { projectNeedOptions, budgetOptions, hearAboutOptions } from "@/lib/data/contactOptions";
@@ -32,7 +33,24 @@ export default function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-background pb-16 md:pb-24">
+    <form onSubmit={handleSubmit} className="relative isolate overflow-visible pb-16 md:pb-24">
+      {/* Ambient Eclipse Glow - Left */}
+      <div
+        aria-hidden="true"
+        data-gsap-ambient
+        data-gsap-scale="1.1"
+        data-gsap-opacity="0.8"
+        data-gsap-duration="10"
+        className="pointer-events-none absolute top-1/3 -left-[100px] sm:-left-[160px] md:-left-[200px] z-0 w-[420px] sm:w-[600px] md:w-[780px] lg:w-[950px] select-none opacity-75"
+      >
+        <Image
+          src="/images/ellipse-left.png"
+          alt=""
+          width={950}
+          height={950}
+          className="h-auto w-full object-contain pointer-events-none"
+        />
+      </div>
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
         <div className="flex flex-col gap-8 border-t border-white/10 py-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-baseline gap-6 md:gap-16">

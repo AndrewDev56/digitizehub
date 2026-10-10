@@ -1,65 +1,106 @@
 "use client";
 
 import { useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useGSAP } from "@gsap/react";
 import WorkPrincipleCard from "@/components/ui/WorkPrincipleCard";
 import { workPrinciples } from "@/lib/data/howWeWork";
+import FadeIn from "@/components/animation/FadeIn";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
 
 export default function HowWeWork() {
-  const scrollerRef = useRef<HTMLDivElement>(null);
-  const isDragging = useRef(false);
-  const startX = useRef(0);
-  const scrollLeftStart = useRef(0);
+  const sectionRef = useRef<HTMLElement>(null);
+  const trackRef = useRef<HTMLDivElement>(null);
 
-  const onPointerDown = (e: React.PointerEvent) => {
-    const el = scrollerRef.current;
-    if (!el) return;
-    isDragging.current = true;
-    startX.current = e.clientX;
-    scrollLeftStart.current = el.scrollLeft;
-    el.setPointerCapture(e.pointerId);
-  };
+  useGSAP(
+    () => {
+      const section = sectionRef.current;
+      const track = trackRef.current;
+      if (!section || !track) return;
 
-  const onPointerMove = (e: React.PointerEvent) => {
-    const el = scrollerRef.current;
-    if (!el || !isDragging.current) return;
-    const delta = e.clientX - startX.current;
-    el.scrollLeft = scrollLeftStart.current - delta;
-  };
+      const getScrollAmount = () => {
+        const offset = window.innerWidth < 768 ? 40 : 160;
+        return -(track.scrollWidth - window.innerWidth + offset);
+      };
 
-  const onPointerUp = () => {
-    isDragging.current = false;
-  };
+      const media = gsap.matchMedia();
+
+      media.add("(min-width: 768px)", () => {
+        const tween = gsap.to(track, {
+          x: getScrollAmount,
+          ease: "none",
+          scrollTrigger: {
+            trigger: section,
+            start: "top top",
+            end: () => `+=${Math.max(track.scrollWidth - window.innerWidth + 400, 800)}`,
+            pin: true,
+            pinSpacing: true,
+            scrub: 1,
+            invalidateOnRefresh: true,
+          },
+        });
+
+        return () => {
+          tween.scrollTrigger?.kill();
+          tween.kill();
+        };
+      });
+
+      return () => media.revert();
+    },
+    { scope: sectionRef },
+  );
 
   return (
-    <section className="bg-background py-24 md:py-32">
-      <div className="mx-auto max-w-[1632px] px-6 md:px-9">
-        <h2 className="text-center font-heading text-3xl font-normal tracking-[-0.02em] text-white md:text-5xl">
-          How We <span className="font-accent italic">Work</span>
-        </h2>
+    <section
+      ref={sectionRef}
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-background "
+    >
+      {/* Ambient background glow */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-30"
+      >
+        <div className="size-[650px] rounded-full bg-accent-to/15 blur-[140px] md:size-[850px]" />
+      </div>
 
-        <div
-          ref={scrollerRef}
-          onPointerDown={onPointerDown}
-          onPointerMove={onPointerMove}
-          onPointerUp={onPointerUp}
-          onPointerLeave={onPointerUp}
-          className="mt-16 flex snap-x snap-mandatory items-stretch gap-0 overflow-x-auto pb-4 md:mt-20 [scrollbar-width:none] active:cursor-grabbing [&::-webkit-scrollbar]:hidden"
-          style={{ cursor: "grab" }}
-        >
-          {workPrinciples.map((principle, index) => (
-            <div key={principle.number} className="flex shrink-0 items-center">
-              <div className="w-[300px] shrink-0 snap-start md:w-[400px]">
+      <div className="relative z-10 w-full">
+        {/* Header */}
+        <div className="mx-auto max-w-[1632px] px-6 text-center md:px-9">
+          <FadeIn direction="up">
+            <h2 className="font-heading text-4xl font-normal tracking-[-0.02em] text-white sm:text-5xl md:text-7xl">
+              How We <span className="font-accent italic ">Work</span>
+            </h2>
+          </FadeIn>
+        </div>
+
+        {/* Horizontal Pinning Track */}
+        <div className="relative mt-16 w-full overflow-hidden md:mt-20">
+          <div
+            ref={trackRef}
+            className="flex items-center gap-0 px-6 sm:px-12 md:px-24 will-change-transform"
+          >
+            {workPrinciples.map((principle, index) => (
+              <div
+                key={principle.number}
+                className="flex shrink-0 items-center"
+              >
                 <WorkPrincipleCard principle={principle} />
-              </div>
 
-              {index < workPrinciples.length - 1 && (
-                <div
-                  aria-hidden
-                  className="mx-2 h-px w-10 shrink-0 border-t border-dashed border-white/20 md:w-16"
-                />
-              )}
-            </div>
-          ))}
+                {index < workPrinciples.length - 1 && (
+                  <div
+                    aria-hidden
+                    className="flex shrink-0 items-center px-4 md:px-8 text-white/20"
+                  >
+                    <span className="h-px w-8 md:w-16 border-t border-dashed border-white/25 block" />
+                    <span className="ml-1 text-sm font-light text-white/30">→</span>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -15,17 +15,24 @@ export default function FloatingChip({
     <span
       data-gsap-reveal
       data-gsap-scale="0.8"
-      className={`inline-flex items-center gap-[9px] rounded-full bg-white/90 px-[10px] py-[6px] font-tag text-base font-semibold tracking-[-0.02em] text-black backdrop-blur-[8px] shadow-lg transition-transform duration-300 hover:-translate-y-1 ${className}`}
+      className={`inline-flex items-center gap-1.5 md:gap-[9px] rounded-full bg-white/95 px-2.5 py-1 md:px-[10px] md:py-[6px] font-tag text-xs sm:text-sm md:text-base font-semibold tracking-[-0.02em] text-black backdrop-blur-[8px] shadow-lg ${className}`}
       style={style}
     >
-      <span className="flex size-[34px] shrink-0 items-center justify-center rounded-full bg-black">
-        <Image
-          src="/icons/counter-icon.png"
-          alt=""
-          width={16}
-          height={16}
-          className="size-4 object-contain brightness-0 invert"
-        />
+      <span className="flex size-5 sm:size-6 md:size-[34px] shrink-0 items-center justify-center rounded-full bg-black">
+        <svg className="size-3 sm:size-3.5 md:size-[23px]" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_138_86)">
+<path d="M12.2133 11.4394L14.7517 11.0827C14.9414 11.056 15.1168 11.1882 15.1435 11.3779L15.5002 13.9163C15.5269 14.106 15.3947 14.2814 15.205 14.3081L12.6666 14.6649C12.4769 14.6915 12.3014 14.5593 12.2748 14.3696L11.918 11.8312C11.8914 11.6415 12.0235 11.4661 12.2133 11.4394Z" fill="white"/>
+<path d="M11.6089 7.13875L14.1473 6.782C14.337 6.75533 14.5124 6.88752 14.5391 7.07724L14.8959 9.61565C14.9225 9.80537 14.7903 9.98078 14.6006 10.0074L12.0622 10.3642C11.8725 10.3909 11.6971 10.2587 11.6704 10.069L11.3137 7.53055C11.287 7.34083 11.4192 7.16541 11.6089 7.13875Z" fill="white"/>
+<path d="M7.91267 12.0438L10.4511 11.687C10.6408 11.6604 10.8162 11.7925 10.8429 11.9823L11.1996 14.5207C11.2263 14.7104 11.0941 14.8858 10.9044 14.9125L8.36598 15.2692C8.17626 15.2959 8.00084 15.1637 7.97418 14.974L7.61743 12.4356C7.59077 12.2459 7.72295 12.0704 7.91267 12.0438Z" fill="white"/>
+<path d="M7.3083 7.74324L9.84671 7.38649C10.0364 7.35983 10.2118 7.49201 10.2385 7.68173L10.5953 10.2201C10.6219 10.4099 10.4897 10.5853 10.3 10.6119L7.76161 10.9687C7.57189 10.9953 7.39647 10.8632 7.36981 10.6734L7.01306 8.13504C6.9864 7.94532 7.11858 7.7699 7.3083 7.74324Z" fill="white"/>
+<path d="M14.272 1.2826L5.67254 2.49118C4.78328 2.61616 4.16028 3.4429 4.28498 4.33019L6.47613 19.921C6.60083 20.8083 7.42757 21.4313 8.31683 21.3063L16.9163 20.0977C17.8056 19.9727 18.4286 19.146 18.3039 18.2587L16.1127 2.66791C15.988 1.78062 15.1613 1.15762 14.272 1.2826ZM13.8113 2.50258C14.0747 2.46557 14.3207 2.64913 14.358 2.91452C14.3953 3.17991 14.2097 3.42613 13.9463 3.46315C13.6809 3.50045 13.4347 3.31491 13.3974 3.04952C13.3601 2.78412 13.5459 2.53988 13.8113 2.50258ZM13.9885 18.7662C14.0158 18.9603 13.8816 19.1407 13.6855 19.1683L11.1663 19.5224C10.9702 19.5499 10.7915 19.4134 10.7642 19.2194L10.6762 18.5935C10.649 18.3994 10.7832 18.219 10.9792 18.1914L13.4985 17.8374C13.6946 17.8098 13.8733 17.9463 13.9006 18.1404L13.9885 18.7662ZM16.3476 16.3403L7.82789 17.5376C7.50833 17.5826 7.21286 17.3599 7.16795 17.0403L5.66859 6.3718C5.62367 6.05224 5.84632 5.75677 6.16588 5.71186L14.6855 4.5145C15.0051 4.46959 15.3006 4.69224 15.3455 5.0118L16.8448 15.6803C16.8898 15.9999 16.6671 16.2954 16.3476 16.3403Z" fill="white"/>
+</g>
+<defs>
+<clipPath id="clip0_138_86">
+<rect width="20" height="20" fill="white" transform="translate(0 2.78346) rotate(-8)"/>
+</clipPath>
+</defs>
+</svg>
       </span>
       {label}
     </span>

@@ -27,4 +27,10 @@ export const workPrinciples: WorkPrinciple[] = [
     description: "We say no when we can't help you, even when it costs a sale.",
     confirmed: false,
   },
+  {
+    number: "04",
+    title: "Proof Behind Every Claim",
+    description: "Every claim on this site has a number, a name, or a link behind it.",
+    confirmed: false,
+  },
 ];

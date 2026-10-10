@@ -105,46 +105,90 @@ function ServiceShowcaseRow({ service, reverse }: { service: AboutService; rever
 
 function TestimonialCarousel() {
   const [index, setIndex] = useState(0);
+  const contentRef = useRef<HTMLDivElement>(null);
+  const isAnimating = useRef(false);
   const testimonial = testimonials[index];
   const hasMultiple = testimonials.length > 1;
 
+  const animateSlide = (newIndex: number, dir: number) => {
+    if (isAnimating.current || newIndex === index) return;
+    isAnimating.current = true;
+
+    const el = contentRef.current;
+    if (!el) {
+      setIndex(newIndex);
+      isAnimating.current = false;
+      return;
+    }
+
+    const xOut = dir * -50;
+    const xIn = dir * 50;
+
+    gsap.to(el, {
+      opacity: 0,
+      x: xOut,
+      duration: 0.28,
+      ease: "power2.in",
+      onComplete: () => {
+        setIndex(newIndex);
+        gsap.set(el, { x: xIn, opacity: 0 });
+        gsap.to(el, {
+          opacity: 1,
+          x: 0,
+          duration: 0.45,
+          ease: "power3.out",
+          onComplete: () => {
+            isAnimating.current = false;
+          },
+        });
+      },
+    });
+  };
+
   const goTo = (next: number) => {
-    setIndex((next + testimonials.length) % testimonials.length);
+    const target = (next + testimonials.length) % testimonials.length;
+    animateSlide(target, next > index ? 1 : -1);
   };
 
   return (
-    <section className="bg-background pt-24 md:pt-32 2xl:mt-[260px] 2xl:pt-0">
-      <div className="mx-auto max-w-[1450px] px-6 2xl:px-0">
-        <blockquote className="text-center font-heading text-[28px] leading-[1.45] font-light tracking-[-0.03em] text-white md:text-[42px] 2xl:text-[54px]">
-          “{testimonial.quote}”
-        </blockquote>
+    <section className="relative isolate overflow-visible pt-24 md:pt-32 2xl:mt-[260px] 2xl:pt-0">
+      <div className="relative z-10 mx-auto max-w-[1450px] px-6 2xl:px-0">
+        <div ref={contentRef} className="will-change-transform">
+          <blockquote className="min-h-[140px] sm:min-h-[120px] md:min-h-[160px] flex items-center justify-center text-center font-heading text-[28px] leading-[1.45] font-light tracking-[-0.03em] text-white md:text-[42px] 2xl:text-[54px]">
+            &ldquo;{testimonial.quote.replace(/^[“"]|[”"]$/g, "")}&rdquo;
+          </blockquote>
 
-        <div className="mt-10 flex items-center justify-center gap-4 2xl:mt-16">
-          <span aria-hidden className="flex size-10 shrink-0 items-center justify-center rounded-full bg-[#111111] text-sm font-semibold text-white">
-            {testimonial.initials}
-          </span>
-          <div className="text-left">
-            <p className="font-heading text-base font-semibold text-white">{testimonial.name}</p>
-            <p className="font-body text-sm text-white/60">{testimonial.title}</p>
+          <div className="mt-10 flex items-center justify-center gap-4 2xl:mt-16">
+            <span aria-hidden className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-[#111113] text-sm font-semibold text-white shadow-md">
+              {testimonial.initials}
+            </span>
+            <div className="text-left">
+              <p className="font-heading text-base font-semibold text-white">{testimonial.name}</p>
+              <p className="font-body text-sm text-white/60">{testimonial.title}</p>
+            </div>
           </div>
         </div>
 
-        <div className="mt-8 flex items-center justify-center gap-6 2xl:mt-10">
+        <div className="mt-10 flex items-center justify-center gap-6 2xl:mt-14">
           <button
             type="button"
             aria-label="Previous testimonial"
             disabled={!hasMultiple}
             onClick={() => goTo(index - 1)}
-            className="flex size-10 items-center justify-center rounded-full bg-[#111111] text-white transition-opacity disabled:opacity-30"
+            className="group flex size-11 items-center justify-center rounded-full border border-white/10 bg-[#111113] text-white/80 transition-all duration-300 hover:scale-110 hover:border-white/30 hover:bg-white hover:text-black active:scale-95 disabled:opacity-30 cursor-pointer"
           >
-            ←
+            <span className="text-lg leading-none transition-transform duration-300 group-hover:-translate-x-0.5">&larr;</span>
           </button>
-          <div className="flex items-center gap-[10px]">
+          <div className="flex items-center gap-2.5">
             {testimonials.map((item, i) => (
-              <span
+              <button
                 key={item.name}
-                aria-hidden
-                className={`size-[10px] rounded-full transition-colors ${i === index ? "bg-accent-to" : "bg-white/20"}`}
+                type="button"
+                aria-label={`Go to testimonial ${i + 1}`}
+                onClick={() => animateSlide(i, i > index ? 1 : -1)}
+                className={`h-2.5 rounded-full transition-all duration-500 ease-out cursor-pointer ${
+                  i === index ? "w-8 bg-brand-red shadow-[0_0_10px_rgba(255,46,0,0.6)]" : "w-2.5 bg-white/20 hover:bg-white/40"
+                }`}
               />
             ))}
           </div>
@@ -153,9 +197,9 @@ function TestimonialCarousel() {
             aria-label="Next testimonial"
             disabled={!hasMultiple}
             onClick={() => goTo(index + 1)}
-            className="flex size-10 items-center justify-center rounded-full bg-[#111111] text-white transition-opacity disabled:opacity-30"
+            className="group flex size-11 items-center justify-center rounded-full border border-white/10 bg-[#111113] text-white/80 transition-all duration-300 hover:scale-110 hover:border-white/30 hover:bg-white hover:text-black active:scale-95 disabled:opacity-30 cursor-pointer"
           >
-            →
+            <span className="text-lg leading-none transition-transform duration-300 group-hover:translate-x-0.5">&rarr;</span>
           </button>
         </div>
       </div>

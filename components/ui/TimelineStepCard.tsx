@@ -6,7 +6,7 @@ import type { TimelineStep } from "@/lib/data/projectTimeline";
 export default function TimelineStepCard({ step }: { step: TimelineStep }) {
   return (
     <div
-      className="relative flex h-[197px] flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6"
+      className="relative flex h-[160px] flex-col justify-between overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] p-6"
     >
       <span
         aria-hidden
@@ -30,7 +30,7 @@ export default function TimelineStepCard({ step }: { step: TimelineStep }) {
         </h3>
       </div>
 
-      <div className="relative">
+      <div className="relative text-end">
         <div aria-hidden className="mb-3 h-px w-full bg-white/10" />
         <span className="font-body text-xs font-medium text-white/50">
           {step.duration}

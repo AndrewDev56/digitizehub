@@ -23,26 +23,34 @@ export default function AnimatedCounter({ value, className = "" }: AnimatedCount
       const [, prefix, number, suffix] = match;
       const target = Number(number.replace(/,/g, ""));
       const decimalPlaces = number.includes(".") ? number.split(".")[1].length : 0;
+      const minIntegerDigits = number.startsWith("0") && number.length > 1 ? number.length : 1;
       const proxy = { value: 0 };
       const format = (amount: number) =>
-        `${prefix}${amount.toLocaleString("en-US", {
+        `${prefix}${Math.round(amount).toLocaleString("en-US", {
+          minimumIntegerDigits: minIntegerDigits,
           minimumFractionDigits: decimalPlaces,
           maximumFractionDigits: decimalPlaces,
         })}${suffix}`;
       const media = gsap.matchMedia();
 
       media.add("(prefers-reduced-motion: reduce)", () => {
-        element.current!.textContent = value;
+        if (element.current) {
+          element.current.textContent = value;
+        }
       });
 
       media.add("(prefers-reduced-motion: no-preference)", () => {
-        element.current!.textContent = format(0);
+        if (element.current) {
+          element.current.textContent = format(0);
+        }
         gsap.to(proxy, {
           value: target,
           duration: 1.5,
           ease: "power3.out",
           onUpdate: () => {
-            element.current!.textContent = format(proxy.value);
+            if (element.current) {
+              element.current.textContent = format(proxy.value);
+            }
           },
           scrollTrigger: {
             trigger: element.current,

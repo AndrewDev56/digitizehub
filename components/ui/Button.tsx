@@ -23,6 +23,11 @@ const iconSizeStyles: Record<NonNullable<CommonProps["size"]>, string> = {
   md: "size-[35px]",
 };
 
+const iconRightOffset: Record<NonNullable<CommonProps["size"]>, string> = {
+  lg: "right-[10px]",
+  md: "right-[8px]",
+};
+
 export default function Button({
   children,
   className = "",
@@ -33,24 +38,33 @@ export default function Button({
 }: CommonProps) {
   const content = (
     <>
-      <span className="whitespace-nowrap font-heading font-semibold tracking-[-0.02em] text-black">
+      {/* Expanding Red Circle Layer from the Black Circle */}
+      <span
+        aria-hidden="true"
+        className={`pointer-events-none absolute top-1/2 -translate-y-1/2 scale-0 opacity-0 rounded-full bg-brand-red transition-all duration-500 ease-out group-hover:scale-[35] group-hover:opacity-100 ${iconRightOffset[size]} ${iconSizeStyles[size]}`}
+      />
+
+      {/* Button Label */}
+      <span className="relative z-10 whitespace-nowrap font-heading font-semibold tracking-[-0.02em] text-black transition-colors duration-300 group-hover:text-white">
         {children}
       </span>
+
+      {/* Circle Icon Container */}
       <span
-        className={`flex shrink-0 items-center justify-center rounded-full bg-[#111111] transition-transform duration-300 group-hover:rotate-45 ${iconSizeStyles[size]}`}
+        className={`relative z-10 flex shrink-0 items-center justify-center rounded-full bg-[#111111] transition-colors duration-300 group-hover:bg-transparent ${iconSizeStyles[size]}`}
       >
         <Image
           src="/icons/Arrow_Right.png"
           alt=""
           width={18}
           height={18}
-          className="h-[45%] w-[45%] "
+          className="h-[45%] w-[45%] transition-transform duration-300 ease-out group-hover:-rotate-45 group-hover:scale-105"
         />
       </span>
     </>
   );
 
-  const classes = `group inline-flex items-center justify-center rounded-full bg-white transition-all duration-300 hover:scale-105 hover:bg-brand-red active:scale-[0.96] ${sizeStyles[size]} ${className}`;
+  const classes = `group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white transition-all duration-300 hover:scale-105 active:scale-[0.96] ${sizeStyles[size]} ${className}`;
 
   if (href) {
     return (
@@ -73,4 +87,4 @@ export default function Button({
       {content}
     </button>
   );
-}
+}
