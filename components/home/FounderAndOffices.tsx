@@ -7,7 +7,7 @@ import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerCon
 
 export default function FounderAndOffices() {
   return (
-    <section className="bg-background py-24 md:py-32">
+    <section className="bg-background ">
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
         <FadeIn direction="up">
           <h2 className="font-heading text-4xl font-semibold tracking-[-0.02em] text-white sm:text-5xl md:text-6xl">
@@ -25,6 +25,12 @@ export default function FounderAndOffices() {
             </StaggerItem>
           ))}
         </StaggerContainer>
+        <FadeIn direction="up" delay={0.3}>
+                  <p className="mt-10 text-center font-body text-lg text-white/50">
+                    A real address in each country means someone is always in your time zone,<br/>
+and you always know who you are dealing with.
+                  </p>
+                </FadeIn>
       </div>
     </section>
   );

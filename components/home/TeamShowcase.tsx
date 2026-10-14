@@ -30,7 +30,7 @@ function CardItem({ item, index }: { item: GridItem; index: number }) {
       tabIndex={0}
       role="group"
       aria-label={`${item.name}, ${item.role}`}
-      className={`group relative size-[130px] shrink-0 cursor-pointer overflow-hidden rounded-[20px] border border-white/[0.08] ${item.bgColor || "bg-[#18181b]"} shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 hover:z-20 hover:scale-[1.04] hover:border-white/30 hover:shadow-[0_20px_40px_rgba(255,0,54,0.18)] focus:outline-none focus:ring-2 focus:ring-accent-from sm:size-[145px] md:size-[160px]`}
+      className={`group relative size-[130px] shrink-0 cursor-pointer overflow-hidden rounded-[20px] border border-white/[0.08] ${item.bgColor || "bg-[#18181b]"} shadow-[0_10px_30px_rgba(0,0,0,0.5)] transition-all duration-300 hover:z-20 focus:outline-none focus:ring-2 focus:ring-accent-from sm:size-[145px] md:size-[160px]`}
     >
       <Image
         src={item.image}
@@ -41,14 +41,14 @@ function CardItem({ item, index }: { item: GridItem; index: number }) {
       />
 
       {/* Hover Info Overlay */}
-      <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/40 to-transparent p-3 opacity-0 backdrop-blur-[2px] transition-all duration-300 group-hover:opacity-100 sm:p-3.5">
+      {/* <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/40 to-transparent p-3 opacity-0 backdrop-blur-[2px] transition-all duration-300 group-hover:opacity-100 sm:p-3.5">
         <p className="font-heading text-xs font-semibold leading-tight text-white sm:text-sm">
           {item.name}
         </p>
         <p className="mt-0.5 font-body text-[10px] font-medium leading-tight text-accent-from sm:text-xs">
           {item.role}
         </p>
-      </div>
+      </div> */}
     </div>
   );
 }

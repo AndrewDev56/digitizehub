@@ -1,30 +1,19 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import FaqCard from "@/components/ui/FaqCard";
 import { faqItems } from "@/lib/data/faq";
 import FadeIn from "@/components/animation/FadeIn";
 
 export default function Faq() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const leftColItems = faqItems.slice(0, 3);
+  const rightColItems = faqItems.slice(3, 6);
+
   return (
     <section className="relative isolate overflow-visible py-section">
-      {/* Ambient Eclipse Glow - Right */}
-      {/* <div
-        aria-hidden="true"
-        data-gsap-ambient
-        data-gsap-scale="1.1"
-        data-gsap-opacity="0.8"
-        data-gsap-duration="10"
-        className="pointer-events-none absolute top-1/2 -translate-y-1/2 -right-[100px] sm:-right-[160px] md:-right-[200px] z-0 w-[420px] sm:w-[600px] md:w-[780px] lg:w-[950px] select-none opacity-75"
-      >
-        <Image
-          src="/images/ellipse-right.png"
-          alt=""
-          width={950}
-          height={950}
-          className="h-auto w-full object-contain pointer-events-none"
-        />
-      </div> */}
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
         <FadeIn direction="up">
           <h2 className="font-heading text-4xl font-semibold tracking-[-0.02em] text-white md:text-6xl">
@@ -34,10 +23,40 @@ export default function Faq() {
         </FadeIn>
 
         <FadeIn direction="up" delay={0.2}>
-          <div className="mt-8 columns-1 gap-4 md:mt-10 md:columns-2 [&>*]:mb-4">
-            {faqItems.map((item, index) => (
-              <FaqCard key={item.question} item={item} defaultOpen={index === 0} />
-            ))}
+          <div className="mt-10 grid grid-cols-1 gap-5 md:mt-14 md:grid-cols-2 md:gap-7 items-start">
+            {/* Left Column (3 items) */}
+            <div className="flex flex-col gap-5 md:gap-7">
+              {leftColItems.map((item, i) => {
+                const itemIndex = i;
+                return (
+                  <FaqCard
+                    key={item.question}
+                    item={item}
+                    isOpen={openIndex === itemIndex}
+                    onToggle={() =>
+                      setOpenIndex(openIndex === itemIndex ? null : itemIndex)
+                    }
+                  />
+                );
+              })}
+            </div>
+
+            {/* Right Column (3 items) */}
+            <div className="flex flex-col gap-5 md:gap-7">
+              {rightColItems.map((item, i) => {
+                const itemIndex = i + 3;
+                return (
+                  <FaqCard
+                    key={item.question}
+                    item={item}
+                    isOpen={openIndex === itemIndex}
+                    onToggle={() =>
+                      setOpenIndex(openIndex === itemIndex ? null : itemIndex)
+                    }
+                  />
+                );
+              })}
+            </div>
           </div>
         </FadeIn>
       </div>

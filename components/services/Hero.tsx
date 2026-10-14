@@ -43,14 +43,14 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto max-w-[1522px] px-6 text-center md:px-9">
+      <div className="relative mx-auto max-w-7xl px-6 text-center md:px-9">
         <p className="font-body text-sm tracking-[0.02em] text-white/70 md:text-xl">
           Web, Apps and SEO&nbsp; · &nbsp;Calgary and Georgia
         </p>
 
         <h1 className="mt-6 font-heading text-[36px] leading-[1.1] font-semibold tracking-[-0.02em] text-white sm:text-6xl lg:text-[90px]">
-          <span className="block">Design, Build, Deploy, Rank, Maintain.</span>
-          <span className="font-accent block font-bold italic">
+          <span >Design, Build, Deploy, Rank, Maintain.</span>{" "}
+          <span className="font-accent font-bold italic"> 
             One team for all of it.
           </span>
         </h1>

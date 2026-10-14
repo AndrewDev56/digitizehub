@@ -8,7 +8,7 @@ import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerCon
 
 export default function ProjectTimeline() {
   return (
-    <section className="relative isolate overflow-visible py-24 md:py-32">
+    <section className="relative isolate overflow-visible py-10 md:py-10">
       {/* Ambient Eclipse Glow - Left */}
       <div
         aria-hidden="true"
@@ -42,7 +42,7 @@ export default function ProjectTimeline() {
         </StaggerContainer>
 
         <FadeIn direction="up" delay={0.3}>
-          <p className="mt-10 text-center font-body text-sm text-white/50">
+          <p className="mt-10 text-center font-body text-lg text-white/50">
             Fixed price quotes before work starts. You own everything we make.
           </p>
         </FadeIn>

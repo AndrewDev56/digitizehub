@@ -58,13 +58,13 @@ export default function Button({
           alt=""
           width={18}
           height={18}
-          className="h-[45%] w-[45%] transition-transform duration-300 ease-out group-hover:-rotate-45 group-hover:scale-105"
+          className="h-[45%] w-[45%] transition-transform duration-300 ease-out group-hover:-rotate-45"
         />
       </span>
     </>
   );
 
-  const classes = `group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white transition-all duration-300 hover:scale-105 active:scale-[0.96] ${sizeStyles[size]} ${className}`;
+  const classes = `group relative inline-flex items-center justify-center overflow-hidden rounded-full bg-white transition-all duration-300 active:scale-[0.96] ${sizeStyles[size]} ${className}`;
 
   if (href) {
     return (
@@ -87,4 +87,4 @@ export default function Button({
       {content}
     </button>
   );
-}
+}

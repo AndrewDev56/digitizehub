@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/animation/FadeIn";
+import Button from "../ui/Button";
 
 export default function CtaBanner() {
   return (
@@ -42,8 +43,8 @@ export default function CtaBanner() {
             className="pointer-events-none absolute -top-24 -right-24 size-[350px] rounded-full bg-accent-from/30 blur-[60px]"
           />
 
-          <h2 className="relative z-10 mx-auto max-w-3xl font-heading text-3xl font-semibold tracking-[-0.02em] text-black md:text-[52px] md:leading-[1.1]">
-            A <span className="font-accent text-accent-to italic">20 Minute Call</span> will
+          <h2 className="relative z-10 mx-auto max-w-4xl font-heading text-3xl font-semibold tracking-[-0.02em] text-black md:text-[52px] md:leading-[1.1]">
+            A <span className="font-accent italic text-[#FF0036]">20 Minute Call</span> will
             tell you exactly what your site is missing.
           </h2>
 
@@ -54,7 +55,7 @@ export default function CtaBanner() {
           <div className="relative z-10 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Link
               href="/contact"
-              className="group relative flex items-center gap-3 overflow-hidden rounded-full bg-black py-3.5 pr-3.5 pl-7 font-heading text-sm font-semibold text-white shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
+              className="group relative flex items-center gap-3 overflow-hidden rounded-full bg-black py-3.5 pr-3.5 pl-7 font-heading text-sm font-semibold text-white shadow-xl transition-all duration-300  active:scale-95"
             >
               {/* Expanding Red Circle Layer */}
               <span
@@ -64,39 +65,22 @@ export default function CtaBanner() {
               <span className="relative z-10 transition-colors duration-300 text-white">
                 Book a 20 Minute Call
               </span>
-              <span className="relative z-10 flex size-8 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-transparent">
+              <span className="relative z-10 flex size-8 items-center justify-center rounded-full bg-white transition-colors duration-300 group-hover:bg-transparent lg:size-[40px] md:size-[35px]">
                 <Image
                   src="/icons/Arrow_Right.png"
                   alt=""
-                  width={12}
+                  width={18}
                   height={12}
-                  className="size-3 invert transition-all duration-300 ease-out group-hover:invert-0 group-hover:-rotate-45 group-hover:scale-105"
+                  className="h-[45%] w-[45%] invert transition-all duration-300 ease-out group-hover:invert-0 group-hover:-rotate-45 group-hover:scale-105"
                 />
               </span>
             </Link>
 
-            <Link
+            <Button
               href="/work"
-              className="group relative flex items-center gap-3 overflow-hidden rounded-full border border-black/20 bg-white/40 py-3.5 pr-3.5 pl-7 font-heading text-sm font-semibold text-black transition-all duration-300 hover:scale-105 active:scale-95"
             >
-              {/* Expanding Red Circle Layer */}
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute right-[14px] top-1/2 -translate-y-1/2 size-8 rounded-full bg-brand-red scale-0 opacity-0 transition-all duration-500 ease-out group-hover:scale-[35] group-hover:opacity-100"
-              />
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
-                Explore Our Portfolio
-              </span>
-              <span className="relative z-10 flex size-8 items-center justify-center rounded-full bg-black transition-colors duration-300 group-hover:bg-transparent">
-                <Image
-                  src="/icons/Arrow_Right.png"
-                  alt=""
-                  width={12}
-                  height={12}
-                  className="size-3 transition-transform duration-300 ease-out group-hover:-rotate-45 group-hover:scale-105"
-                />
-              </span>
-            </Link>
+              Explore Our Portfolio
+            </Button>
           </div>
 
         </div>

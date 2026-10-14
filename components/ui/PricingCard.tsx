@@ -20,21 +20,21 @@ export default function PricingCard({
         {/* Category Header Row */}
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
-            <span className="flex size-9 shrink-0 items-center justify-center rounded-xl bg-white/5 border border-white/10 p-2">
+            <span className="flex size-14 shrink-0 items-center justify-center rounded-xl ">
               <Image
                 src={plan.icon}
                 alt=""
-                width={20}
-                height={20}
-                className="size-5 object-contain"
+                width={40}
+                height={40}
+                className="size-12 object-contain"
               />
             </span>
-            <span className="font-heading text-base font-medium text-white/90">
+            <span className="font-heading text-3xl font-medium text-white/90">
               {plan.name}
             </span>
           </div>
           {plan.badge && (
-            <span className="shrink-0 rounded-full border border-white/15 bg-white/5 px-3 py-1 font-tag text-[11px] font-medium text-white/80">
+            <span className="shrink-0 rounded-full border border-white/15 bg-white/5 px-3 py-1 font-tag text-xs font-medium text-white/80">
               {plan.badge}
             </span>
           )}
@@ -42,12 +42,12 @@ export default function PricingCard({
 
         {/* Tier Name & Start Now CTA */}
         <div className="mt-6 flex items-center justify-between gap-4">
-          <h3 className="font-heading text-2xl sm:text-3xl font-medium tracking-[-0.01em] text-white">
+          <h3 className="font-heading text-2xl sm:text-4xl font-medium tracking-[-0.01em] text-white">
             {tier}
           </h3>
           <Link
             href="/contact"
-            className="group relative flex shrink-0 items-center gap-2 overflow-hidden rounded-full bg-white py-1.5 pr-1.5 pl-4 font-heading text-xs sm:text-sm font-semibold text-black transition-all duration-300 hover:scale-105 active:scale-95"
+            className="group relative flex shrink-0 items-center gap-2 overflow-hidden rounded-full bg-white py-1.5 pr-1.5 pl-4 font-heading text-xs sm:text-sm font-semibold text-black transition-all duration-300 active:scale-95"
           >
             {/* Expanding Red Circle Layer */}
             <span
@@ -63,7 +63,7 @@ export default function PricingCard({
                 alt=""
                 width={10}
                 height={10}
-                className="size-2.5 sm:size-3 transition-transform duration-300 ease-out group-hover:-rotate-45 group-hover:scale-105"
+                className="size-2.5 sm:size-3 transition-transform duration-300 ease-out group-hover:-rotate-45 "
               />
             </span>
           </Link>
@@ -77,13 +77,15 @@ export default function PricingCard({
           {plan.features.map((feature) => (
             <li
               key={feature}
-              className="flex items-start gap-3 font-body text-xs sm:text-sm text-white/70"
+              className="flex items-start gap-3 font-body text-xs sm:text-lg text-white/70"
             >
               <span
                 aria-hidden
-                className="mt-0.5 shrink-0 text-xs sm:text-sm font-bold text-white/50"
+                className="mt-2 shrink-0 text-xs sm:text-sm font-bold text-white/50"
               >
-                ✓
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10" fill="none">
+<path d="M1 4.75L4.88917 8.5L12.6667 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
               </span>
               <span>{feature}</span>
             </li>

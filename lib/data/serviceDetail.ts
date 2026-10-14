@@ -8,6 +8,7 @@ export type ServiceDetailContent = {
   heroH1: TitleSegment[][];
   heroSubtext: string;
   heroImageAlt: string;
+  heroVideo?: string;
   heroTitle: TitleSegment[][];
   heroBody: string;
   captivatingTitle: TitleSegment[][];

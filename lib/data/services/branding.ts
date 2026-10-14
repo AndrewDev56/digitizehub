@@ -4,10 +4,14 @@ import type { AboutService } from "@/lib/data/aboutServices";
 export const brandingContent: ServiceDetailContent = {
   slug: "branding",
   eyebrowTags: ["Websites", "Apps", "Deployment", "SEO", "Branding", "Social"],
-  heroH1: [[{ text: "Branding & Logo", italic: true }, { text: " Design Services." }]],
+  heroH1: [
+    [{ text: "Branding & Logo", italic: true }],
+    [{ text: "Design Services." }],
+  ],
   heroSubtext:
     "Digitize Hub is a branding and logo design agency in Calgary and Atlanta helping businesses across Canada and the USA look as good as they really are. We design logos, colour palettes, and complete brand identities that people recognize, remember, and trust.",
   heroImageAlt: "Branding and logo design services showing a brand identity system by Digitize Hub",
+  heroVideo: "/videos/Branding-logo-design.mp4",
   heroTitle: [
     [{ text: "Hire a Top " }, { text: "Branding", italic: true }, { text: " Agency" }],
     [{ text: "in Canada & the USA" }],

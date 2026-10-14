@@ -36,7 +36,7 @@ export default function Services() {
       <div className="relative z-10 mx-auto max-w-[1632px] px-6 md:px-9">
         <FadeIn direction="up">
           <div className="text-center">
-            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-normal tracking-[-0.02em] text-white">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-7xl font-normal tracking-[-0.02em] text-white">
               What We <span className="font-accent font-normal italic text-white">Do</span>
             </h2>
             <p className="mt-2 font-body text-xs sm:text-sm text-white/70 font-normal">
@@ -86,7 +86,7 @@ export default function Services() {
           <FadeIn direction="left" delay={0.2}>
             <Link
               href={active.href}
-              className="relative block aspect-[4/3] sm:aspect-[16/11] overflow-hidden rounded-[24px] sm:rounded-[36px] md:rounded-[44px] transition-transform duration-300 hover:scale-[1.01] border border-white/10 shadow-2xl group cursor-pointer"
+              className="relative block aspect-[4/3] sm:aspect-[13/11] overflow-hidden rounded-[24px] sm:rounded-[36px] md:rounded-[44px] transition-transform duration-300 hover:scale-[1.01] border border-white/10 shadow-2xl group cursor-pointer"
             >
               <video
                 key={active.video}

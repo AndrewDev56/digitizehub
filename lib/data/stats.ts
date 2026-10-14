@@ -12,7 +12,7 @@ export type Stat = {
 export const stats: Stat[] = [
   {
     value: "200+",
-    tags: ["Mobile Apps"],
+    tags: ["Mobile Apps", "UI/UX Design"],
     graphic: "/images/two-hundred.png",
     graphicWidth: 432,
     graphicHeight: 140,

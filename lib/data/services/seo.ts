@@ -4,10 +4,14 @@ import type { AboutService } from "@/lib/data/aboutServices";
 export const seoContent: ServiceDetailContent = {
   slug: "seo",
   eyebrowTags: ["Websites", "Apps", "Deployment", "SEO", "Branding", "Social"],
-  heroH1: [[{ text: "Search Engine", italic: true }, { text: " Optimization Services." }]],
+  heroH1: [
+    [{ text: "Search Engine", italic: true }],
+    [{ text: "Optimization Services." }],
+  ],
   heroSubtext:
     "Digitize Hub is an SEO agency in Calgary and Atlanta helping businesses across Canada and the USA get found by customers who are already searching. We combine technical SEO, on-page optimization, and off-page authority building to grow rankings, traffic, and real enquiries.",
   heroImageAlt: "SEO services dashboard showing ranking and organic traffic growth by Digitize Hub",
+  heroVideo: "/videos/seo.mp4",
   heroTitle: [
     [{ text: "Hire a Top " }, { text: "SEO", italic: true }, { text: " Company" }],
     [{ text: "in Canada & the USA" }],

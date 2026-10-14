@@ -9,7 +9,7 @@ import { testimonials } from "@/lib/data/testimonials";
 gsap.registerPlugin(useGSAP);
 
 export default function Testimonials() {
-  const [index, setIndex] = useState(0);
+  const [index, setIndex] = useState(3);
   const [direction, setDirection] = useState(1);
   const contentRef = useRef<HTMLDivElement>(null);
   const isAnimating = useRef(false);
@@ -28,14 +28,14 @@ export default function Testimonials() {
       return;
     }
 
-    const xOut = dir * -50;
-    const xIn = dir * 50;
+    const xOut = dir * -40;
+    const xIn = dir * 40;
 
     // Smooth exit
     gsap.to(el, {
       opacity: 0,
       x: xOut,
-      duration: 0.28,
+      duration: 0.25,
       ease: "power2.in",
       onComplete: () => {
         setIndex(newIndex);
@@ -45,7 +45,7 @@ export default function Testimonials() {
         gsap.to(el, {
           opacity: 1,
           x: 0,
-          duration: 0.45,
+          duration: 0.4,
           ease: "power3.out",
           onComplete: () => {
             isAnimating.current = false;
@@ -62,94 +62,99 @@ export default function Testimonials() {
   };
 
   return (
-    <section className="relative isolate overflow-visible pt-24 pb-16 md:pt-32 md:pb-24 2xl:mt-[260px] 2xl:pt-0">
-      {/* Ambient Eclipse Glow - Left */}
-      {/* <div
-        aria-hidden="true"
-        data-gsap-ambient
-        data-gsap-scale="1.1"
-        data-gsap-opacity="0.8"
-        data-gsap-duration="10"
-        className="pointer-events-none absolute top-1/2 -translate-y-1/2 -left-[100px] sm:-left-[160px] md:-left-[200px] z-0 w-[420px] sm:w-[600px] md:w-[780px] lg:w-[950px] select-none opacity-75"
-      >
-        <Image
-          src="/images/ellipse-left.png"
-          alt=""
-          width={950}
-          height={950}
-          className="h-auto w-full object-contain pointer-events-none"
-        />
-      </div> */}
-
-      <div className="relative z-10 mx-auto max-w-[1450px] px-6 2xl:px-0">
-        {/* Animated Slide Content */}
-        <div ref={contentRef} className="will-change-transform">
-          <blockquote className="min-h-[140px] sm:min-h-[120px] md:min-h-[160px] flex items-center justify-center text-center font-heading text-[26px] leading-[1.35] font-light tracking-[-0.03em] text-white sm:text-[32px] md:text-[42px] 2xl:text-[52px]">
-            &ldquo;{testimonial.quote.replace(/^[“"]|[”"]$/g, "")}&rdquo;
-          </blockquote>
-
-          {/* Author Details */}
-          <div className="mt-10 flex items-center justify-center gap-4 2xl:mt-16">
-            <span
-              aria-hidden
-              className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-[#111113] text-sm font-semibold text-white shadow-md"
-            >
-              {testimonial.initials}
-            </span>
-            <div className="text-left">
-              <p className="font-heading text-base font-semibold text-white">
-                {testimonial.name}
-              </p>
-              <p className="font-body text-xs sm:text-sm text-white/60">
-                {testimonial.role}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        {/* Navigation Controls & Animated Indicator Dots */}
-        <div className="mt-10 flex items-center justify-center gap-6 2xl:mt-14">
+    <section className="relative isolate overflow-visible py-16 md:py-24 2xl:mt-[60px]">
+      <div className="relative z-10 mx-auto max-w-[1450px] px-4 sm:px-8 md:px-12 2xl:px-0">
+        <div className="relative flex items-center justify-between gap-4 md:gap-8">
+          {/* Left Arrow Button */}
           <button
             type="button"
             aria-label="Previous testimonial"
             onClick={() => goTo(index - 1)}
-            className="group flex size-11 items-center justify-center rounded-full border border-white/10 bg-[#111113] text-white/80 transition-all duration-300 hover:scale-110 hover:border-white/30 hover:bg-white hover:text-black active:scale-95 cursor-pointer"
+            className="group flex size-10 sm:size-11 md:size-12 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.08] text-white/90 transition-all duration-300 hover:scale-105 hover:bg-brand-red hover:border-brand-red hover:text-white hover:shadow-[0_0_24px_rgba(255,46,0,0.4)] active:scale-95 cursor-pointer shadow-lg"
           >
-            <span className="text-lg leading-none transition-transform duration-300 group-hover:-translate-x-0.5">
-              &larr;
-            </span>
+            <svg
+              className="size-4 sm:size-5 transition-transform duration-300 group-hover:-translate-x-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="19" y1="12" x2="5" y2="12" />
+              <polyline points="12 19 5 12 12 5" />
+            </svg>
           </button>
 
-          {/* Dot Indicators */}
-          <div className="flex items-center gap-2.5">
-            {testimonials.map((item, i) => {
-              const isActive = i === index;
-              return (
-                <button
-                  key={item.name}
-                  type="button"
-                  aria-label={`Go to testimonial ${i + 1}`}
-                  onClick={() => animateSlide(i, i > index ? 1 : -1)}
-                  className={`h-2.5 rounded-full transition-all duration-500 ease-out cursor-pointer ${
-                    isActive
-                      ? "w-8 bg-brand-red shadow-[0_0_10px_rgba(255,46,0,0.6)]"
-                      : "w-2.5 bg-white/20 hover:bg-white/40"
-                  }`}
-                />
-              );
-            })}
+          {/* Central Animated Testimonial */}
+          <div
+            ref={contentRef}
+            className="mx-auto container px-2 sm:px-6 md:px-8 text-center will-change-transform"
+          >
+            <blockquote className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-[32px] 2xl:text-[46px] font-normal leading-[1.38] tracking-[-0.015em] text-white">
+              &ldquo;{testimonial.quote.replace(/^[“"]|[”"]$/g, "")}&rdquo;
+            </blockquote>
+
+            {/* Author Details */}
+            <div className="mt-8 sm:mt-10 md:mt-12 flex items-center justify-center gap-3.5 sm:gap-4">
+              <span
+                aria-hidden
+                className="flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full font-heading text-base font-semibold text-white shadow-md select-none"
+                style={{ backgroundColor: testimonial.avatarColor }}
+              >
+                {testimonial.initials}
+              </span>
+              <div className="text-left">
+                <p className="font-heading text-base sm:text-lg md:text-2xl font-medium text-white">
+                  {testimonial.name}
+                </p>
+                <p className="mt-0.5 font-body text-xs sm:text-base text-white/50 tracking-wide">
+                  {testimonial.role}
+                </p>
+              </div>
+            </div>
           </div>
 
+          {/* Right Arrow Button */}
           <button
             type="button"
             aria-label="Next testimonial"
             onClick={() => goTo(index + 1)}
-            className="group flex size-11 items-center justify-center rounded-full border border-white/10 bg-[#111113] text-white/80 transition-all duration-300 hover:scale-110 hover:border-white/30 hover:bg-white hover:text-black active:scale-95 cursor-pointer"
+            className="group flex size-10 sm:size-11 md:size-12 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.08] text-white/90 transition-all duration-300 hover:scale-105 hover:bg-brand-red hover:border-brand-red hover:text-white hover:shadow-[0_0_24px_rgba(255,46,0,0.4)] active:scale-95 cursor-pointer shadow-lg"
           >
-            <span className="text-lg leading-none transition-transform duration-300 group-hover:translate-x-0.5">
-              &rarr;
-            </span>
+            <svg
+              className="size-4 sm:size-5 transition-transform duration-300 group-hover:translate-x-0.5"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12" />
+              <polyline points="12 5 19 12 12 19" />
+            </svg>
           </button>
+        </div>
+
+        {/* Circular Dot Indicators */}
+        <div className="mt-10 sm:mt-12 md:mt-14 flex items-center justify-center gap-2.5">
+          {testimonials.map((item, i) => {
+            const isActive = i === index;
+            return (
+              <button
+                key={item.name}
+                type="button"
+                aria-label={`Go to testimonial ${i + 1}`}
+                onClick={() => animateSlide(i, i > index ? 1 : -1)}
+                className={`size-2 rounded-full transition-all duration-300 cursor-pointer ${
+                  isActive
+                    ? "bg-brand-red shadow-[0_0_8px_rgba(255,46,0,0.6)] scale-125"
+                    : "bg-white/20 hover:bg-white/40"
+                }`}
+              />
+            );
+          })}
         </div>
       </div>
     </section>

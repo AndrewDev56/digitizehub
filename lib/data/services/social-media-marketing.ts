@@ -4,10 +4,14 @@ import type { AboutService } from "@/lib/data/aboutServices";
 export const socialMediaMarketingContent: ServiceDetailContent = {
   slug: "social-media-marketing",
   eyebrowTags: ["Websites", "Apps", "Deployment", "SEO", "Branding", "Social"],
-  heroH1: [[{ text: "Social Media", italic: true }, { text: " Marketing Services." }]],
+  heroH1: [
+    [{ text: "Social Media", italic: true }],
+    [{ text: "Marketing Services." }],
+  ],
   heroSubtext:
     "Digitize Hub is a social media marketing agency in Calgary and Atlanta helping brands across Canada and the USA turn attention into customers. We plan, design, publish, and run paid campaigns on Instagram, Facebook, and LinkedIn, and we report in leads, not likes.",
   heroImageAlt: "Social media marketing services showing branded Instagram and Facebook posts by Digitize Hub",
+  heroVideo: "/videos/Social Media.mp4",
   heroTitle: [
     [{ text: "Hire a Top " }, { text: "Social Media", italic: true }, { text: " Marketing" }],
     [{ text: "Agency in Canada & the USA" }],

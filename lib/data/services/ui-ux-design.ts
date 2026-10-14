@@ -4,10 +4,14 @@ import type { AboutService } from "@/lib/data/aboutServices";
 export const uiUxDesignContent: ServiceDetailContent = {
   slug: "ui-ux-design",
   eyebrowTags: ["Websites", "Apps", "Deployment", "SEO", "Branding", "Social"],
-  heroH1: [[{ text: "UI & UX", italic: true }, { text: " Design Services." }]],
+  heroH1: [
+    [{ text: "UI & UX", italic: true }],
+    [{ text: "Design Services." }],
+  ],
   heroSubtext:
     "Digitize Hub is a UI/UX design agency in Calgary and Atlanta helping startups, SMEs, and enterprises across Canada and the USA design digital products people enjoy using. From websites to SaaS dashboards, our research-led UX design turns confused visitors into confident customers.",
   heroImageAlt: "UI/UX design services by Digitize Hub showing a website and dashboard interface",
+  heroVideo: "/videos/home-website-design-video.mp4",
   heroTitle: [
     [{ text: "Hire a Top " }, { text: "UI / UX", italic: true }, { text: " Design Company" }],
     [{ text: "in Canada & the USA" }],

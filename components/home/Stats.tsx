@@ -10,10 +10,10 @@ import AnimatedCounter from "@/components/animation/AnimatedCounter";
 export default function Stats() {
   const [hoveredCol, setHoveredCol] = useState<number | null>(null);
 
-  // Helper to determine column index for each chip
+  // Helper to determine column index for each chip (2 chips per column)
   const getChipCol = (index: number) => {
-    if (index === 0) return 0;
-    if (index === 1 || index === 2) return 1;
+    if (index === 0 || index === 1) return 0;
+    if (index === 2 || index === 3) return 1;
     return 2;
   };
 
@@ -26,13 +26,8 @@ export default function Stats() {
       return `translateX(-50%) rotate(${baseRotate}deg)`;
     }
 
-    // Chip 0 (single tag above column 1)
-    if (index === 0) {
-      return `translateX(-50%) translateY(-6px) rotate(-1deg) scale(1.06)`;
-    }
-
     // Left chips in 2-chip pairs (move right + rotate closer)
-    if (index === 1 || index === 3) {
+    if (index % 2 === 0) {
       return `translateX(calc(-50% + 26px)) translateY(-4px) rotate(-1deg) scale(1.06)`;
     }
 

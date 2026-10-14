@@ -3,7 +3,7 @@ import { lifecycleSteps } from "@/lib/data/lifecycleSteps";
 
 export default function Lifecycle() {
   return (
-    <section className="relative isolate overflow-visible py-20 md:py-28 lg:py-32">
+    <section className="relative isolate overflow-visible py-20 md:py-28 lg:py-20">
       {/* Animated background ambient glow - Bottom Left corner */}
       <div
         aria-hidden="true"
@@ -23,9 +23,16 @@ export default function Lifecycle() {
       </div>
 
       {/* 3D Metallic Chrome Sculpture on the Right */}
+      
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-12 md:top-16 -right-12 md:-right-20 lg:-right-52 z-0 hidden h-[750px] lg:h-[860px] w-[500px] lg:w-[806px] opacity-90 lg:block"
+        className="pointer-events-none absolute top-12 md:top-16 -right-12 md:-right-20 lg:-right-52 z-0 hidden h-[750px] md:h-[800px] lg:h-[860px] w-[500px] lg:w-[806px] opacity-90 lg:block"
+        style={{
+          maskImage:
+            "linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
+          WebkitMaskImage:
+            "linear-gradient(90deg, transparent 0%, #000 8%, #000 92%, transparent 100%)",
+        }}
       >
         <video
           src="/videos/lifecycle-video.mp4"
@@ -37,13 +44,24 @@ export default function Lifecycle() {
           preload="metadata"
           className="absolute inset-0 size-full rotate-[-90deg] object-contain"
         />
+
+        {/* Single shade layer to smoothly hide video corners and cut edges */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -inset-6 z-10"
+          style={{
+            background:
+              "radial-gradient(ellipse 85% 75% at 50% 50%, transparent 35%, rgba(0,0,0,0.6) 65%, #000 88%), linear-gradient(to bottom, #000 0%, transparent 16%, transparent 75%, #000 92%), linear-gradient(to right, #000 0%, transparent 12%, transparent 88%, #000 100%)",
+          }}
+        />
       </div>
+
 
       <div className="relative z-10 mx-auto max-w-[1632px] px-6 md:px-9">
         {/* Section Header & Frosted Glass Card */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 md:gap-12">
           <div className="max-w-xl">
-            <h2 className="font-heading text-4xl sm:text-5xl md:text-6xl font-normal tracking-[-0.02em] text-white">
+            <h2 className="font-heading text-4xl sm:text-5xl md:text-7xl font-normal tracking-[-0.02em] text-white">
               The Lifecycle <span className="font-accent font-normal italic text-white">Chain</span>
             </h2>
             <p className="mt-3 font-body text-sm sm:text-base text-white/70 font-normal">
@@ -52,8 +70,8 @@ export default function Lifecycle() {
           </div>
 
           {/* Frosted Glass Info Card Overlapping Video */}
-          <div className="relative z-10 rounded-[24px] sm:rounded-[30px] border border-white/15 bg-white/[0.08] backdrop-blur-xl p-6 sm:p-8 max-w-[500px] shadow-2xl">
-            <p className="font-body text-xs sm:text-sm md:text-base leading-[1.6] text-white/80">
+          <div className="relative z-10 rounded-[24px] sm:rounded-[30px] border border-white/15 bg-white/[0.08] backdrop-blur-xl p-6 sm:p-8 max-w-[600px] shadow-2xl translate-y-16">
+            <p className="font-body text-xs sm:text-sm md:text-lg leading-[1.6] text-white/80">
               Most agencies hand you files and disappear. We design it, build
               it, put it live on infrastructure we manage, rank it, and keep it
               running. One team, one invoice, one person to call.
@@ -78,6 +96,7 @@ export default function Lifecycle() {
               <div
                 key={step.title}
                 className={`flex items-start gap-4 sm:gap-6 ${indentClasses}`}
+                
               >
                 {!isFirst && (
                   <div className="hidden lg:flex shrink-0 pt-1 items-center justify-center">

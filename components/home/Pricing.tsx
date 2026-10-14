@@ -7,6 +7,7 @@ import PricingCard from "@/components/ui/PricingCard";
 import { pricingPlans } from "@/lib/data/pricing";
 import FadeIn from "@/components/animation/FadeIn";
 import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerContainer";
+import Button from "../ui/Button";
 
 export default function Pricing() {
   const [billing, setBilling] = useState<"monthly" | "quarterly">("monthly");
@@ -105,28 +106,11 @@ export default function Pricing() {
           </StaggerContainer>
 
           <FadeIn direction="up" delay={0.3} className="mt-10 md:mt-12 flex justify-center">
-            <Link
+            <Button
               href="/pricing"
-              className="group relative flex items-center gap-2.5 overflow-hidden rounded-full bg-white py-2 pr-2 pl-6 font-heading text-xs sm:text-sm font-semibold text-black shadow-xl transition-all duration-300 hover:scale-105 active:scale-95"
             >
-              {/* Expanding Red Circle */}
-              <span
-                aria-hidden="true"
-                className="pointer-events-none absolute right-[8px] top-1/2 -translate-y-1/2 size-7 rounded-full bg-brand-red scale-0 opacity-0 transition-all duration-500 ease-out group-hover:scale-[35] group-hover:opacity-100"
-              />
-              <span className="relative z-10 transition-colors duration-300 group-hover:text-white">
-                See Full Pricing
-              </span>
-              <span className="relative z-10 flex size-7 items-center justify-center rounded-full bg-black transition-colors duration-300 group-hover:bg-transparent">
-                <Image
-                  src="/icons/Arrow_Right.png"
-                  alt=""
-                  width={12}
-                  height={12}
-                  className="size-3 transition-transform duration-300 ease-out group-hover:-rotate-45 group-hover:scale-105"
-                />
-              </span>
-            </Link>
+              See Full Pricing
+            </Button>
           </FadeIn>
 
         </div>

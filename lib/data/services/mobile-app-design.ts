@@ -4,10 +4,14 @@ import type { AboutService } from "@/lib/data/aboutServices";
 export const mobileAppDesignContent: ServiceDetailContent = {
   slug: "mobile-app-design",
   eyebrowTags: ["Websites", "Apps", "Deployment", "SEO", "Branding", "Social"],
-  heroH1: [[{ text: "Mobile App", italic: true }, { text: " Design Services." }]],
+  heroH1: [
+    [{ text: "Mobile App", italic: true }],
+    [{ text: "Design Services." }],
+  ],
   heroSubtext:
     "Digitize Hub designs mobile apps people keep on their home screen. From our Calgary and Atlanta offices, we help startups and growing businesses across Canada and the USA plan, design, and prototype iOS and Android apps that are simple to use and built to grow.",
   heroImageAlt: "Mobile app design services showing iOS and Android app screens by Digitize Hub",
+  heroVideo: "/videos/home-screen-app.mp4",
   heroTitle: [
     [{ text: "Hire a Top " }, { text: "Mobile App", italic: true }, { text: " Design" }],
     [{ text: "Company in Canada & the USA" }],
