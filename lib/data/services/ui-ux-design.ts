@@ -13,20 +13,25 @@ export const uiUxDesignContent: ServiceDetailContent = {
   heroImageAlt: "UI/UX design services by Digitize Hub showing a website and dashboard interface",
   heroVideo: "/videos/home-website-design-video.mp4",
   heroTitle: [
-    [{ text: "Hire a Top " }, { text: "UI / UX", italic: true }, { text: " Design Company" }],
-    [{ text: "in Canada & the USA" }],
+    [{ text: "Hire Top " }, { text: "UI / UX", italic: true }, { text: " Design" }],
+    [{ text: "Company in USA" }],
   ],
   heroBody:
     "Work with a UX design team that starts with your users, not trends. We plan, design, and test every screen so your website or product is easy to use and built to convert.",
   captivatingTitle: [
-    [{ text: "Captivating " }, { text: "UI & UX", italic: true }],
+    [{ text: "Captivating " }, { text: "UI / UX", italic: true }],
     [{ text: "Design That Converts" }],
   ],
   captivatingBody:
     "Looking for UI/UX designers who understand both your users and your business goals? Our team designs custom user experiences for SaaS platforms, websites, web apps, and enterprise systems. Every layout is backed by research, tested before launch, and handed over ready for development.",
   captivatingPills: ["User Research", "Wireframing", "Prototyping", "Usability Testing"],
-  servicesTitle: [[{ text: "Our " }, { text: "UI / UX", italic: true }, { text: " Design Services" }]],
-  processTitle: [[{ text: "Our " }, { text: "UI / UX", italic: true }, { text: " Design Process" }]],
+  servicesTitle: [
+    [{ text: "Our " }, { text: "UI / UX", italic: true }, { text: " Design Services" }],
+  ],
+  processTitle: [
+    [{ text: "Our " }, { text: "UI / UX", italic: true }],
+    [{ text: "Design Process" }],
+  ],
   processSteps: [
     {
       title: "In-depth Research",
@@ -60,7 +65,10 @@ export const uiUxDesignContent: ServiceDetailContent = {
   ],
   industriesBody:
     "We prioritize usability and conversion. Our UI/UX designers tailor every decision to your industry, its users, and its rules, so every flow feels familiar and trustworthy from the first click.",
-  caseStudiesTitle: [[{ text: "UI & UX", italic: true }, { text: " Design Case Studies" }]],
+  caseStudiesTitle: [
+    [{ text: "UI & UX", italic: true }, { text: " Design" }],
+    [{ text: "Case Studies." }],
+  ],
   auditCtaTitle: [
     [{ text: "Not Sure Where to Start? Get a" }],
     [{ text: "Website Audit", italic: true }, { text: " First." }],

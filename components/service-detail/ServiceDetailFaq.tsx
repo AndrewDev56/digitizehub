@@ -1,8 +1,11 @@
 "use client";
 
 import { useState } from "react";
+import FaqCard from "@/components/ui/FaqCard";
+import FadeIn from "@/components/animation/FadeIn";
+import type { FaqItem } from "@/lib/data/faq";
 
-const faqItems = [
+const faqItems: FaqItem[] = [
   {
     question: "How long does a typical design project take?",
     answer: "The timeline depends on the scope. We agree on milestones before the work begins.",
@@ -40,37 +43,69 @@ const faqItems = [
     answer: "Yes. We review existing experiences and identify practical opportunities to improve them.",
   },
   {
-    question: "How long does a typical design project take?",
-    answer: "We share a timeline and clear milestones before starting so you know what to expect.",
+    question: "What design tools does your team use?",
+    answer: "We primarily design in Figma, creating complete design systems, high-fidelity prototypes, and developer-ready handoffs.",
   },
 ];
 
 export default function ServiceDetailFaq() {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const half = Math.ceil(faqItems.length / 2);
+  const leftColItems = faqItems.slice(0, half);
+  const rightColItems = faqItems.slice(half);
 
   return (
-    <section aria-labelledby="service-faq-title" className="bg-background 2xl:mt-[450px]">
+    <section aria-labelledby="service-faq-title" className="relative isolate overflow-visible py-section bg-background">
       <div className="mx-auto max-w-[1632px] px-6 md:px-9 2xl:px-0">
-        <h2 id="service-faq-title" className="max-w-[845px] font-heading text-[42px] leading-[1.05] font-semibold tracking-[-0.01em] text-white md:text-6xl 2xl:text-[100px]">
-          If You&apos;re Wondering,
-          <br />
-          We&apos;re Answering
-        </h2>
+        <FadeIn direction="up">
+          <h2
+            id="service-faq-title"
+            className="font-heading text-4xl leading-[1.05] font-semibold tracking-[-0.02em] text-white md:text-6xl lg:text-7xl 2xl:text-8xl"
+          >
+            If You&apos;re <span className="font-accent italic">Wondering</span>,
+            <br />
+            We&apos;re <span className="font-accent italic">Answering</span>
+          </h2>
+        </FadeIn>
 
-        <div className="mt-12 grid grid-cols-1 gap-4 md:mt-16 md:grid-cols-2 md:gap-x-8 2xl:mt-[100px] 2xl:grid-cols-[796px_804px] 2xl:gap-x-8 2xl:gap-y-10">
-          {faqItems.map((item, index) => {
-            const open = openIndex === index;
-            return (
-              <article key={`${item.question}-${index}`} className="min-h-[88px] rounded-[20px] border border-white/10 bg-[#111111] p-5 shadow-[0_0_0_1px_rgba(255,255,255,0.03)] md:min-h-[104px] md:p-6">
-                <button type="button" aria-expanded={open} onClick={() => setOpenIndex(open ? null : index)} className="flex w-full items-center justify-between gap-5 text-left">
-                  <span className="font-heading text-base font-semibold text-white md:text-lg">{item.question}</span>
-                  <span aria-hidden className="shrink-0 font-body text-2xl leading-none text-accent-to">{open ? "−" : "+"}</span>
-                </button>
-                {open && <p className="mt-4 max-w-[700px] font-body text-sm leading-6 text-white/70 md:text-base">{item.answer}</p>}
-              </article>
-            );
-          })}
-        </div>
+        <FadeIn direction="up" delay={0.2}>
+          <div className="mt-10 grid grid-cols-1 gap-5 md:mt-14 md:grid-cols-2 md:gap-7 items-start">
+            {/* Left Column */}
+            <div className="flex flex-col gap-5 md:gap-7">
+              {leftColItems.map((item, i) => {
+                const itemIndex = i;
+                return (
+                  <FaqCard
+                    key={`${item.question}-${itemIndex}`}
+                    item={item}
+                    isOpen={openIndex === itemIndex}
+                    onToggle={() =>
+                      setOpenIndex(openIndex === itemIndex ? null : itemIndex)
+                    }
+                  />
+                );
+              })}
+            </div>
+
+            {/* Right Column */}
+            <div className="flex flex-col gap-5 md:gap-7">
+              {rightColItems.map((item, i) => {
+                const itemIndex = i + half;
+                return (
+                  <FaqCard
+                    key={`${item.question}-${itemIndex}`}
+                    item={item}
+                    isOpen={openIndex === itemIndex}
+                    onToggle={() =>
+                      setOpenIndex(openIndex === itemIndex ? null : itemIndex)
+                    }
+                  />
+                );
+              })}
+            </div>
+          </div>
+        </FadeIn>
       </div>
     </section>
   );

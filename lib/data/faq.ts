@@ -1,7 +1,7 @@
 export type FaqItem = {
   question: string;
   answer: string;
-  confirmed: boolean;
+  confirmed?: boolean;
 };
 
 // Questions transcribed directly from your Figma screenshot. Only card 1's

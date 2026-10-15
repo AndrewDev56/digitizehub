@@ -1,6 +1,5 @@
 "use client";
 
-import { useRef, useState } from "react";
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import TrustBadges from "@/components/service-detail/TrustBadges";
@@ -13,6 +12,7 @@ import {
 } from "@/lib/data/portfolio";
 import ServiceDetailFaq from "@/components/service-detail/ServiceDetailFaq";
 import ServiceInquiryForm from "@/components/service-detail/ServiceInquiryForm";
+import Testimonials from "@/components/home/Testimonials";
 
 const industryGridPositions = [
   { row: 1, column: 1 },
@@ -25,15 +25,6 @@ const industryGridPositions = [
   { row: 1, column: 3 },
   { row: 2, column: 3 },
   { row: 3, column: 3 },
-];
-
-const testimonials = [
-  {
-    quote: "Thank you, Digitize Hub, for turning our vision into reality. Your team's creativity and commitment made all the difference. The final product is exactly what we were hoping for.",
-    name: "Sarah Williams",
-    title: "CEO - XYZ Company",
-    initials: "SW",
-  },
 ];
 
 const caseStudies = [portfolioLarge, portfolioMedium, portfolioWide];
@@ -92,7 +83,7 @@ function ServiceShowcaseRow({ service, reverse }: { service: AboutService; rever
         <ul className="mt-8 grid grid-cols-1 gap-4 sm:grid-cols-2">
           {service.features.map((feature) => (
             <li key={feature} className="flex items-center gap-3 font-body text-sm text-white md:text-base">
-              <span aria-hidden className="flex size-7 shrink-0 items-center justify-center border border-accent-to text-accent-to">✓</span>
+              <span aria-hidden className="font-body text-lg font-bold text-accent-to"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10" fill="none"><path d="M1 4.75L4.88917 8.5L12.6667 1" stroke="#FF0036" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
               {feature}
             </li>
           ))}
@@ -103,109 +94,7 @@ function ServiceShowcaseRow({ service, reverse }: { service: AboutService; rever
   );
 }
 
-function TestimonialCarousel() {
-  const [index, setIndex] = useState(0);
-  const contentRef = useRef<HTMLDivElement>(null);
-  const isAnimating = useRef(false);
-  const testimonial = testimonials[index];
-  const hasMultiple = testimonials.length > 1;
 
-  const animateSlide = (newIndex: number, dir: number) => {
-    if (isAnimating.current || newIndex === index) return;
-    isAnimating.current = true;
-
-    const el = contentRef.current;
-    if (!el) {
-      setIndex(newIndex);
-      isAnimating.current = false;
-      return;
-    }
-
-    const xOut = dir * -50;
-    const xIn = dir * 50;
-
-    gsap.to(el, {
-      opacity: 0,
-      x: xOut,
-      duration: 0.28,
-      ease: "power2.in",
-      onComplete: () => {
-        setIndex(newIndex);
-        gsap.set(el, { x: xIn, opacity: 0 });
-        gsap.to(el, {
-          opacity: 1,
-          x: 0,
-          duration: 0.45,
-          ease: "power3.out",
-          onComplete: () => {
-            isAnimating.current = false;
-          },
-        });
-      },
-    });
-  };
-
-  const goTo = (next: number) => {
-    const target = (next + testimonials.length) % testimonials.length;
-    animateSlide(target, next > index ? 1 : -1);
-  };
-
-  return (
-    <section className="relative isolate overflow-visible pt-24 md:pt-32 2xl:mt-[260px] 2xl:pt-0">
-      <div className="relative z-10 mx-auto max-w-[1450px] px-6 2xl:px-0">
-        <div ref={contentRef} className="will-change-transform">
-          <blockquote className="min-h-[140px] sm:min-h-[120px] md:min-h-[160px] flex items-center justify-center text-center font-heading text-[28px] leading-[1.45] font-light tracking-[-0.03em] text-white md:text-[42px] 2xl:text-[54px]">
-            &ldquo;{testimonial.quote.replace(/^[“"]|[”"]$/g, "")}&rdquo;
-          </blockquote>
-
-          <div className="mt-10 flex items-center justify-center gap-4 2xl:mt-16">
-            <span aria-hidden className="flex size-11 shrink-0 items-center justify-center rounded-full border border-white/10 bg-[#111113] text-sm font-semibold text-white shadow-md">
-              {testimonial.initials}
-            </span>
-            <div className="text-left">
-              <p className="font-heading text-base font-semibold text-white">{testimonial.name}</p>
-              <p className="font-body text-sm text-white/60">{testimonial.title}</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="mt-10 flex items-center justify-center gap-6 2xl:mt-14">
-          <button
-            type="button"
-            aria-label="Previous testimonial"
-            disabled={!hasMultiple}
-            onClick={() => goTo(index - 1)}
-            className="group flex size-11 items-center justify-center rounded-full border border-white/10 bg-[#111113] text-white/80 transition-all duration-300 hover:scale-110 hover:border-white/30 hover:bg-white hover:text-black active:scale-95 disabled:opacity-30 cursor-pointer"
-          >
-            <span className="text-lg leading-none transition-transform duration-300 group-hover:-translate-x-0.5">&larr;</span>
-          </button>
-          <div className="flex items-center gap-2.5">
-            {testimonials.map((item, i) => (
-              <button
-                key={item.name}
-                type="button"
-                aria-label={`Go to testimonial ${i + 1}`}
-                onClick={() => animateSlide(i, i > index ? 1 : -1)}
-                className={`h-2.5 rounded-full transition-all duration-500 ease-out cursor-pointer ${
-                  i === index ? "w-8 bg-brand-red shadow-[0_0_10px_rgba(255,46,0,0.6)]" : "w-2.5 bg-white/20 hover:bg-white/40"
-                }`}
-              />
-            ))}
-          </div>
-          <button
-            type="button"
-            aria-label="Next testimonial"
-            disabled={!hasMultiple}
-            onClick={() => goTo(index + 1)}
-            className="group flex size-11 items-center justify-center rounded-full border border-white/10 bg-[#111113] text-white/80 transition-all duration-300 hover:scale-110 hover:border-white/30 hover:bg-white hover:text-black active:scale-95 disabled:opacity-30 cursor-pointer"
-          >
-            <span className="text-lg leading-none transition-transform duration-300 group-hover:translate-x-0.5">&rarr;</span>
-          </button>
-        </div>
-      </div>
-    </section>
-  );
-}
 
 export default function ServiceDetailSections({
   content,
@@ -216,35 +105,46 @@ export default function ServiceDetailSections({
 }) {
   return (
     <>
-      <section className="relative bg-background pt-24 md:pt-28 lg:pt-20 2xl:h-[1142px] 2xl:pt-0">
-        <div className="relative mx-auto max-w-[1632px] px-6 md:px-9 lg:grid lg:grid-cols-2 lg:grid-rows-2 lg:items-start lg:gap-x-16 lg:gap-y-6 2xl:block 2xl:h-full 2xl:px-0">
-          <h2 className="max-w-[804px] font-heading text-[44px] leading-[1.2] font-semibold text-white mb-10 md:text-6xl lg:mb-0 lg:col-start-1 lg:row-start-1 2xl:absolute 2xl:left-0 2xl:top-0 2xl:mb-0 2xl:text-[80px]">
-            <TitleWithSegments lines={content.captivatingTitle} />
-          </h2>
-          <div className="mt-8 md:mt-10 lg:col-start-1 lg:row-start-2 lg:mt-0 2xl:absolute 2xl:left-0 2xl:top-[425px] 2xl:mt-0">
-            <TrustBadges />
-          </div>
-          <p className="mt-10 max-w-[942px] font-body text-lg leading-[1.6] text-white/80 md:text-2xl lg:col-start-2 lg:row-start-1 lg:mt-0 2xl:absolute 2xl:left-[690px] 2xl:top-[292px] 2xl:mt-0 2xl:text-[30px]">
-            {content.captivatingBody}
-          </p>
-          <div className="mt-8 flex flex-wrap gap-[10px] md:mt-10 lg:col-start-2 lg:row-start-2 lg:mt-0 2xl:absolute 2xl:left-[690px] 2xl:top-[612px] 2xl:mt-0">
-            {content.captivatingPills.map((tag) => (
-              <span
-                key={tag}
-                className="inline-flex shrink-0 items-center justify-center rounded-[30px] bg-white/5 px-[34px] py-4 font-tag text-sm tracking-[-0.01em] whitespace-nowrap text-white underline md:text-[18px]"
-              >
-                {tag}
-              </span>
-            ))}
+      <section className="relative bg-background py-20 md:py-28 lg:py-32 2xl:py-36">
+        <div className="relative mx-auto max-w-[1632px] px-6 md:px-9 2xl:px-0">
+          <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16 2xl:gap-24">
+            {/* Left Column: Heading & Trust Badges */}
+            <div className="flex flex-col justify-between space-y-12 md:space-y-16 2xl:space-y-24">
+              <h2 className="max-w-[720px] font-heading text-[44px] leading-[1.1] font-semibold text-white md:text-6xl 2xl:text-[76px]">
+                <TitleWithSegments lines={content.captivatingTitle} />
+              </h2>
+              <div>
+                <TrustBadges />
+              </div>
+            </div>
+
+            {/* Right Column: Staggered Paragraph & Pills */}
+            <div className="flex flex-col space-y-10 lg:pt-16 2xl:pt-24">
+              <p className="max-w-[780px] font-body text-lg leading-[1.6] text-white/80 md:text-2xl 2xl:text-[28px]">
+                {content.captivatingBody}
+              </p>
+              <div className="flex flex-wrap gap-2.5 sm:gap-3">
+                {content.captivatingPills.map((tag) => (
+                  <span
+                    key={tag}
+                    className="inline-flex shrink-0 items-center justify-center rounded-[30px] bg-white/5 px-6 sm:px-[34px] py-3.5 sm:py-4 font-tag text-sm tracking-[-0.01em] whitespace-nowrap text-white md:text-[18px]"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       <div className="relative flex flex-col gap-16 2xl:gap-[160px]">
         <div aria-hidden className="pointer-events-none absolute top-[100px] -right-[150px] size-[400px] rounded-full bg-red-600/70 blur-[120px] 2xl:size-[600px] 2xl:blur-[160px]" />
-        <h2 className="mx-auto max-w-[1632px] px-6 font-heading text-5xl leading-[1] font-semibold tracking-[-0.01em] text-white md:px-9 md:text-7xl 2xl:text-[100px]">
-          <TitleWithSegments lines={content.servicesTitle} />
-        </h2>
+        <div className="mx-auto w-full max-w-[1632px] px-6 md:px-9 2xl:px-0">
+          <h2 className="font-heading text-4xl leading-[1.05] font-semibold tracking-[-0.01em] text-white md:text-6xl 2xl:text-[76px]">
+            <TitleWithSegments lines={content.servicesTitle} />
+          </h2>
+        </div>
         {showcaseRows.slice(0, 2).map((service, index) => (
           <ServiceShowcaseRow key={`${service.duration}-${index}`} service={service} reverse={service.imagePosition === "right"} />
         ))}
@@ -253,12 +153,12 @@ export default function ServiceDetailSections({
       <section className="relative bg-background pt-24 md:pt-32 2xl:mt-[200px] 2xl:pt-0">
         <div aria-hidden className="pointer-events-none absolute top-[200px] -left-[150px] size-[400px] rounded-full bg-red-600/50 blur-[120px] 2xl:size-[600px] 2xl:blur-[160px]" />
         <div className="relative mx-auto max-w-[1632px] px-6 md:px-9 2xl:px-0">
-          <h2 className="max-w-[675px] font-heading text-5xl leading-[1] font-semibold tracking-[-0.01em] text-white md:text-7xl 2xl:text-[100px]">
+          <h2 className="font-heading text-4xl leading-[1.05] font-semibold tracking-[-0.01em] text-white md:text-6xl 2xl:text-[76px]">
             <TitleWithSegments lines={content.processTitle} />
           </h2>
           <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 2xl:mt-[52px] 2xl:gap-[60px]">
             {content.processSteps.map((step) => (
-              <article key={step.title} className="flex flex-col rounded-[30px] border border-white/8 bg-white/4 p-7 md:p-10 2xl:min-h-[716px]">
+              <article key={step.title} className="flex flex-col rounded-[30px] border border-white/8 bg-white/4 p-7 md:p-10">
                 <div className="flex size-14 items-center justify-center rounded-2xl bg-white/10 md:size-16 2xl:size-[100px] 2xl:rounded-[14px]">
                   <Image src="/icons/process/rocket.svg" alt="" width={50} height={50} className="size-7 md:size-8 2xl:size-[50px]" />
                 </div>
@@ -300,7 +200,7 @@ export default function ServiceDetailSections({
 
       <section className="bg-background pt-24 md:pt-32 2xl:mt-[160px] 2xl:pt-0">
         <div className="mx-auto max-w-[1632px] px-6 md:px-9 2xl:px-0">
-          <h2 className="mx-auto max-w-[700px] text-center font-heading text-5xl leading-[1.2] font-semibold tracking-[-0.01em] text-white md:text-7xl 2xl:text-[100px]">
+          <h2 className="mx-auto  text-center font-heading text-5xl leading-[1.2] font-semibold tracking-[-0.01em] text-white md:text-7xl 2xl:text-[100px]">
             <TitleWithSegments lines={content.caseStudiesTitle} />
           </h2>
           <div className="mt-16 flex flex-col gap-8 2xl:mt-[100px] 2xl:gap-[100px]">
@@ -321,7 +221,7 @@ export default function ServiceDetailSections({
         </div>
       </section>
 
-      <TestimonialCarousel />
+      <Testimonials />
 
       <ServiceDetailFaq />
       <ServiceInquiryForm />
