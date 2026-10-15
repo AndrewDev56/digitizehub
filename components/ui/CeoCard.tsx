@@ -4,13 +4,11 @@ import type { Ceo } from "@/lib/data/ceo";
 export default function CeoCard({ ceo }: { ceo: Ceo }) {
   return (
     <div className="relative min-h-[380px] sm:min-h-[420px] md:min-h-[460px] overflow-hidden rounded-[28px] sm:rounded-[36px] md:rounded-[40px] bg-gradient-to-br from-[#ffeef0] via-[#ffd7df] to-[#f7b3c2] p-8 sm:p-10 md:p-11 shadow-2xl flex flex-col justify-between">
-      {/* Ambient soft glow overlays */}
       <div
         aria-hidden
         className="pointer-events-none absolute -right-20 top-1/3 size-[300px] rounded-full bg-rose-300/40 blur-[80px]"
       />
 
-      {/* Founder Photo positioned on right side */}
       <div className="absolute right-0 bottom-0 h-[82%] sm:h-[85%] md:h-[88%] w-[60%] sm:w-[58%] md:w-[68%] pointer-events-none select-none">
         <Image
           src={ceo.photo}
@@ -22,7 +20,6 @@ export default function CeoCard({ ceo }: { ceo: Ceo }) {
         />
       </div>
 
-      {/* Card Content (Left Column) */}
       <div className="relative z-10 flex flex-col max-w-[55%] sm:max-w-[52%]">
         <h3 className="font-heading text-2xl sm:text-3xl md:text-[34px] font-semibold tracking-tight text-[#111] leading-tight">
           {ceo.name}
@@ -38,7 +35,6 @@ export default function CeoCard({ ceo }: { ceo: Ceo }) {
         )}
       </div>
 
-      {/* LinkedIn Action Button */}
       <div className="relative z-10 mt-8 sm:mt-10">
         <a
           href="#"

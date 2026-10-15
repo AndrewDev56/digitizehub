@@ -70,7 +70,6 @@ export default function Header({ active }: HeaderProps) {
                   >
                     <span>{link.label}</span>
 
-                    {/* Active State: Vibrant Glowing Gradient Line & Center Light Dot */}
                     {isActive && (
                       <>
                         <span
@@ -84,7 +83,6 @@ export default function Header({ active }: HeaderProps) {
                       </>
                     )}
 
-                    {/* Hover State for Non-Active Links: Center-Expanding Gradient Reveal */}
                     {!isActive && (
                       <span
                         aria-hidden="true"

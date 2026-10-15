@@ -4,9 +4,6 @@ export type Service = {
   video: string;
 };
 
-// "Website Design" rendered with a large image by default, the rest are
-// link rows with a divider + arrow icon; hover/focus swaps the preview
-// to that row's own video.
 export const services: Service[] = [
   { title: "Website Design", href: "/services/website-design", video: "/videos/website-that-sell.mp4" },
   { title: "Mobile App Design", href: "/services/mobile-app-design", video: "/videos/home-screen-app.mp4" },

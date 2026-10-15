@@ -8,7 +8,6 @@ export type Stat = {
   description: string;
 };
 
-// Confirmed via Figma REST API (node 86:1789)
 export const stats: Stat[] = [
   {
     value: "200+",

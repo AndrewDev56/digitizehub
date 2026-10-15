@@ -9,7 +9,6 @@ import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerCon
 export default function ProjectTimeline() {
   return (
     <section className="relative isolate overflow-visible py-10 md:py-10">
-      {/* Ambient Eclipse Glow - Left */}
       <div
         aria-hidden="true"
         data-gsap-ambient

@@ -77,7 +77,6 @@ export const uiUxDesignContent: ServiceDetailContent = {
     "We go through your site page by page and send a plain English report: what is costing you customers, what to fix first, and what it should cost. Delivered in [X] business days for [Price]. If you hire us after, the fee comes off your project.",
 };
 
-// Card 2 timeline is marked [confirm] in the source content doc — check before publishing.
 export const uiUxShowcaseRows: AboutService[] = [
   {
     titleLines: [[{ text: "Website", italic: true }, { text: " UX Design Services" }]],

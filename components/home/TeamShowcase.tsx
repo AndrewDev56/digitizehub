@@ -8,7 +8,6 @@ import {
   teamRow4,
   GridItem,
 } from "@/lib/data/teamGrid";
-import FadeIn from "@/components/animation/FadeIn";
 
 function CardItem({ item, index }: { item: GridItem; index: number }) {
   if (item.type === "empty") {
@@ -39,20 +38,9 @@ function CardItem({ item, index }: { item: GridItem; index: number }) {
         sizes="(max-width: 640px) 130px, (max-width: 768px) 145px, 160px"
         className="object-cover object-center transition-transform duration-500 ease-out group-hover:scale-105"
       />
-
-      {/* Hover Info Overlay */}
-      {/* <div className="absolute inset-0 flex flex-col justify-end bg-gradient-to-t from-black/90 via-black/40 to-transparent p-3 opacity-0 backdrop-blur-[2px] transition-all duration-300 group-hover:opacity-100 sm:p-3.5">
-        <p className="font-heading text-xs font-semibold leading-tight text-white sm:text-sm">
-          {item.name}
-        </p>
-        <p className="mt-0.5 font-body text-[10px] font-medium leading-tight text-accent-from sm:text-xs">
-          {item.role}
-        </p>
-      </div> */}
     </div>
   );
 }
-
 
 function SlidingRow({
   items,
@@ -61,7 +49,6 @@ function SlidingRow({
   items: GridItem[];
   animationClass: string;
 }) {
-  // Repeat items multiple times so the infinite scroll animation seamlessly tiles without gaps
   const quadItems = [...items, ...items, ...items, ...items];
 
   return (
@@ -80,8 +67,6 @@ function SlidingRow({
 export default function TeamShowcase() {
   return (
     <section className="relative isolate overflow-visible bg-background py-24 md:py-32">
-
-      {/* Shaded Ellipse Center Image */}
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -100,33 +85,6 @@ export default function TeamShowcase() {
         />
       </div>
 
-
-      {/* Section Header */}
-      {/* <div className="relative z-10 mx-auto mb-14 max-w-[1450px] px-6 text-center md:mb-20 md:px-9">
-        <FadeIn direction="up">
-          <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 backdrop-blur-md">
-            <span className="size-1.5 rounded-full bg-accent-to animate-pulse" />
-            <span className="font-tag text-xs font-medium tracking-wider text-white/80 uppercase">
-              The Collective
-            </span>
-          </div>
-        </FadeIn>
-
-        <FadeIn direction="up" delay={0.1}>
-          <h2 className="mt-5 font-heading text-4xl font-semibold tracking-[-0.02em] text-white md:text-6xl">
-            The Minds Behind the{" "}
-            <span className="font-accent italic text-accent-from">Craft</span>
-          </h2>
-        </FadeIn>
-
-        <FadeIn direction="up" delay={0.2}>
-          <p className="mx-auto mt-4 max-w-2xl font-body text-base text-white/60 md:text-lg">
-            A multidisciplinary collective of visionary designers, architects, and engineers dedicated to crafting world-class digital products.
-          </p>
-        </FadeIn>
-      </div> */}
-
-      {/* Sliding Rows Grid with Edge Gradient Mask */}
       <div
         className="relative flex flex-col gap-3.5 sm:gap-4 md:gap-5"
         style={{
@@ -136,16 +94,9 @@ export default function TeamShowcase() {
             "linear-gradient(90deg, transparent 0%, rgba(0,0,0,0.85) 6%, #000 12%, #000 88%, rgba(0,0,0,0.85) 94%, transparent 100%)",
         }}
       >
-        {/* Row 1: Sliding to the RIGHT */}
         <SlidingRow items={teamRow1} animationClass="animate-slide-right-slow" />
-
-        {/* Row 2: Sliding to the LEFT */}
         <SlidingRow items={teamRow2} animationClass="animate-slide-left-slow" />
-
-        {/* Row 3: Sliding to the RIGHT */}
         <SlidingRow items={teamRow3} animationClass="animate-slide-right-mid" />
-
-        {/* Row 4: Sliding to the LEFT */}
         <SlidingRow items={teamRow4} animationClass="animate-slide-left-mid" />
       </div>
     </section>

@@ -28,13 +28,11 @@ export default function ContactForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // TODO: wire up to a real submission endpoint.
     console.log({ needs, budget, company, name, email, phone, designation, hearAbout, details });
   };
 
   return (
     <form onSubmit={handleSubmit} className="relative isolate overflow-visible pb-16 md:pb-24">
-      {/* Ambient Eclipse Glow - Left */}
       <div
         aria-hidden="true"
         data-gsap-ambient

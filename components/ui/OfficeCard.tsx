@@ -8,13 +8,11 @@ export default function OfficeCard({ office }: { office: Office }) {
   return (
     <div className="group relative flex flex-col justify-between rounded-[24px] border border-white/[0.08] bg-[#111113]/90 p-7 sm:p-8 md:rounded-[28px] md:p-9 shadow-xl backdrop-blur-md transition-all duration-300">
       <div>
-        {/* City Title */}
         <h3 className="font-heading text-xl sm:text-4xl font-semibold text-white tracking-tight pb-6 border-b border-white/[0.08]">
           <span className="font-accent italic ">{office.city}</span> Office
         </h3>
 
         <div className="mt-6 flex flex-col gap-5 md:gap-6">
-          {/* Phone Row */}
           <div className="flex items-center gap-4">
             <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.08]">
               <Image
@@ -33,7 +31,6 @@ export default function OfficeCard({ office }: { office: Office }) {
             </a>
           </div>
 
-          {/* Address Row */}
           <div className="flex items-start gap-4">
             <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.08]">
               <Image
@@ -51,7 +48,6 @@ export default function OfficeCard({ office }: { office: Office }) {
         </div>
       </div>
 
-      {/* View on Map Link */}
       <div className="mt-8 flex justify-end">
         <Link
           href={office.mapUrl || "#"}

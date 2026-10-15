@@ -8,7 +8,6 @@ import Button from "../ui/Button";
 export default function CtaBanner() {
   return (
     <section className="relative isolate overflow-visible bg-background px-6 py-24 md:px-9 md:py-32">
-      {/* Animated background ambient glow - Left side */}
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -25,7 +24,6 @@ export default function CtaBanner() {
           className="h-auto w-full object-contain pointer-events-none"
         />
       </div>
-
 
       <FadeIn direction="up">
         <div
@@ -57,7 +55,6 @@ export default function CtaBanner() {
               href="/contact"
               className="group relative flex items-center gap-3 overflow-hidden rounded-full bg-black py-3.5 pr-3.5 pl-7 font-heading text-sm font-semibold text-white shadow-xl transition-all duration-300  active:scale-95"
             >
-              {/* Expanding Red Circle Layer */}
               <span
                 aria-hidden="true"
                 className="pointer-events-none absolute right-[14px] top-1/2 -translate-y-1/2 size-8 rounded-full bg-brand-red scale-0 opacity-0 transition-all duration-500 ease-out group-hover:scale-[35] group-hover:opacity-100"

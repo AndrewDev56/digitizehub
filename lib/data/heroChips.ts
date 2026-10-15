@@ -5,7 +5,6 @@ export type HeroChip = {
   rotate: number;
 };
 
-// Confirmed via Figma REST API (node 86:1789). Left-to-right screen order.
 export const heroChips: HeroChip[] = [
   { label: "Mobile Apps", left: 4.5, top: -2, rotate: -8 },
   { label: "UI/UX Design", left: 19, top: 1, rotate: 8 },

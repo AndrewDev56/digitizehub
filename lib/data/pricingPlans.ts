@@ -7,9 +7,6 @@ export type PricingPlan = {
   featured: boolean;
 };
 
-// Confirmed via Figma REST API (node 1:3030). Custom's feature list is
-// literally identical to Launch's in the Figma file — not an error on my
-// end, worth flagging to whoever owns the design.
 export const pricingPlans: PricingPlan[] = [
   {
     name: "Launch",

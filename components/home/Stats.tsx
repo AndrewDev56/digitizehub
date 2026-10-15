@@ -10,14 +10,12 @@ import AnimatedCounter from "@/components/animation/AnimatedCounter";
 export default function Stats() {
   const [hoveredCol, setHoveredCol] = useState<number | null>(null);
 
-  // Helper to determine column index for each chip (2 chips per column)
   const getChipCol = (index: number) => {
     if (index === 0 || index === 1) return 0;
     if (index === 2 || index === 3) return 1;
     return 2;
   };
 
-  // Helper to compute dynamic transform for desktop chips
   const getChipTransform = (index: number, baseRotate: number) => {
     const colIndex = getChipCol(index);
     const isHovered = hoveredCol === colIndex;
@@ -26,19 +24,16 @@ export default function Stats() {
       return `translateX(-50%) rotate(${baseRotate}deg)`;
     }
 
-    // Left chips in 2-chip pairs (move right + rotate closer)
     if (index % 2 === 0) {
       return `translateX(calc(-50% + 26px)) translateY(-4px) rotate(-1deg) scale(1.06)`;
     }
 
-    // Right chips in 2-chip pairs (move left + rotate closer)
     return `translateX(calc(-50% - 26px)) translateY(-4px) rotate(1deg) scale(1.06)`;
   };
 
   return (
     <section id="stats-section" className="relative isolate pb-24 md:pb-32">
 
-      {/* Desktop Hero Chips Bar */}
       <div className="relative mx-auto translate-x-28 hidden h-[100px] w-full max-w-[1920px] lg:block mt-[40px]">
         {heroChips.map((chip, index) => {
           const colIndex = getChipCol(index);
@@ -62,7 +57,6 @@ export default function Stats() {
         })}
       </div>
 
-      {/* Mobile Chips List */}
       <div className="mx-auto flex max-w-[1632px] flex-wrap items-center justify-center gap-3 px-6 lg:hidden">
         {heroChips.map((chip, index) => {
           const colIndex = getChipCol(index);
@@ -84,7 +78,6 @@ export default function Stats() {
         })}
       </div>
 
-      {/* Stats Counter Columns */}
       <div className="mx-auto mt-16 max-w-[1632px] px-6 md:px-9 lg:mt-10">
         <StaggerContainer staggerChildren={0.2} className="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-8">
           {stats.map((stat, index) => {

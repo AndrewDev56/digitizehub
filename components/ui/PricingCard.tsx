@@ -17,7 +17,6 @@ export default function PricingCard({
   return (
     <div className="relative flex h-full flex-col justify-between rounded-[24px] sm:rounded-[28px] border border-white/10 bg-[#141414] p-6 sm:p-7 md:p-8 backdrop-blur-md transition-all duration-300 hover:border-white/20">
       <div>
-        {/* Category Header Row */}
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
             <span className="flex size-14 shrink-0 items-center justify-center rounded-xl ">
@@ -40,7 +39,6 @@ export default function PricingCard({
           )}
         </div>
 
-        {/* Tier Name & Start Now CTA */}
         <div className="mt-6 flex items-center justify-between gap-4">
           <h3 className="font-heading text-2xl sm:text-4xl font-medium tracking-[-0.01em] text-white">
             {tier}
@@ -49,7 +47,6 @@ export default function PricingCard({
             href="/contact"
             className="group relative flex shrink-0 items-center gap-2 overflow-hidden rounded-full bg-white py-1.5 pr-1.5 pl-4 font-heading text-xs sm:text-sm font-semibold text-black transition-all duration-300 active:scale-95"
           >
-            {/* Expanding Red Circle Layer */}
             <span
               aria-hidden="true"
               className="pointer-events-none absolute right-[6px] top-1/2 -translate-y-1/2 size-6 sm:size-7 rounded-full bg-brand-red scale-0 opacity-0 transition-all duration-500 ease-out group-hover:scale-[35] group-hover:opacity-100"
@@ -72,7 +69,6 @@ export default function PricingCard({
 
         <div aria-hidden className="my-5 h-px w-full bg-white/10" />
 
-        {/* Features list */}
         <ul className="flex flex-col gap-3">
           {plan.features.map((feature) => (
             <li

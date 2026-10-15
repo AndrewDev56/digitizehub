@@ -6,7 +6,6 @@ export default function Hero() {
 
   return (
     <section className="relative isolate overflow-visible pt-[140px] pb-16 md:pt-[220px] md:pb-24">
-      {/* Ambient Eclipse Glow - Top Right */}
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -25,7 +24,6 @@ export default function Hero() {
         />
       </div>
 
-      {/* Ambient Eclipse Glow - Left */}
       <div
         aria-hidden="true"
         data-gsap-ambient

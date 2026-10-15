@@ -58,7 +58,6 @@ export default function HowWeWork() {
       ref={sectionRef}
       className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-background "
     >
-      {/* Ambient background glow */}
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0 flex items-center justify-center opacity-30"
@@ -67,7 +66,6 @@ export default function HowWeWork() {
       </div>
 
       <div className="relative z-10 w-full">
-        {/* Header */}
         <div className="mx-auto max-w-[1632px] px-6 text-center md:px-9">
           <FadeIn direction="up">
             <h2 className="font-heading text-4xl font-normal tracking-[-0.02em] text-white sm:text-5xl md:text-7xl">
@@ -76,7 +74,6 @@ export default function HowWeWork() {
           </FadeIn>
         </div>
 
-        {/* Horizontal Pinning Track */}
         <div className="relative mt-16 w-full overflow-hidden md:mt-20">
           <div
             ref={trackRef}

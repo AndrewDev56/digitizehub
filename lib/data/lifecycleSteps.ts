@@ -4,8 +4,6 @@ export type LifecycleStep = {
   confirmed: boolean;
 };
 
-// Confirmed via Figma REST API (node 101:2961) — all four descriptions are
-// exact matches.
 export const lifecycleSteps: LifecycleStep[] = [
   {
     title: "Design",

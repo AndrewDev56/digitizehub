@@ -3,7 +3,6 @@ import Image from "next/image";
 export default function BlogHero() {
   return (
     <div className="relative isolate overflow-visible pt-[140px] pb-16 text-center md:pt-[220px]">
-      {/* Ambient Eclipse Glow - Top Right */}
       <div
         aria-hidden="true"
         data-gsap-ambient

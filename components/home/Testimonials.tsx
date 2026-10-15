@@ -31,7 +31,6 @@ export default function Testimonials() {
     const xOut = dir * -40;
     const xIn = dir * 40;
 
-    // Smooth exit
     gsap.to(el, {
       opacity: 0,
       x: xOut,
@@ -39,9 +38,7 @@ export default function Testimonials() {
       ease: "power2.in",
       onComplete: () => {
         setIndex(newIndex);
-        // Position at entrance offset before fading in
         gsap.set(el, { x: xIn, opacity: 0 });
-        // Smooth entrance
         gsap.to(el, {
           opacity: 1,
           x: 0,
@@ -65,7 +62,6 @@ export default function Testimonials() {
     <section className="relative isolate overflow-visible py-16 md:py-24 2xl:mt-[60px]">
       <div className="relative z-10 mx-auto max-w-[1450px] px-4 sm:px-8 md:px-12 2xl:px-0">
         <div className="relative flex items-center justify-between gap-4 md:gap-8">
-          {/* Left Arrow Button */}
           <button
             type="button"
             aria-label="Previous testimonial"
@@ -86,7 +82,6 @@ export default function Testimonials() {
             </svg>
           </button>
 
-          {/* Central Animated Testimonial */}
           <div
             ref={contentRef}
             className="mx-auto container px-2 sm:px-6 md:px-8 text-center will-change-transform"
@@ -95,7 +90,6 @@ export default function Testimonials() {
               &ldquo;{testimonial.quote.replace(/^[“"]|[”"]$/g, "")}&rdquo;
             </blockquote>
 
-            {/* Author Details */}
             <div className="mt-8 sm:mt-10 md:mt-12 flex items-center justify-center gap-3.5 sm:gap-4">
               <span
                 aria-hidden
@@ -115,7 +109,6 @@ export default function Testimonials() {
             </div>
           </div>
 
-          {/* Right Arrow Button */}
           <button
             type="button"
             aria-label="Next testimonial"
@@ -137,7 +130,6 @@ export default function Testimonials() {
           </button>
         </div>
 
-        {/* Circular Dot Indicators */}
         <div className="mt-10 sm:mt-12 md:mt-14 flex items-center justify-center gap-2.5">
           {testimonials.map((item, i) => {
             const isActive = i === index;

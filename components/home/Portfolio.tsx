@@ -52,7 +52,6 @@ export default function Portfolio() {
 
   return (
     <section ref={root} className="relative isolate overflow-visible py-20 md:py-28">
-      {/* Animated background ambient glow - Top Left corner */}
       <div
         aria-hidden="true"
         data-gsap-ambient

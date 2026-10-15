@@ -4,9 +4,6 @@ export type TimelineStep = {
   duration: string;
 };
 
-// Transcribed directly from your Figma screenshot — titles and durations
-// confirmed, exact icon asset still pending (using a shared rocket icon
-// placeholder, same icon repeats across all 6 in the screenshot).
 export const timelineSteps: TimelineStep[] = [
   { number: "01", title: "Research", duration: "about 1 week" },
   { number: "02", title: "Strategy and Structure", duration: "3 to 5 days" },

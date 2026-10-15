@@ -11,7 +11,6 @@ import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerCon
 export default function Hero() {
   return (
     <section className="relative isolate pt-[140px] pb-16 md:pt-[220px] md:pb-[60px]">
-      {/* Animated background ambient glow - Top Right Navbar area */}
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -30,7 +29,6 @@ export default function Hero() {
         />
       </div>
 
-      {/* Animated background ambient glow - Left / Icons & Stats section */}
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -151,4 +149,4 @@ export default function Hero() {
       </button>
     </section>
   );
-}
+}

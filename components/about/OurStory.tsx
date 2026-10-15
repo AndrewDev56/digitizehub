@@ -29,7 +29,6 @@ export default function OurStory() {
     () => {
       const items = gsap.utils.toArray<HTMLElement>(".story-timeline-item");
 
-      // Animate each timeline item as it enters the viewport on scroll
       items.forEach((item) => {
         const side = item.dataset.side;
         const xOffset = side === "left" ? -40 : 40;
@@ -68,7 +67,6 @@ export default function OurStory() {
           );
       });
 
-      // Animate vertical center line progress as user scrolls through the timeline container
       if (timelineRef.current && lineProgressRef.current) {
         gsap.fromTo(
           lineProgressRef.current,
@@ -95,7 +93,6 @@ export default function OurStory() {
       ref={containerRef}
       className="relative isolate overflow-visible py-24 md:py-32"
     >
-      {/* Ambient Eclipse Glow - Left */}
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -113,7 +110,6 @@ export default function OurStory() {
         />
       </div>
 
-      {/* Ambient Eclipse Glow - Right / Bottom */}
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -132,22 +128,18 @@ export default function OurStory() {
       </div>
 
       <div className="relative mx-auto max-w-[1100px] px-6 md:px-9">
-        {/* Section Header */}
         <FadeIn direction="up">
           <h2 className="text-center font-heading text-3xl font-normal tracking-[-0.02em] text-white md:text-6xl">
             Our <span className="font-accent italic">Story</span>
           </h2>
         </FadeIn>
 
-        {/* Vertical Timeline with alternating Left & Right paragraphs */}
         <div ref={timelineRef} className="relative mt-20 md:mt-28">
-          {/* Central Vertical Line (Background Track) */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute top-0 bottom-0 left-4 -translate-x-1/2 w-px bg-white/10 md:left-1/2"
           />
 
-          {/* Central Vertical Line (Animated Progress Fill) */}
           <div
             ref={lineProgressRef}
             aria-hidden="true"
@@ -166,7 +158,6 @@ export default function OurStory() {
                     isLeft ? "md:justify-start" : "md:justify-end"
                   }`}
                 >
-                  {/* Horizontal Connector Line */}
                   <div
                     className={`story-connector hidden md:block absolute top-1/2 -translate-y-1/2 h-px bg-white/10 ${
                       isLeft
@@ -175,7 +166,6 @@ export default function OurStory() {
                     }`}
                   />
 
-                  {/* Paragraph Box */}
                   <div
                     className={`story-text pl-10 md:pl-0 w-full md:w-[44%] lg:w-[42%] ${
                       isLeft ? "md:pr-10 lg:pr-14 md:text-left" : "md:pl-10 lg:pl-14 md:text-left"
@@ -190,19 +180,15 @@ export default function OurStory() {
             })}
           </div>
 
-          {/* Bottom Framing Line with Left & Right Ticks */}
           <div
             aria-hidden="true"
             className="relative mt-16 md:mt-24 w-full h-px bg-white/5"
           >
-            {/* Left tick pointing up */}
             <div className="absolute left-0 bottom-0 h-4 md:h-5 w-px bg-white/5 top-0" />
-            {/* Right tick pointing up */}
             <div className="absolute right-0 bottom-0 h-4 md:h-5 w-px bg-white/5 top-0" />
           </div>
         </div>
 
-        {/* Bottom Quote Banner */}
         <FadeIn direction="up" delay={0.3} className="relative mt-24 md:mt-32">
           <span
             aria-hidden
@@ -236,9 +222,7 @@ export default function OurStory() {
             className="relative mt-16 md:mt-24 w-full h-px bg-white/5"
           >
           </div>
-         {/* Ambient Eclipse Glow - Right / Bottom */}
-     
-      </div>
+         </div>
       
        <div
         aria-hidden="true"

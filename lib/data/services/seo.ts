@@ -69,9 +69,6 @@ export const seoContent: ServiceDetailContent = {
     "We go through your site page by page and send a plain English report: what is costing you customers, what to fix first, and what it should cost. Delivered in [X] business days for [Price]. If you hire us after, the fee comes off your project.",
 };
 
-// Both rows use the same seo.mp4 since only one SEO video asset exists —
-// tell me if On-Page and Off-Page should each get their own separate video.
-// Both timelines are marked [confirm] in the source content doc — check before publishing.
 export const seoShowcaseRows: AboutService[] = [
   {
     titleLines: [[{ text: "On-Page", italic: true }, { text: " SEO Services" }]],

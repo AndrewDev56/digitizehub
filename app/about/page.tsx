@@ -3,7 +3,6 @@ import Footer from "@/components/layout/Footer";
 import Hero from "@/components/about/Hero";
 import OurStory from "@/components/about/OurStory";
 import HowWeWork from "@/components/about/HowWeWork";
-// import FoundersAndOffices from "@/components/about/FoundersAndOffices";
 import Testimonials from "@/components/home/Testimonials";
 import CtaBanner from "@/components/home/CtaBanner";
 import Stats from "@/components/home/Stats";
@@ -21,7 +20,6 @@ export default function About() {
         <HowWeWork />
         <TeamShowcase/>
         <FounderAndOffices/>
-        {/* <FoundersAndOffices /> */}
         <Testimonials />
         <CtaBanner />
       </main>

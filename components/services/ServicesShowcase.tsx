@@ -5,7 +5,6 @@ import { aboutServices } from "@/lib/data/aboutServices";
 export default function ServicesShowcase() {
   return (
     <section className="relative isolate overflow-visible py-24 md:py-32">
-      {/* Ambient Eclipse Glow - Left */}
       <div
         aria-hidden="true"
         data-gsap-ambient

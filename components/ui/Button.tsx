@@ -38,18 +38,15 @@ export default function Button({
 }: CommonProps) {
   const content = (
     <>
-      {/* Expanding Red Circle Layer from the Black Circle */}
       <span
         aria-hidden="true"
         className={`pointer-events-none absolute top-1/2 -translate-y-1/2 scale-0 opacity-0 rounded-full bg-brand-red transition-all duration-500 ease-out group-hover:scale-[35] group-hover:opacity-100 ${iconRightOffset[size]} ${iconSizeStyles[size]}`}
       />
 
-      {/* Button Label */}
       <span className="relative z-10 whitespace-nowrap font-heading font-semibold tracking-[-0.02em] text-black transition-colors duration-300 group-hover:text-white">
         {children}
       </span>
 
-      {/* Circle Icon Container */}
       <span
         className={`relative z-10 flex shrink-0 items-center justify-center rounded-full bg-[#111111] transition-colors duration-300 group-hover:bg-transparent ${iconSizeStyles[size]}`}
       >

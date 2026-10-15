@@ -10,7 +10,6 @@ export type AboutService = {
   href?: string;
 };
 
-// Confirmed via Figma REST API (node 64:1795).
 export const aboutServices: AboutService[] = [
   {
     titleLines: [[{ text: "Websites", italic: true }, { text: " that Sell" }]],

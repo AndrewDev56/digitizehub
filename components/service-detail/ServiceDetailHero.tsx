@@ -9,7 +9,6 @@ export default function ServiceDetailHero({
 }) {
   return (
     <section className="relative isolate overflow-visible text-white">
-      {/* Ambient Eclipse Glow - Top Right */}
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -28,7 +27,6 @@ export default function ServiceDetailHero({
         />
       </div>
 
-      {/* Ambient Eclipse Glow - Left */}
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -68,9 +66,7 @@ export default function ServiceDetailHero({
           ))}
         </div>
 
-        {/* Hero Video Container with Eclipse Glow */}
         <div className="relative mt-12 md:mt-16 2xl:mt-24">
-          {/* Ambient Eclipse Glow Behind Container */}
           <div
             aria-hidden="true"
             data-gsap-ambient
@@ -89,7 +85,6 @@ export default function ServiceDetailHero({
             />
           </div>
 
-          {/* Additional Ambient Corner Glows */}
           <div
             aria-hidden="true"
             className="pointer-events-none absolute -top-12 -left-12 z-0 size-[320px] md:size-[500px] rounded-full bg-red-600/30 blur-[130px]"
@@ -99,13 +94,11 @@ export default function ServiceDetailHero({
             className="pointer-events-none absolute -bottom-12 -right-12 z-0 size-[380px] md:size-[580px] rounded-full bg-red-600/35 blur-[140px]"
           />
 
-          {/* Main Card Container */}
           <div
             aria-label={`${content.heroImageAlt}`}
             className="relative z-10 overflow-hidden rounded-[28px] sm:rounded-[36px] md:rounded-[44px] border border-white/10 bg-[#070709] p-5 sm:p-8 md:p-12 lg:p-14 shadow-2xl backdrop-blur-md"
           >
-            {/* Ambient Eclipse Glow - Left */}
-      <div
+            <div
         aria-hidden="true"
         data-gsap-ambient
         data-gsap-scale="1.1"
@@ -138,7 +131,6 @@ export default function ServiceDetailHero({
           className="h-auto w-full object-contain pointer-events-none"
         />
       </div>
-            {/* Video Frame */}
             <div className="relative  overflow-hidden rounded-xl sm:rounded-2xl md:rounded-[20px] aspect-[16/10] sm:aspect-[16/12] bg-black/60 shadow-inner w-[80%] m-auto">
               <video
                 src={
@@ -161,7 +153,6 @@ export default function ServiceDetailHero({
               />
             </div>
 
-            {/* Caption below video */}
             <p className="mt-5 text-center font-body text-xs text-white/50 sm:text-sm md:mt-7">
               {content.heroImageAlt}
             </p>
@@ -169,9 +160,7 @@ export default function ServiceDetailHero({
         </div>
       </div>
 
-      {/* Middle Banner with Light Red Vertical Lines & Ambient Glow */}
       <div className="relative mt-16 2xl:mt-28 w-full min-h-[600px] h-screen py-16 md:py-24 flex items-center flex-col justify-center overflow-hidden bg-black text-center px-6 md:px-9">
-        {/* Layer 1: Ambient Red Glow (Upper Left, Upper Right, & Center) */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0 select-none"
@@ -185,24 +174,15 @@ export default function ServiceDetailHero({
           }}
         />
 
-        {/* Layer 2: Exactly 12 Vertical Columns with Light Red Lines */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0 grid grid-cols-12 select-none"
-          // style={{
-          //   maskImage:
-          //     "linear-gradient(180deg, transparent 0%, black 14%, black 74%, transparent 100%)",
-          //   WebkitMaskImage:
-          //     "linear-gradient(180deg, transparent 0%, black 14%, black 74%, transparent 100%)",
-          // }}
         >
           {Array.from({ length: 12 }).map((_, i) => (
             <div
               key={i}
               className="relative h-full"
               style={{
-                // boxShadow:
-                //   "inset 1px 0 0 rgba(255, 120, 140, 0.4), inset -1px 0 0 rgba(0, 0, 0, 0.85)",
                 background:
                   "linear-gradient(90deg, rgba(255, 110, 130, 0.09) 0%, rgba(255, 70, 90, 0.02) 40%, rgba(0, 0, 0, 0.35) 100%)",
               }}
@@ -210,7 +190,6 @@ export default function ServiceDetailHero({
           ))}
         </div>
 
-        {/* Layer 3: Vertical Vignette & Edge Fades */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0 select-none"
@@ -222,7 +201,6 @@ export default function ServiceDetailHero({
           }}
         />
 
-        {/* Banner Content */}
         <div className="relative z-10 mx-auto max-w-[1356px] text-center">
           <h2 data-gsap-ignore className="relative font-heading text-[42px] leading-[0.9] font-semibold tracking-[-0.05em] text-white md:text-[80px] 2xl:text-[120px] 2xl:leading-[0.85]">
             {content.heroTitle.map((line, i) => (

@@ -4,7 +4,6 @@ import { lifecycleSteps } from "@/lib/data/lifecycleSteps";
 export default function Lifecycle() {
   return (
     <section className="relative isolate overflow-visible py-20 md:py-28 lg:py-20">
-      {/* Animated background ambient glow - Bottom Left corner */}
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -22,8 +21,6 @@ export default function Lifecycle() {
         />
       </div>
 
-      {/* 3D Metallic Chrome Sculpture on the Right */}
-      
       <div
         aria-hidden="true"
         className="pointer-events-none absolute top-12 md:top-16 -right-12 md:-right-20 lg:-right-52 z-0 hidden h-[750px] md:h-[800px] lg:h-[860px] w-[500px] lg:w-[806px] opacity-90 lg:block"
@@ -45,7 +42,6 @@ export default function Lifecycle() {
           className="absolute inset-0 size-full rotate-[-90deg] object-contain"
         />
 
-        {/* Single shade layer to smoothly hide video corners and cut edges */}
         <div
           aria-hidden="true"
           className="pointer-events-none absolute -inset-6 z-10"
@@ -56,9 +52,7 @@ export default function Lifecycle() {
         />
       </div>
 
-
       <div className="relative z-10 mx-auto max-w-[1632px] px-6 md:px-9">
-        {/* Section Header & Frosted Glass Card */}
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 md:gap-12">
           <div className="max-w-xl">
             <h2 className="font-heading text-4xl sm:text-5xl md:text-7xl font-normal tracking-[-0.02em] text-white">
@@ -69,7 +63,6 @@ export default function Lifecycle() {
             </p>
           </div>
 
-          {/* Frosted Glass Info Card Overlapping Video */}
           <div className="relative z-10 rounded-[24px] sm:rounded-[30px] border border-white/15 bg-white/[0.08] backdrop-blur-xl p-6 sm:p-8 max-w-[600px] shadow-2xl translate-y-16">
             <p className="font-body text-xs sm:text-sm md:text-lg leading-[1.6] text-white/80">
               Most agencies hand you files and disappear. We design it, build
@@ -79,7 +72,6 @@ export default function Lifecycle() {
           </div>
         </div>
 
-        {/* Stepped Cascade Chain Steps */}
         <div className="mt-14 md:mt-20 flex flex-col gap-8 md:gap-12">
           {lifecycleSteps.map((step, index) => {
             const isFirst = index === 0;

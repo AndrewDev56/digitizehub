@@ -8,11 +8,6 @@ export type PricingPlan = {
   featured: boolean;
 };
 
-// Transcribed from a low-resolution screenshot — structure (icon, inline
-// price + CTA, feature count) is confident; exact feature wording for
-// Custom in particular is uncertain since it looked nearly identical to
-// Launch at this resolution. Verify once you can send a clearer crop or
-// Figma access resets.
 export const pricingPlans: PricingPlan[] = [
   {
     name: "Launch",

@@ -8,7 +8,6 @@ export type Founder = {
 export const founderIntro =
   "You will talk to the people doing the work. We are a 25 person team across Calgary and Atlanta, and someone replies to every inquiry within one business day.";
 
-// Second slide's bio is a placeholder — swap in the real copy when available.
 export const founders: Founder[] = [
   {
     name: "Raheel Karim",

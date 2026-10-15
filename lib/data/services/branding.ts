@@ -69,9 +69,6 @@ export const brandingContent: ServiceDetailContent = {
     "We go through your site page by page and send a plain English report: what is costing you customers, what to fix first, and what it should cost. Delivered in [X] business days for [Price]. If you hire us after, the fee comes off your project.",
 };
 
-// Both rows use the same Branding-logo-design.mp4 since only one branding video asset exists —
-// tell me if Logo Design and Brand Identity should each get their own separate video.
-// Card 1 timeline is marked [confirm] in the source content doc — check before publishing.
 export const brandingShowcaseRows: AboutService[] = [
   {
     titleLines: [[{ text: "Logo", italic: true }, { text: " Design Services" }]],

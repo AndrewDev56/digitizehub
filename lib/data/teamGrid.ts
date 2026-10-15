@@ -15,7 +15,6 @@ export interface EmptySlot {
 
 export type GridItem = TeamMember | EmptySlot;
 
-
 export const teamRow1: GridItem[] = [
   { id: "e1-1", type: "empty", span: "single" },
   {

@@ -4,16 +4,10 @@ export type PortfolioItem = {
   mockupTags?: string[];
   image: string;
   video: string;
-  /** Real Figma layer dimensions — used to derive the aspect ratio, not for next/image width/height. */
   imageWidth: number;
   imageHeight: number;
 };
 
-// Figma nodes 1:612, 1:601, 1:590, 1:568, 1:579. Only card 1 has a real
-// title ("Sapforce") in the file — the rest literally said "Project Title";
-// filled in with placeholder names below, swap for real project names when known.
-// Videos reused from the service pages, matched by tag — not real footage
-// of these specific client projects. Swap in real project clips when available.
 export const portfolioLarge: PortfolioItem = {
   title: "Sapforce",
   tags: ["Website", "UI/UX", "Animation"],

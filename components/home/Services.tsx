@@ -15,7 +15,6 @@ export default function Services() {
 
   return (
     <section className="relative isolate overflow-visible py-20 md:py-28 lg:py-32">
-      {/* Animated background ambient glow - Top Left corner */}
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -46,7 +45,6 @@ export default function Services() {
         </FadeIn>
 
         <div className="mt-14 grid grid-cols-1 gap-12 md:mt-20 lg:grid-cols-2 lg:gap-16 items-center">
-          {/* Services List on Left */}
           <StaggerContainer staggerChildren={0.1} className="flex flex-col">
             {services.map((service) => {
               const isActive = service.href === active.href;
@@ -82,7 +80,6 @@ export default function Services() {
             })}
           </StaggerContainer>
 
-          {/* Video Preview on Right */}
           <FadeIn direction="left" delay={0.2}>
             <Link
               href={active.href}

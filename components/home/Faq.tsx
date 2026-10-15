@@ -24,7 +24,6 @@ export default function Faq() {
 
         <FadeIn direction="up" delay={0.2}>
           <div className="mt-10 grid grid-cols-1 gap-5 md:mt-14 md:grid-cols-2 md:gap-7 items-start">
-            {/* Left Column (3 items) */}
             <div className="flex flex-col gap-5 md:gap-7">
               {leftColItems.map((item, i) => {
                 const itemIndex = i;
@@ -41,7 +40,6 @@ export default function Faq() {
               })}
             </div>
 
-            {/* Right Column (3 items) */}
             <div className="flex flex-col gap-5 md:gap-7">
               {rightColItems.map((item, i) => {
                 const itemIndex = i + 3;

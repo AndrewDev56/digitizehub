@@ -50,7 +50,6 @@ export default function FaqCard({
         style={{ gridTemplateRows: open ? "1fr" : "0fr" }}
       >
         <div className="overflow-hidden">
-          {/* One line after question */}
           <div aria-hidden className="my-5 sm:my-6 h-px w-full bg-white/10" />
 
           <p className="font-body text-sm sm:text-base md:text-lg font-normal leading-[1.65] text-white/70">

@@ -35,7 +35,6 @@ export default function PortfolioCard({
       className={`group relative w-full overflow-hidden rounded-[24px] sm:rounded-[36px] md:rounded-[48px] border border-white/10 bg-neutral-900 shadow-xl cursor-pointer transition-transform duration-500 hover:-translate-y-1 ${className}`}
       style={{ aspectRatio: `${item.imageWidth} / ${item.imageHeight}` }}
     >
-      {/* Static Image Thumbnail - Visible at base */}
       {item.image && (
         <Image
           src={item.image}
@@ -46,7 +45,6 @@ export default function PortfolioCard({
         />
       )}
 
-      {/* Video Container with Expanding Circle Wipe Transition on Hover */}
       <div className="absolute inset-0 size-full overflow-hidden transition-[clip-path] duration-700 ease-in-out [clip-path:circle(0%_at_50%_50%)] group-hover:[clip-path:circle(150%_at_50%_50%)]">
         <video
           ref={videoRef}
@@ -60,14 +58,11 @@ export default function PortfolioCard({
         />
       </div>
 
-
-      {/* Gradient Backdrop on Hover */}
       <div
         aria-hidden
         className="absolute inset-x-0 bottom-0 h-2/3 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 transition-opacity duration-400 group-hover:opacity-100"
       />
 
-      {/* Top Right Tags - Staggered slide-in from right on hover */}
       <div className="absolute top-4 right-4 z-10 flex flex-wrap justify-end gap-1.5 sm:gap-2 md:top-6 md:right-6 pointer-events-none group-hover:pointer-events-auto">
         {item.tags.map((tag, index) => (
           <span
@@ -82,7 +77,6 @@ export default function PortfolioCard({
         ))}
       </div>
 
-      {/* Bottom Left Title - Word by word staggered reveal on hover */}
       <div className="absolute bottom-4 left-4 z-10 md:bottom-6 md:left-6">
         <h3 className="flex flex-wrap gap-x-2 font-heading text-base font-medium text-white sm:text-2xl md:text-4xl">
           {item.title.split(" ").map((word, wordIndex) => (
@@ -105,4 +99,4 @@ export default function PortfolioCard({
     </div>
   );
 }
-
+

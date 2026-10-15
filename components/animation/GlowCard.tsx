@@ -34,7 +34,6 @@ export default function GlowCard({
       onMouseLeave={() => setIsHovered(false)}
       className={`relative overflow-hidden transition-all duration-300 hover:-translate-y-1 ${className}`}
     >
-      {/* Background Mouse Glow */}
       <div
         className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-300 rounded-[inherit]"
         style={{

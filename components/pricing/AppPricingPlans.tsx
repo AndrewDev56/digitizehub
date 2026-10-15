@@ -10,7 +10,6 @@ export default function AppPricingPlans() {
 
   return (
     <section className="relative isolate overflow-visible pb-section">
-      {/* Ambient Eclipse Glow - Right */}
       <div
         aria-hidden="true"
         data-gsap-ambient

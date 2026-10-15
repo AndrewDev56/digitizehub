@@ -10,7 +10,6 @@ import FadeIn from "@/components/animation/FadeIn";
 export default function ProjectsGrid() {
   return (
     <section className="relative isolate overflow-visible pb-24 md:pb-32">
-      {/* Ambient Eclipse Glow - Left */}
       <div
         aria-hidden="true"
         data-gsap-ambient

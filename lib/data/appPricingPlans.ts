@@ -1,9 +1,8 @@
 export interface AppPricingPlan {
   name: string;
-  icon: string; // path under /public, e.g. "/icons/rocket.png"
+  icon: string;
   popular?: boolean;
   priceMonthly: number;
-  /** Placeholder — no quarterly figures were in the Figma frame. Replace with real numbers. */
   priceQuarterly: number;
   features: string[];
 }

@@ -94,8 +94,6 @@ function ServiceShowcaseRow({ service, reverse }: { service: AboutService; rever
   );
 }
 
-
-
 export default function ServiceDetailSections({
   content,
   showcaseRows,
@@ -108,7 +106,6 @@ export default function ServiceDetailSections({
       <section className="relative bg-background py-20 md:py-28 lg:py-32 2xl:py-36">
         <div className="relative mx-auto max-w-[1632px] px-6 md:px-9 2xl:px-0">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16 2xl:gap-24">
-            {/* Left Column: Heading & Trust Badges */}
             <div className="flex flex-col justify-between space-y-12 md:space-y-16 2xl:space-y-24">
               <h2 className="max-w-[720px] font-heading text-[44px] leading-[1.1] font-semibold text-white md:text-6xl 2xl:text-[76px]">
                 <TitleWithSegments lines={content.captivatingTitle} />
@@ -118,7 +115,6 @@ export default function ServiceDetailSections({
               </div>
             </div>
 
-            {/* Right Column: Staggered Paragraph & Pills */}
             <div className="flex flex-col space-y-10 lg:pt-16 2xl:pt-24">
               <p className="max-w-[780px] font-body text-lg leading-[1.6] text-white/80 md:text-2xl 2xl:text-[28px]">
                 {content.captivatingBody}
