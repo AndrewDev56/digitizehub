@@ -60,9 +60,9 @@ function ServiceShowcaseRow({ service, reverse }: { service: AboutService; rever
           className="absolute inset-0 size-full  object-cover"
         />
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
-        <Button href="/contact" className="absolute bottom-5 left-5 md:bottom-7 md:left-7">
+        {/* <Button href="/contact" className="absolute bottom-5 left-5 md:bottom-7 md:left-7">
           Explore Service
-        </Button>
+        </Button> */}
       </div>
 
       <div className={reverse ? "lg:order-1" : ""}>
