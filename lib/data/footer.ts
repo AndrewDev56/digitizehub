@@ -4,22 +4,23 @@ export type FooterColumn = {
 };
 
 export const footerColumns: FooterColumn[] = [
-  {
-    title: "Industries",
-    links: [
-      { label: "Agriculture", href: "/industries/agriculture" },
-      { label: "E-Commerce", href: "/industries/ecommerce" },
-      { label: "Energy", href: "/industries/energy" },
-      { label: "Entertainment", href: "/industries/entertainment" },
-      { label: "Fintech", href: "/industries/fintech" },
-      { label: "Health Care", href: "/industries/health-care" },
-      { label: "Hospitality", href: "/industries/hospitality" },
-      { label: "Logistics", href: "/industries/logistics" },
-      { label: "Manufacturing", href: "/industries/manufacturing" },
-      { label: "Oil & Gas", href: "/industries/oil-gas" },
-      { label: "Real Estate", href: "/industries/real-estate" },
-    ],
-  },
+  // GUIDED: Restore the Industries footer column when industry pages are ready.
+  // {
+  //   title: "Industries",
+  //   links: [
+  //     { label: "Agriculture", href: "/industries/agriculture" },
+  //     { label: "E-Commerce", href: "/industries/ecommerce" },
+  //     { label: "Energy", href: "/industries/energy" },
+  //     { label: "Entertainment", href: "/industries/entertainment" },
+  //     { label: "Fintech", href: "/industries/fintech" },
+  //     { label: "Health Care", href: "/industries/health-care" },
+  //     { label: "Hospitality", href: "/industries/hospitality" },
+  //     { label: "Logistics", href: "/industries/logistics" },
+  //     { label: "Manufacturing", href: "/industries/manufacturing" },
+  //     { label: "Oil & Gas", href: "/industries/oil-gas" },
+  //     { label: "Real Estate", href: "/industries/real-estate" },
+  //   ],
+  // },
   {
     title: "Our Services",
     links: [

@@ -41,4 +41,28 @@ export const faqItems: FaqItem[] = [
       "You do — 100%. All source code, design assets, domains, and hosting configurations belong completely to you with zero lock-in.",
     confirmed: true,
   },
+  {
+    question: "Will your team also implement the design?",
+    answer:
+      "Yes. Our team can take the approved design through development and launch, so you are not left handing files to a third party.",
+    confirmed: true,
+  },
+  {
+    question: "Do your designs include mobile responsiveness?",
+    answer:
+      "Yes. Every website and product we design is built to work on phones, tablets, and desktops from the start.",
+    confirmed: true,
+  },
+  {
+    question: "How do we get started?",
+    answer:
+      "Book a 20 minute call. We will look at what you have, tell you what it needs, and send a fixed quote before any work begins.",
+    confirmed: true,
+  },
+  {
+    question: "Do you work with companies outside Canada and the USA?",
+    answer:
+      "Yes. Our offices are in Calgary and Atlanta, and we work with clients globally.",
+    confirmed: true,
+  },
 ];
