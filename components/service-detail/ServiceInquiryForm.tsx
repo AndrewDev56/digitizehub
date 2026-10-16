@@ -31,7 +31,7 @@ function PillGroup({
               type="button"
               aria-pressed={active}
               onClick={() => onToggle(item)}
-              className={`min-h-[52px] rounded-full px-8 font-body text-[15px] transition-colors ${active ? "bg-brand-red text-black" : "bg-white/4 text-white hover:bg-brand-red hover:text-black"}`}
+              className={`min-h-11 rounded-full px-4 font-body text-sm transition-colors sm:min-h-[52px] sm:px-8 sm:text-[15px] ${active ? "bg-brand-red text-black" : "bg-white/4 text-white hover:bg-brand-red hover:text-black"}`}
             >
               {item}
             </button>
@@ -61,7 +61,7 @@ export default function ServiceInquiryForm() {
       <div aria-hidden className="pointer-events-none absolute top-[500px] -left-[150px] size-[400px] rounded-full bg-accent-to/50 blur-[120px] 2xl:size-[600px] 2xl:blur-[160px]" />
       <div aria-hidden className="pointer-events-none absolute top-[900px] -right-[150px] size-[400px] rounded-full bg-accent-to/40 blur-[120px] 2xl:size-[600px] 2xl:blur-[160px]" />
       <div className="relative mx-auto max-w-[1632px] px-6 md:px-9 2xl:px-0">
-        <h2 id="service-contact-title" className="font-heading text-[48px] leading-none font-semibold tracking-[-0.01em] text-white md:text-[64px] 2xl:text-[88px]">
+        <h2 id="service-contact-title" className="font-heading text-[32px] leading-[1.15] font-semibold tracking-[-0.01em] text-white sm:text-[48px] md:text-[64px] 2xl:text-[88px]">
           Let&apos;s <span className="font-accent italic">Connect</span>
         </h2>
 

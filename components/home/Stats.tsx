@@ -57,31 +57,11 @@ export default function Stats() {
         })}
       </div>
 
-      <div className="mx-auto flex max-w-[1632px] flex-wrap items-center justify-center gap-3 px-6 lg:hidden">
-        {heroChips.map((chip, index) => {
-          const colIndex = getChipCol(index);
-          const isHovered = hoveredCol === colIndex;
-          const rotate = isHovered ? chip.rotate / 3 : chip.rotate;
-          return (
-            <div
-              key={`${chip.label}-${index}`}
-              onMouseEnter={() => setHoveredCol(colIndex)}
-              onMouseLeave={() => setHoveredCol(null)}
-              className="transition-transform duration-300"
-              style={{
-                transform: `rotate(${rotate}deg) ${isHovered ? "scale(1.05)" : "scale(1)"}`,
-              }}
-            >
-              <FloatingChip label={chip.label} />
-            </div>
-          );
-        })}
-      </div>
-
-      <div className="mx-auto mt-16 max-w-[1632px] px-6 md:px-9 lg:mt-10">
+      <div className="mx-auto mt-10 max-w-[1632px] px-6 md:px-9 lg:mt-10">
         <StaggerContainer staggerChildren={0.2} className="grid grid-cols-1 gap-16 md:grid-cols-3 md:gap-8">
           {stats.map((stat, index) => {
             const isHovered = hoveredCol === index;
+            const chips = heroChips.filter((_, chipIndex) => getChipCol(chipIndex) === index);
             return (
               <StaggerItem
                 key={stat.title}
@@ -92,10 +72,27 @@ export default function Stats() {
                   onMouseLeave={() => setHoveredCol(null)}
                   className="w-full flex flex-col items-center"
                 >
-                  <div className="flex h-[100px] items-center justify-center md:h-[140px]">
+                  <div className="mb-5 flex h-14 w-full items-center justify-center lg:hidden">
+                    {chips.map((chip, chipIndex) => (
+                      <div
+                        key={`${chip.label}-${chipIndex}`}
+                        className="relative transition-transform duration-300"
+                        style={{
+                          zIndex: chipIndex + 1,
+                          marginLeft: chipIndex === 0 ? 0 : -10,
+                          transform: `rotate(${isHovered ? chip.rotate / 3 : chip.rotate}deg) ${
+                            isHovered ? "scale(1.05)" : "scale(1)"
+                          }`,
+                        }}
+                      >
+                        <FloatingChip label={chip.label} />
+                      </div>
+                    ))}
+                  </div>
+                  <div className="flex h-[72px] items-center justify-center sm:h-[100px] md:h-[140px]">
                     <AnimatedCounter
                       value={stat.value}
-                      className={`font-heading text-7xl font-bold tracking-[-0.03em] transition-colors duration-300 md:text-8xl lg:text-[130px] leading-none select-none ${
+                      className={`font-heading text-5xl font-bold tracking-[-0.03em] leading-none select-none transition-colors duration-300 sm:text-7xl md:text-8xl lg:text-[130px] ${
                         isHovered ? "text-white" : "text-[#9A9A9A]"
                       }`}
                     />

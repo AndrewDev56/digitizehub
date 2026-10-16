@@ -39,7 +39,7 @@ export default function Hero() {
       </div>
 
       <div className="relative mx-auto max-w-[1522px] px-6 md:px-9">
-        <h1 className="font-heading text-[36px] font-semibold tracking-[-0.02em] text-white sm:text-6xl lg:text-[90px]">
+        <h1 className="font-heading text-[30px] font-semibold leading-[1.15] tracking-[-0.02em] text-white sm:text-[36px] md:text-6xl lg:text-[90px]">
           Tell Us About Your{" "}
           <span className="font-accent font-bold italic">Project</span>
         </h1>

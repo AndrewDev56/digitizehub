@@ -43,8 +43,8 @@ export default function ServiceDetailHero({
           className="h-auto w-full object-contain pointer-events-none"
         />
       </div>
-      <div className="mx-auto max-w-[1632px] px-6 pt-[212px] pb-24 md:px-9 md:pb-32 lg:pb-20 2xl:px-0 2xl:pb-0 ">
-        <h1 className="font-heading text-[32px] leading-[1.1] font-semibold tracking-[-0.01em] text-white md:text-[56px] 2xl:text-[100px]">
+      <div className="mx-auto max-w-[1632px] px-4 pt-[120px] pb-16 sm:px-6 sm:pt-[160px] sm:pb-20 md:px-9 md:pt-[212px] md:pb-32 lg:pb-20 2xl:px-0 2xl:pb-0 ">
+        <h1 className="font-heading text-[28px] leading-[1.15] font-semibold tracking-[-0.01em] text-white sm:text-[32px] md:text-[56px] 2xl:text-[100px]">
           {content.heroH1.map((line, i) => (
             <span key={i} className="block">
               {line.map((seg, j) => (
@@ -56,7 +56,7 @@ export default function ServiceDetailHero({
           ))}
         </h1>
 
-        <p className="mt-6 max-w-[1632px] font-body text-[22px] leading-[1.4] tracking-[-0.02em] text-white md:text-[30px] 2xl:mt-10 2xl:text-[40px]">
+        <p className="mt-5 max-w-[1632px] font-body text-base leading-[1.5] tracking-[-0.02em] text-white sm:mt-6 sm:text-[22px] md:text-[30px] 2xl:mt-10 2xl:text-[40px]">
           {content.heroSubtext}
         </p>
 
@@ -131,7 +131,7 @@ export default function ServiceDetailHero({
           className="h-auto w-full object-contain pointer-events-none"
         />
       </div>
-            <div className="relative  overflow-hidden rounded-xl sm:rounded-2xl md:rounded-[20px] aspect-[16/10] sm:aspect-[16/12] bg-black/60 shadow-inner w-[80%] m-auto">
+            <div className="relative m-auto aspect-[16/10] w-full overflow-hidden rounded-xl bg-black/60 shadow-inner sm:w-[80%] sm:rounded-2xl sm:aspect-[16/12] md:rounded-[20px]">
               <video
                 src={
                   content.heroVideo ||
@@ -160,7 +160,7 @@ export default function ServiceDetailHero({
         </div>
       </div>
 
-      <div className="relative mt-16 2xl:mt-28 w-full min-h-[600px] h-screen py-16 md:py-24 flex items-center flex-col justify-center overflow-hidden bg-black text-center px-6 md:px-9 bg-[url('/images/service-banner-text-middle.png')] bg-cover bg-center bg-no-repeat">
+      <div className="relative mt-6 flex w-full flex-col items-center justify-center overflow-hidden bg-black bg-[url('/images/service-banner-text-middle.png')] bg-cover bg-center bg-no-repeat px-4 py-10 text-center sm:mt-16 sm:min-h-[600px] sm:px-6 sm:py-16 md:mt-16 md:h-screen md:px-9 md:py-24 2xl:mt-28">
         {/* <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0 select-none"
@@ -204,7 +204,7 @@ export default function ServiceDetailHero({
         <div className="relative z-10 mx-auto max-w-[1356px] text-center">
           <h2
             data-gsap-ignore
-            className="relative flex w-full flex-col items-center justify-center gap-y-[0.18em] text-center font-heading text-[36px] font-semibold tracking-[-0.04em] text-white leading-[1.18] sm:text-[42px] md:text-[68px] md:leading-[1.16] lg:text-[80px] 2xl:text-[120px] 2xl:leading-[1.12]"
+            className="relative flex w-full flex-col items-center justify-center gap-y-[0.18em] text-center font-heading text-[26px] font-semibold tracking-[-0.04em] text-white leading-[1.2] sm:text-[36px] md:text-[68px] md:leading-[1.16] lg:text-[80px] 2xl:text-[120px] 2xl:leading-[1.12]"
           >
             {content.heroTitle.map((line, i) => (
               <span key={i} className="block max-w-full text-balance">
@@ -224,7 +224,7 @@ export default function ServiceDetailHero({
             ))}
           </h2>
 
-          <p className="relative mx-auto mt-8 max-w-[1356px] font-body text-lg leading-[1.5] font-light text-white/80 md:mt-10 md:text-[28px] 2xl:mt-[48px] 2xl:text-[36px]">
+          <p className="relative mx-auto mt-5 max-w-[1356px] font-body text-sm leading-[1.55] font-light text-white/80 sm:mt-8 sm:text-lg md:mt-10 md:text-[28px] 2xl:mt-[48px] 2xl:text-[36px]">
             {content.heroBody}
           </p>
         </div>

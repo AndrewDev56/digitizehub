@@ -36,7 +36,7 @@ export default function Header({ active }: HeaderProps) {
           : "bg-transparent py-6 md:py-8"
       }`}
     >
-      <div className="mx-auto flex max-w-[1632px] items-center justify-between px-6 md:px-9">
+      <div className="mx-auto flex max-w-[1632px] items-center justify-between px-4 sm:px-6 md:px-9">
         <Link href="/" aria-label="DigitizeHub home" className="shrink-0 group">
           <Image
             src="/images/logo.png"

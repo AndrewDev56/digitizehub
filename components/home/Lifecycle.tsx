@@ -55,7 +55,7 @@ export default function Lifecycle() {
       <div className="relative z-10 mx-auto max-w-[1632px] px-6 md:px-9">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 md:gap-12">
           <div className="max-w-xl">
-            <h2 className="font-heading text-4xl sm:text-5xl md:text-7xl font-normal tracking-[-0.02em] text-white">
+            <h2 className="font-heading text-3xl sm:text-5xl md:text-7xl font-normal tracking-[-0.02em] text-white">
               The Lifecycle <span className="font-accent font-normal italic text-white">Chain</span>
             </h2>
             <p className="mt-3 font-body text-sm sm:text-base text-white/70 font-normal">
@@ -63,7 +63,7 @@ export default function Lifecycle() {
             </p>
           </div>
 
-          <div className="relative z-10 rounded-[24px] sm:rounded-[30px] border border-white/15 bg-white/[0.08] backdrop-blur-xl p-6 sm:p-8 max-w-[600px] shadow-2xl translate-y-16">
+          <div className="relative z-10 max-w-[600px] rounded-[24px] border border-white/15 bg-white/[0.08] p-5 shadow-2xl backdrop-blur-xl sm:rounded-[30px] sm:p-8 md:translate-y-16">
             <p className="font-body text-xs sm:text-sm md:text-lg leading-[1.6] text-white/80">
               Most agencies hand you files and disappear. We design it, build
               it, put it live on infrastructure we manage, rank it, and keep it
@@ -103,7 +103,7 @@ export default function Lifecycle() {
                 )}
 
                 <div className="flex flex-col">
-                  <h3 className="font-accent text-4xl sm:text-5xl md:text-6xl font-normal italic text-white tracking-wide">
+                  <h3 className="font-accent text-3xl sm:text-5xl md:text-6xl font-normal italic text-white tracking-wide">
                     {step.title}
                   </h3>
                   <p className="mt-1.5 font-body text-xs sm:text-sm md:text-base italic text-white/70">

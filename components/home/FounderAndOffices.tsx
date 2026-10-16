@@ -10,7 +10,7 @@ export default function FounderAndOffices() {
     <section className="bg-background ">
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
         <FadeIn direction="up">
-          <h2 className="font-heading text-4xl font-semibold tracking-[-0.02em] text-white sm:text-5xl md:text-6xl">
+          <h2 className="font-heading text-3xl font-semibold tracking-[-0.02em] text-white sm:text-5xl md:text-6xl">
             Offices
           </h2>
         </FadeIn>
@@ -27,8 +27,9 @@ export default function FounderAndOffices() {
         </StaggerContainer>
         <FadeIn direction="up" delay={0.3}>
                   <p className="mt-10 text-center font-body text-lg text-white/50">
-                    A real address in each country means someone is always in your time zone,<br/>
-and you always know who you are dealing with.
+                    A real address in each country means someone is always in your time zone,
+                    <br className="hidden sm:block" />
+                    you always know who you are dealing with.
                   </p>
                 </FadeIn>
       </div>

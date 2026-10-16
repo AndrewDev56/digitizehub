@@ -35,7 +35,7 @@ export default function Services() {
       <div className="relative z-10 mx-auto max-w-[1632px] px-6 md:px-9">
         <FadeIn direction="up">
           <div className="text-center">
-            <h2 className="font-heading text-4xl sm:text-5xl md:text-7xl font-normal tracking-[-0.02em] text-white">
+            <h2 className="font-heading text-3xl sm:text-5xl md:text-7xl font-normal tracking-[-0.02em] text-white">
               What We <span className="font-accent font-normal italic text-white">Do</span>
             </h2>
             <p className="mt-2 font-body text-xs sm:text-sm text-white/70 font-normal">

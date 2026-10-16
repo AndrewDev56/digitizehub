@@ -27,7 +27,7 @@ export default function ProjectTimeline() {
       </div>
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
         <FadeIn direction="up">
-          <h2 className="text-center font-heading text-4xl font-semibold tracking-[-0.02em] text-white md:text-6xl">
+          <h2 className="text-center font-heading text-[28px] font-semibold tracking-[-0.02em] text-white sm:text-4xl md:text-6xl">
             How a <span className="font-accent italic ">Project</span> Runs
           </h2>
         </FadeIn>

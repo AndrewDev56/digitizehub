@@ -35,12 +35,12 @@ export default function Pricing() {
              />
            </div>
 
-      <div className="relative isolate mx-auto max-w-[1632px] overflow-hidden rounded-[32px] sm:rounded-[40px] md:rounded-[48px] border border-white/10 bg-white/[0.04] backdrop-blur-md  px-6 py-10 sm:px-10 sm:py-14 md:px-14 md:py-16 shadow-2xl">
+      <div className="relative isolate mx-auto max-w-[1632px] overflow-hidden rounded-[24px] border border-white/10 bg-white/[0.04] px-4 py-8 shadow-2xl backdrop-blur-md sm:rounded-[40px] sm:px-10 sm:py-14 md:rounded-[48px] md:px-14 md:py-16">
 
         <FadeIn direction="up">
           <div className="relative z-10 flex flex-col items-start justify-between gap-8 md:flex-row md:items-start">
             <div className="max-w-3xl">
-              <h2 className="font-heading text-3xl leading-tight font-normal tracking-[-0.02em] text-white sm:text-4xl md:text-5xl lg:text-6xl">
+              <h2 className="font-heading text-[26px] leading-tight font-normal tracking-[-0.02em] text-white sm:text-4xl md:text-5xl lg:text-6xl">
                 Fixed <span className="font-accent font-normal italic text-white">Prices</span>. You see
                 them
                 <br className="hidden lg:block" /> before we{" "}

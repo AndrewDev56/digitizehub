@@ -61,12 +61,12 @@ export default function Testimonials() {
   return (
     <section className="relative isolate overflow-visible py-16 md:py-24 2xl:mt-[60px]">
       <div className="relative z-10 mx-auto max-w-[1450px] px-4 sm:px-8 md:px-12 2xl:px-0">
-        <div className="relative flex items-center justify-between gap-4 md:gap-8">
+        <div className="relative flex items-center justify-between gap-2 sm:gap-4 md:gap-8">
           <button
             type="button"
             aria-label="Previous testimonial"
             onClick={() => goTo(index - 1)}
-            className="group flex size-10 sm:size-11 md:size-12 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.08] text-white/90 transition-all duration-300 hover:scale-105 hover:bg-brand-red hover:border-brand-red hover:text-white hover:shadow-[0_0_24px_rgba(255,46,0,0.4)] active:scale-95 cursor-pointer shadow-lg"
+            className="group flex size-8 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.08] text-white/90 shadow-lg transition-all duration-300 hover:scale-105 hover:border-brand-red hover:bg-brand-red hover:text-white hover:shadow-[0_0_24px_rgba(255,46,0,0.4)] active:scale-95 cursor-pointer sm:size-11 md:size-12"
           >
             <svg
               className="size-4 sm:size-5 transition-transform duration-300 group-hover:-translate-x-0.5"
@@ -84,9 +84,9 @@ export default function Testimonials() {
 
           <div
             ref={contentRef}
-            className="mx-auto container px-2 sm:px-6 md:px-8 text-center will-change-transform"
+            className="container mx-auto min-w-0 px-1 text-center will-change-transform sm:px-6 md:px-8"
           >
-            <blockquote className="font-heading text-xl sm:text-2xl md:text-3xl lg:text-[32px] 2xl:text-[46px] font-normal leading-[1.38] tracking-[-0.015em] text-white">
+            <blockquote className="font-heading text-[15px] font-normal leading-[1.45] tracking-[-0.015em] text-white sm:text-2xl md:text-3xl lg:text-[32px] 2xl:text-[46px]">
               &ldquo;{testimonial.quote.replace(/^[“"]|[”"]$/g, "")}&rdquo;
             </blockquote>
 
@@ -113,7 +113,7 @@ export default function Testimonials() {
             type="button"
             aria-label="Next testimonial"
             onClick={() => goTo(index + 1)}
-            className="group flex size-10 sm:size-11 md:size-12 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.08] text-white/90 transition-all duration-300 hover:scale-105 hover:bg-brand-red hover:border-brand-red hover:text-white hover:shadow-[0_0_24px_rgba(255,46,0,0.4)] active:scale-95 cursor-pointer shadow-lg"
+            className="group flex size-8 shrink-0 items-center justify-center rounded-full border border-white/10 bg-white/[0.08] text-white/90 shadow-lg transition-all duration-300 hover:scale-105 hover:border-brand-red hover:bg-brand-red hover:text-white hover:shadow-[0_0_24px_rgba(255,46,0,0.4)] active:scale-95 cursor-pointer sm:size-11 md:size-12"
           >
             <svg
               className="size-4 sm:size-5 transition-transform duration-300 group-hover:translate-x-0.5"

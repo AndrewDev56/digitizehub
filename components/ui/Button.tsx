@@ -14,8 +14,8 @@ type CommonProps = {
 };
 
 const sizeStyles: Record<NonNullable<CommonProps["size"]>, string> = {
-  lg: "h-[60px] pl-[30px] pr-[10px] text-[18px] gap-[38px]",
-  md: "h-[52px] pl-[26px] pr-[8px] text-[15.6px] gap-[30px]",
+  lg: "h-[52px] max-w-full pl-5 pr-2 text-[15px] gap-3 sm:h-[60px] sm:pl-[30px] sm:pr-[10px] sm:text-[18px] sm:gap-[38px]",
+  md: "h-[48px] max-w-full pl-4 pr-2 text-[13.5px] gap-2.5 sm:h-[52px] sm:pl-[26px] sm:pr-[8px] sm:text-[15.6px] sm:gap-[30px]",
 };
 
 const iconSizeStyles: Record<NonNullable<CommonProps["size"]>, string> = {

@@ -47,7 +47,7 @@ export default function Hero() {
           Web, Apps and SEO&nbsp; · &nbsp;Calgary and Georgia
         </p>
 
-        <h1 className="mt-6 font-heading text-[32px] leading-[1.1] font-semibold tracking-[-0.02em] text-white sm:text-5xl lg:text-[90px]">
+        <h1 className="mt-6 font-heading text-[26px] leading-[1.2] font-semibold tracking-[-0.02em] text-white sm:text-[32px] md:text-5xl lg:text-[90px]">
           Every Project Below Shows What It Produced, Not Just{" "}
           <span className="font-accent italic">How It Looked</span>
         </h1>

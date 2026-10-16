@@ -47,7 +47,7 @@ export default function Hero() {
           Web, Apps and SEO&nbsp; · &nbsp;Calgary and Georgia
         </p>
 
-        <h1 className="mt-6 font-heading text-[36px] leading-[1.1] font-semibold tracking-[-0.02em] text-white sm:text-6xl lg:text-[90px]">
+        <h1 className="mt-6 font-heading text-[28px] leading-[1.15] font-semibold tracking-[-0.02em] text-white sm:text-[36px] md:text-6xl lg:text-[90px]">
           <span >Design, Build, Deploy, Rank, Maintain.</span>{" "}
           <span className="font-accent font-bold italic"> 
             One team for all of it.

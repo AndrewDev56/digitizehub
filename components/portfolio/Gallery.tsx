@@ -1,7 +1,11 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useLayoutEffect, useMemo, useState } from "react";
 import Image from "next/image";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 import FadeIn from "@/components/animation/FadeIn";
 import StaggerContainer, {
   StaggerItem,
@@ -24,8 +28,30 @@ export default function Gallery() {
     [active],
   );
 
+  useLayoutEffect(() => {
+    const frame = window.requestAnimationFrame(() => {
+      ScrollTrigger.getAll().forEach((trigger) => {
+        const target = trigger.trigger;
+        if (target && !document.contains(target)) {
+          trigger.kill();
+        }
+      });
+      ScrollTrigger.refresh();
+
+      const maxScroll = Math.max(
+        0,
+        document.documentElement.scrollHeight - window.innerHeight,
+      );
+      if (window.scrollY > maxScroll) {
+        window.scrollTo({ top: maxScroll, behavior: "auto" });
+      }
+    });
+
+    return () => window.cancelAnimationFrame(frame);
+  }, [active, items.length]);
+
   return (
-    <section className="relative isolate overflow-visible pb-24 md:pb-32">
+    <section className="relative isolate overflow-hidden pb-24 md:pb-32">
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -67,7 +93,7 @@ export default function Gallery() {
           <StaggerContainer
             key={active}
             staggerChildren={0.08}
-            className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 md:gap-6"
+            className="min-h-0 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 md:gap-6"
           >
             {items.map((item) => (
               <StaggerItem key={item.id}>

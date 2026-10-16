@@ -53,7 +53,7 @@ export default function Hero() {
           </p>
         </FadeIn>
 
-        <h1 data-gsap-ignore className="mx-auto mt-6 max-w-[1356px] text-center font-heading text-[38px] leading-[1.15] font-semibold tracking-[-0.02em] text-white sm:text-6xl lg:text-[90px] lg:leading-[104px]">
+        <h1 data-gsap-ignore className="mx-auto mt-6 max-w-[1356px] text-center font-heading text-[30px] leading-[1.2] font-semibold tracking-[-0.02em] text-white sm:text-[38px] sm:leading-[1.15] md:text-6xl lg:text-[90px] lg:leading-[104px]">
             We{" "}
             <span className="font-accent font-bold italic text-white">
               Design it

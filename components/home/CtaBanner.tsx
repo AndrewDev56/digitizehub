@@ -7,7 +7,7 @@ import Button from "../ui/Button";
 
 export default function CtaBanner() {
   return (
-    <section className="relative isolate overflow-visible bg-background px-6 py-24 md:px-9 md:py-32">
+    <section className="relative isolate overflow-visible bg-background px-4 py-16 sm:px-6 sm:py-24 md:px-9 md:py-32">
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -27,7 +27,7 @@ export default function CtaBanner() {
 
       <FadeIn direction="up">
         <div
-          className="relative z-10 mx-auto max-w-[1400px] overflow-hidden rounded-[28px] px-8 py-16 text-center shadow-2xl transition-transform duration-300  md:rounded-[36px] md:px-16 md:py-24"
+          className="relative z-10 mx-auto max-w-[1400px] overflow-hidden rounded-[24px] px-5 py-12 text-center shadow-2xl transition-transform duration-300 sm:rounded-[28px] sm:px-8 sm:py-16 md:rounded-[36px] md:px-16 md:py-24"
 
           style={{
             background: "linear-gradient(135deg, #ffffff 0%, #f8d5df 100%)",
@@ -41,7 +41,7 @@ export default function CtaBanner() {
             className="pointer-events-none absolute -top-24 -right-24 size-[350px] rounded-full bg-accent-from/30 blur-[60px]"
           />
 
-          <h2 className="relative z-10 mx-auto max-w-4xl font-heading text-3xl font-semibold tracking-[-0.02em] text-black md:text-[52px] md:leading-[1.1]">
+          <h2 className="relative z-10 mx-auto max-w-4xl font-heading text-[26px] font-semibold leading-[1.2] tracking-[-0.02em] text-black sm:text-3xl md:text-[52px] md:leading-[1.1]">
             A <span className="font-accent italic text-[#FF0036]">20 Minute Call</span> will
             tell you exactly what your site is missing.
           </h2>
@@ -50,10 +50,10 @@ export default function CtaBanner() {
             No pitch deck, no pressure. If we are not the right fit, we will say so.
           </p>
 
-          <div className="relative z-10 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div className="relative z-10 mt-8 flex w-full flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
             <Link
               href="/contact"
-              className="group relative flex items-center gap-3 overflow-hidden rounded-full bg-black py-3.5 pr-3.5 pl-7 font-heading text-sm font-semibold text-white shadow-xl transition-all duration-300  active:scale-95"
+              className="group relative flex w-full max-w-xs items-center justify-center gap-3 overflow-hidden rounded-full bg-black py-3 pr-3 pl-5 font-heading text-sm font-semibold text-white shadow-xl transition-all duration-300 active:scale-95 sm:w-auto sm:py-3.5 sm:pr-3.5 sm:pl-7"
             >
               <span
                 aria-hidden="true"

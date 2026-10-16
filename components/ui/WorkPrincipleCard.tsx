@@ -4,12 +4,14 @@ import type { WorkPrinciple } from "@/lib/data/howWeWork";
 
 export default function WorkPrincipleCard({
   principle,
+  className = "",
 }: {
   principle: WorkPrinciple;
+  className?: string;
 }) {
   return (
     <div
-      className="group relative flex h-[190px] w-[320px] sm:w-[360px] md:w-[400px] flex-col justify-between overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.03]  p-7 shadow-xl backdrop-blur-md transition-all duration-300 "
+      className={`group relative flex h-[190px] w-[min(280px,calc(100vw-3rem))] flex-col justify-between overflow-hidden rounded-[20px] border border-white/10 bg-white/[0.03] p-6 shadow-xl backdrop-blur-md transition-all duration-300 sm:w-[360px] sm:p-7 md:w-[400px] ${className}`}
     >
       <span
         aria-hidden

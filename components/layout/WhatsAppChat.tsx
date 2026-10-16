@@ -61,7 +61,7 @@ export default function WhatsAppChat() {
   return (
     <div
       ref={rootRef}
-      className="pointer-events-none fixed right-4 bottom-4 z-40 flex flex-col items-end gap-3 sm:right-6 sm:bottom-6"
+      className="pointer-events-none fixed right-4 bottom-[max(1rem,env(safe-area-inset-bottom))] z-40 flex flex-col items-end gap-3 sm:right-6 sm:bottom-6"
     >
       {open && (
         <div

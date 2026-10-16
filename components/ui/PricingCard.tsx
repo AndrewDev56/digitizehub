@@ -80,7 +80,7 @@ export default function PricingCard({
                 className="mt-2 shrink-0 text-xs sm:text-sm font-bold text-white/50"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="14" height="10" viewBox="0 0 14 10" fill="none">
-<path d="M1 4.75L4.88917 8.5L12.6667 1" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M1 4.75L4.88917 8.5L12.6667 1" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
 </svg>
               </span>
               <span>{feature}</span>

@@ -79,6 +79,7 @@ export default function SiteAnimations({ children }: { children: ReactNode }) {
         });
 
         root.current?.querySelectorAll<HTMLElement>("[data-gsap-stagger]").forEach((container) => {
+          if (container.closest("[data-gsap-ignore]")) return;
           const items = container.querySelectorAll<HTMLElement>(":scope > [data-gsap-stagger-item]");
           if (items.length === 0) return;
 
@@ -143,6 +144,7 @@ export default function SiteAnimations({ children }: { children: ReactNode }) {
         root.current
           ?.querySelectorAll<HTMLElement>("main > section img.object-cover")
           .forEach((image) => {
+            if (image.closest("[data-gsap-ignore], [data-gsap-stagger]")) return;
             gsap.fromTo(
               image,
               { yPercent: -4, scale: 1.08 },

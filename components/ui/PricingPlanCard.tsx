@@ -42,7 +42,7 @@ export default function PricingPlanCard({ plan }: { plan: PricingPlan }) {
         </h3>
       </div>
 
-      <div className="mt-8 flex items-center justify-between gap-4 md:mt-11">
+      <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between md:mt-11">
         <div>
           <p className="font-heading text-sm font-light text-white/60">
             Starting from

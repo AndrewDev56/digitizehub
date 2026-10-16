@@ -7,7 +7,7 @@ import FormPill from "@/components/ui/FormPill";
 import { projectNeedOptions, budgetOptions, hearAboutOptions } from "@/lib/data/contactOptions";
 
 const inputClass =
-  "w-full bg-transparent text-right font-body text-lg md:text-[30px] font-light text-white placeholder:text-white/30 tracking-[-0.01em] outline-none md:w-[666px]";
+  "w-full max-w-full bg-transparent text-left font-body text-base font-light tracking-[-0.01em] text-white outline-none placeholder:text-white/30 sm:text-lg md:w-[666px] md:text-right md:text-[30px]";
 
 export default function ContactForm() {
   const [needs, setNeeds] = useState<string[]>([]);
@@ -53,11 +53,11 @@ export default function ContactForm() {
         <div className="flex flex-col gap-8 border-t border-white/10 py-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-baseline gap-6 md:gap-16">
             <span className="font-accent text-xl text-white italic">01.</span>
-            <span className="font-heading text-2xl font-light text-white md:text-4xl">
+            <span className="font-heading text-xl font-light text-white sm:text-2xl md:text-4xl">
               What do you need?
             </span>
           </div>
-          <div className="flex flex-wrap justify-end gap-3 md:max-w-[680px]">
+          <div className="flex flex-wrap justify-start gap-2 sm:gap-3 md:max-w-[680px] md:justify-end">
             {projectNeedOptions.map((option) => (
               <FormPill
                 key={option}
@@ -72,11 +72,11 @@ export default function ContactForm() {
         <div className="flex flex-col gap-8 border-t border-white/10 py-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-baseline gap-6 md:gap-16">
             <span className="font-accent text-xl text-white italic">02.</span>
-            <span className="font-heading text-2xl font-light text-white md:text-4xl">
+            <span className="font-heading text-xl font-light text-white sm:text-2xl md:text-4xl">
               Project Budget ($)
             </span>
           </div>
-          <div className="flex flex-wrap justify-end gap-3">
+          <div className="flex flex-wrap justify-start gap-2 sm:gap-3 md:justify-end">
             {budgetOptions.map((option) => (
               <FormPill
                 key={option}
@@ -91,7 +91,7 @@ export default function ContactForm() {
         <div className="flex flex-col gap-4 border-t border-white/10 py-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-baseline gap-6 md:gap-16">
             <span className="font-accent text-xl text-white italic">03.</span>
-            <span className="font-heading text-2xl font-light text-white md:text-4xl">
+            <span className="font-heading text-xl font-light text-white sm:text-2xl md:text-4xl">
               Your Company
             </span>
           </div>
@@ -107,7 +107,7 @@ export default function ContactForm() {
         <div className="flex flex-col gap-4 border-t border-white/10 py-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-baseline gap-6 md:gap-16">
             <span className="font-accent text-xl text-white italic">04.</span>
-            <span className="font-heading text-2xl font-light text-white md:text-4xl">
+            <span className="font-heading text-xl font-light text-white sm:text-2xl md:text-4xl">
               Your Name
             </span>
           </div>
@@ -123,7 +123,7 @@ export default function ContactForm() {
         <div className="flex flex-col gap-4 border-t border-white/10 py-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-baseline gap-6 md:gap-16">
             <span className="font-accent text-xl text-white italic">05.</span>
-            <span className="font-heading text-2xl font-light text-white md:text-4xl">
+            <span className="font-heading text-xl font-light text-white sm:text-2xl md:text-4xl">
               Your Email
             </span>
           </div>
@@ -139,7 +139,7 @@ export default function ContactForm() {
         <div className="flex flex-col gap-4 border-t border-white/10 py-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-baseline gap-6 md:gap-16">
             <span className="font-accent text-xl text-white italic">06.</span>
-            <span className="font-heading text-2xl font-light text-white md:text-4xl">
+            <span className="font-heading text-xl font-light text-white sm:text-2xl md:text-4xl">
               Your Phone
             </span>
           </div>
@@ -155,7 +155,7 @@ export default function ContactForm() {
         <div className="flex flex-col gap-4 border-t border-white/10 py-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-baseline gap-6 md:gap-16">
             <span className="font-accent text-xl text-white italic">07.</span>
-            <span className="font-heading text-2xl font-light text-white md:text-4xl">
+            <span className="font-heading text-xl font-light text-white sm:text-2xl md:text-4xl">
               Your Designation
             </span>
           </div>
@@ -171,7 +171,7 @@ export default function ContactForm() {
         <div className="flex flex-col gap-4 border-t border-white/10 py-8 md:flex-row md:items-center md:justify-between">
           <div className="flex items-baseline gap-6 md:gap-16">
             <span className="font-accent text-xl text-white italic">08.</span>
-            <span className="font-heading text-2xl font-light text-white md:text-4xl">
+            <span className="font-heading text-xl font-light text-white sm:text-2xl md:text-4xl">
               How did you hear about us
             </span>
           </div>
@@ -194,7 +194,7 @@ export default function ContactForm() {
         <div className="flex flex-col gap-4 border-t border-white/10 py-8 md:flex-row md:justify-between">
           <div className="flex items-baseline gap-6 md:gap-16">
             <span className="font-accent text-xl text-white italic">09.</span>
-            <span className="font-heading text-2xl font-light text-white md:text-4xl">
+            <span className="font-heading text-xl font-light text-white sm:text-2xl md:text-4xl">
               Project Details
             </span>
           </div>

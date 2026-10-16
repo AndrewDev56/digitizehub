@@ -136,12 +136,12 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+          <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-center sm:flex-row sm:text-left">
             <p className="font-body text-sm md:text-base text-white/50">
               All Rights Reserved <span aria-hidden="true">|</span> © 2026{" "}
               <span className="font-semibold text-brand-red">DigitizeHub</span>.
             </p>
-            <div className="flex items-center gap-4">
+            <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
               <Link href="/privacy" className="font-body text-sm md:text-base text-white/50 transition-colors hover:text-white">
                 Privacy Policy
               </Link>

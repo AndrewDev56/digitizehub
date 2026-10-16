@@ -52,7 +52,7 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn direction="up" delay={0.15}>
-          <h1 className="mx-auto mt-6 font-heading text-[34px] leading-[1.2] font-semibold tracking-[-0.02em] text-white sm:text-5xl lg:text-[64px] lg:leading-[1.15]">
+          <h1 className="mx-auto mt-6 font-heading text-[28px] leading-[1.2] font-semibold tracking-[-0.02em] text-white sm:text-[34px] md:text-5xl lg:text-[64px] lg:leading-[1.15]">
             Six Years, 200 Projects,{" "}<br/>
             <span className="font-accent italic ">Two Countries, One Team.</span>
           </h1>

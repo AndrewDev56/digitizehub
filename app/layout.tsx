@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import SiteAnimations from "@/components/animation/SiteAnimations";
 import WhatsAppChat from "@/components/layout/WhatsAppChat";
@@ -21,6 +21,12 @@ export const metadata: Metadata = {
   title: "DigitizeHub — Web, Apps and SEO",
   description:
     "We design it, build it, launch it, and get it found. Web, Apps and SEO for businesses across Calgary and Georgia.",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

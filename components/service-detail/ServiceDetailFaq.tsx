@@ -61,7 +61,7 @@ export default function ServiceDetailFaq() {
         <FadeIn direction="up">
           <h2
             id="service-faq-title"
-            className="font-heading text-4xl leading-[1.05] font-semibold tracking-[-0.02em] text-white md:text-6xl lg:text-7xl 2xl:text-8xl"
+            className="font-heading text-[28px] leading-[1.15] font-semibold tracking-[-0.02em] text-white sm:text-4xl md:text-6xl lg:text-7xl 2xl:text-8xl"
           >
             If You&apos;re <span className="font-accent italic">Wondering</span>,
             <br />
