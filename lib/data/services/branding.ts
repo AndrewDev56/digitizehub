@@ -14,6 +14,7 @@ export const brandingContent: ServiceDetailContent = {
   heroVideo: "/videos/Branding-logo-design.mp4",
   heroTitle: [
     [{ text: "Hire a Top " }, { text: "Branding", italic: true }, { text: " Agency" }],
+    // [{ text: "Agency" }],
     [{ text: "in Canada & the USA" }],
   ],
   heroBody:

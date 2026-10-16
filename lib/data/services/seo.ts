@@ -99,7 +99,7 @@ export const seoShowcaseRows: AboutService[] = [
       "Monthly Report",
     ],
     duration: "Monthly Plan, First Results in 3 to 6 Months",
-    video: "/videos/seo.mp4",
+    image: "/images/off-Page.png",
     imagePosition: "right",
   },
 ];

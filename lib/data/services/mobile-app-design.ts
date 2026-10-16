@@ -13,8 +13,9 @@ export const mobileAppDesignContent: ServiceDetailContent = {
   heroImageAlt: "Mobile app design services showing iOS and Android app screens by Digitize Hub",
   heroVideo: "/videos/home-screen-app.mp4",
   heroTitle: [
-    [{ text: "Hire a Top " }, { text: "Mobile App", italic: true }, { text: " Design" }],
-    [{ text: "Company in Canada & the USA" }],
+    [{ text: "Hire a Top " }, { text: "Mobile App", italic: true }],
+    [{ text: "Design Company" }],
+    [{ text: "in Canada & the USA" }],
   ],
   heroBody:
     "Your app has seconds to earn a place on someone's phone. We design every tap, swipe, and screen around real user behavior, so people sign up, come back, and recommend it.",

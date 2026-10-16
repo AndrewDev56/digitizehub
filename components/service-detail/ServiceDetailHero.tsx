@@ -202,11 +202,21 @@ export default function ServiceDetailHero({
         /> */}
 
         <div className="relative z-10 mx-auto max-w-[1356px] text-center">
-          <h2 data-gsap-ignore className="relative font-heading text-[42px] leading-[0.9] font-semibold tracking-[-0.05em] text-white md:text-[80px] 2xl:text-[120px] 2xl:leading-[0.85]">
+          <h2
+            data-gsap-ignore
+            className="relative flex w-full flex-col items-center justify-center gap-y-[0.18em] text-center font-heading text-[36px] font-semibold tracking-[-0.04em] text-white leading-[1.18] sm:text-[42px] md:text-[68px] md:leading-[1.16] lg:text-[80px] 2xl:text-[120px] 2xl:leading-[1.12]"
+          >
             {content.heroTitle.map((line, i) => (
-              <span key={i} className="block">
+              <span key={i} className="block max-w-full text-balance">
                 {line.map((seg, j) => (
-                  <span key={j} className={seg.italic ? "font-accent italic text-[var(--color-accent-1)]" : ""}>
+                  <span
+                    key={j}
+                    className={
+                      seg.italic
+                        ? "font-accent italic align-baseline"
+                        : "align-baseline"
+                    }
+                  >
                     {seg.text}
                   </span>
                 ))}
@@ -214,7 +224,7 @@ export default function ServiceDetailHero({
             ))}
           </h2>
 
-          <p className="relative mx-auto mt-6 max-w-[1356px] font-body text-lg leading-[1.4] font-light text-white/80 md:text-[30px] 2xl:mt-[60px] 2xl:text-[36px]">
+          <p className="relative mx-auto mt-8 max-w-[1356px] font-body text-lg leading-[1.5] font-light text-white/80 md:mt-10 md:text-[28px] 2xl:mt-[48px] 2xl:text-[36px]">
             {content.heroBody}
           </p>
         </div>

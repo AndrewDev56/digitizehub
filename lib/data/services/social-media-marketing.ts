@@ -13,8 +13,9 @@ export const socialMediaMarketingContent: ServiceDetailContent = {
   heroImageAlt: "Social media marketing services showing branded Instagram and Facebook posts by Digitize Hub",
   heroVideo: "/videos/Social Media.mp4",
   heroTitle: [
-    [{ text: "Hire a Top " }, { text: "Social Media", italic: true }, { text: " Marketing" }],
-    [{ text: "Agency in Canada & the USA" }],
+    [{ text: "Hire a Top " }, { text: "Social Media", italic: true }],
+    [{ text: "Marketing Agency" }],
+    [{ text: "in Canada & the USA" }],
   ],
   heroBody:
     "Posting every day means nothing if nobody buys. We build social media strategies tied to your sales goals, so every post, story, and ad has a clear job to do.",
