@@ -104,7 +104,7 @@ export default function Portfolio() {
         </div>
 
         <FadeIn direction="up" delay={0.2} className="mt-12 flex justify-center md:mt-16">
-          <Button href="/work">Explore All Work</Button>
+          <Button href="/portfolio">Explore All Work</Button>
         </FadeIn>
       </div>
     </section>

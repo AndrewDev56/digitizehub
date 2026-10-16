@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
-import LogoMarquee from "@/components/home/LogoMarquee";
+// GUIDED: Uncomment after replacing placeholder logos in lib/data/clientLogos.ts.
+// import LogoMarquee from "@/components/home/LogoMarquee";
 import FadeIn from "@/components/animation/FadeIn";
 import RotatingWord from "@/components/animation/RotatingWord";
 import AnimatedCounter from "@/components/animation/AnimatedCounter";
@@ -68,9 +69,11 @@ export default function Hero() {
         </FadeIn>
       </div>
 
+      {/* GUIDED: Logo marquee hidden until real client logos replace the placeholder images.
       <div className="mt-16 md:mt-20">
         <LogoMarquee />
       </div>
+      */}
     </section>
   );
 }

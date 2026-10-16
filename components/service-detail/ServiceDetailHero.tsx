@@ -160,8 +160,8 @@ export default function ServiceDetailHero({
         </div>
       </div>
 
-      <div className="relative mt-16 2xl:mt-28 w-full min-h-[600px] h-screen py-16 md:py-24 flex items-center flex-col justify-center overflow-hidden bg-black text-center px-6 md:px-9">
-        <div
+      <div className="relative mt-16 2xl:mt-28 w-full min-h-[600px] h-screen py-16 md:py-24 flex items-center flex-col justify-center overflow-hidden bg-black text-center px-6 md:px-9 bg-[url('/images/service-banner-text-middle.png')] bg-cover bg-center bg-no-repeat">
+        {/* <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0 select-none"
           style={{
@@ -172,9 +172,9 @@ export default function ServiceDetailHero({
               linear-gradient(180deg, rgba(45, 5, 10, 0.65) 0%, rgba(22, 2, 5, 0.45) 45%, rgba(4, 0, 1, 0.9) 80%, #000000 100%)
             `,
           }}
-        />
+        /> */}
 
-        <div
+        {/* <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0 z-0 grid grid-cols-12 select-none"
         >
@@ -199,7 +199,7 @@ export default function ServiceDetailHero({
               radial-gradient(ellipse 95% 85% at 50% 50%, transparent 45%, rgba(0, 0, 0, 0.65) 100%)
             `,
           }}
-        />
+        /> */}
 
         <div className="relative z-10 mx-auto max-w-[1356px] text-center">
           <h2 data-gsap-ignore className="relative font-heading text-[42px] leading-[0.9] font-semibold tracking-[-0.05em] text-white md:text-[80px] 2xl:text-[120px] 2xl:leading-[0.85]">

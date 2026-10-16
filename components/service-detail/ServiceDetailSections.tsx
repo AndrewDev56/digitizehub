@@ -46,19 +46,34 @@ function TitleWithSegments({ lines }: { lines: ServiceDetailContent["servicesTit
 }
 
 function ServiceShowcaseRow({ service, reverse }: { service: AboutService; reverse: boolean }) {
+  const mediaLabel = service.titleLines
+    .flat()
+    .map((segment) => segment.text)
+    .join("");
+
   return (
     <article className={`mx-auto grid min-h-[680px] w-full max-w-[1632px] grid-cols-1 items-center gap-10 px-6 md:px-9 lg:grid-cols-[420px_1fr] lg:gap-12 xl:grid-cols-[500px_1fr] xl:gap-16 2xl:min-h-[820px] 2xl:grid-cols-[766px_1fr] 2xl:gap-[100px] 2xl:px-0 ${reverse ? "lg:[&>div:first-child]:order-2" : ""}`}>
       <div className="relative aspect-[766/806] w-full overflow-hidden rounded-[60px] border border-white/10 bg-[#111111] shadow-[0_0_0_1px_rgba(255,255,255,0.03)] 2xl:h-[806px] 2xl:aspect-auto">
-        <video
-          aria-label={`${service.titleLines.flat().map((segment) => segment.text).join("")} preview`}
-          src={service.video}
-          autoPlay
-          loop
-          muted
-          playsInline
-          preload="metadata"
-          className="absolute inset-0 size-full  object-cover"
-        />
+        {service.image ? (
+          <Image
+            src={service.image}
+            alt={mediaLabel}
+            fill
+            sizes="(min-width: 1536px) 766px, (min-width: 1024px) 50vw, 100vw"
+            className="object-cover"
+          />
+        ) : (
+          <video
+            aria-label={`${mediaLabel} preview`}
+            src={service.video}
+            autoPlay
+            loop
+            muted
+            playsInline
+            preload="metadata"
+            className="absolute inset-0 size-full  object-cover"
+          />
+        )}
         <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
         {/* <Button href="/contact" className="absolute bottom-5 left-5 md:bottom-7 md:left-7">
           Explore Service

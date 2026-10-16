@@ -3,7 +3,8 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Tag from "@/components/ui/Tag";
-import LogoMarquee from "@/components/home/LogoMarquee";
+// GUIDED: Uncomment after replacing placeholder logos in lib/data/clientLogos.ts.
+// import LogoMarquee from "@/components/home/LogoMarquee";
 import { trustColumns } from "@/lib/data/heroTrust";
 import FadeIn from "@/components/animation/FadeIn";
 import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerContainer";
@@ -123,9 +124,11 @@ export default function Hero() {
         </StaggerContainer>
       </div>
 
+      {/* GUIDED: Logo marquee hidden until real client logos replace the placeholder images.
       <div className="mt-16 md:mt-[60px]">
         <LogoMarquee />
       </div>
+      */}
 
       <button
         type="button"

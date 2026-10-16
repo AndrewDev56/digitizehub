@@ -1,19 +1,35 @@
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import ServiceFeatureList from "@/components/ui/ServiceFeatureList";
 import type { AboutService } from "@/lib/data/aboutServices";
 
 export default function ServiceRow({ service }: { service: AboutService }) {
+  const mediaLabel = service.titleLines
+    .flat()
+    .map((segment) => segment.text)
+    .join("");
+
   const mediaBlock = (
     <div className="relative aspect-[766/806] w-full overflow-hidden rounded-[32px] md:rounded-[60px]">
-      <video
-        src={service.video}
-        autoPlay
-        loop
-        muted
-        playsInline
-        preload="metadata"
-        className="absolute inset-0 size-full object-cover"
-      />
+      {service.image ? (
+        <Image
+          src={service.image}
+          alt={mediaLabel}
+          fill
+          sizes="(min-width: 768px) 50vw, 100vw"
+          className="object-cover"
+        />
+      ) : (
+        <video
+          src={service.video}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="metadata"
+          className="absolute inset-0 size-full object-cover"
+        />
+      )}
     </div>
   );
 

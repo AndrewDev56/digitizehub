@@ -74,7 +74,7 @@ export default function CtaBanner() {
             </Link>
 
             <Button
-              href="/work"
+              href="/portfolio"
             >
               Explore Our Portfolio
             </Button>

@@ -28,9 +28,15 @@ export default function PricingPlanCard({ plan }: { plan: PricingPlan }) {
       )}
 
       <div className="flex items-center gap-4">
-        <span className="flex size-[60px] shrink-0 items-center justify-center rounded-[10px] bg-white/6">
-          <Image src={plan.icon} alt="" width={28} height={28} className="size-7" />
-        </span>
+      <span className="flex size-14 shrink-0 items-center justify-center rounded-xl ">
+              <Image
+                src={plan.icon}
+                alt=""
+                width={40}
+                height={40}
+                className="size-12 object-contain"
+              />
+            </span>
         <h3 className="font-heading text-2xl font-semibold text-white md:text-3xl">
           {plan.name}
         </h3>

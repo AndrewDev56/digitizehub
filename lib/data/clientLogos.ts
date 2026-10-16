@@ -5,6 +5,8 @@ export type ClientLogo = {
   height: number;
 };
 
+// GUIDED: Replace these placeholder logoipsum files with real client logos,
+// then uncomment <LogoMarquee /> on home, about, work, services, pricing, and portfolio heroes.
 export const clientLogos: ClientLogo[] = [
   { src: "/images/client-logo-1.png", alt: "", width: 163, height: 42 },
   { src: "/images/client-logo-2.png", alt: "", width: 172, height: 44 },

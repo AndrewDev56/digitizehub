@@ -8,6 +8,10 @@ import { clientLogos } from "@/lib/data/clientLogos";
 
 gsap.registerPlugin(useGSAP);
 
+// GUIDED: This marquee is commented out on every page until real client logos
+// replace the placeholder images in lib/data/clientLogos.ts. Then uncomment
+// <LogoMarquee /> in the page heroes listed below:
+// home, about, work, services, pricing, portfolio.
 export default function LogoMarquee() {
   const root = useRef<HTMLDivElement>(null);
 

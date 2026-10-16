@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import SiteAnimations from "@/components/animation/SiteAnimations";
+import WhatsAppChat from "@/components/layout/WhatsAppChat";
 import "./globals.css";
 
 const inter = Inter({
@@ -31,6 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${montserrat.variable} antialiased`}>
         <SiteAnimations>{children}</SiteAnimations>
+        <WhatsAppChat />
       </body>
     </html>
   );

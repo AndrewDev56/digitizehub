@@ -11,7 +11,7 @@ export const pricingPlans: PricingPlan[] = [
   {
     name: "Launch",
     icon: "/icons/rocket-tilted.png",
-    price: "1,499",
+    price: "Silver",
     featured: false,
     features: [
       "Up to 5 custom pages",

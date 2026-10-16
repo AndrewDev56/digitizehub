@@ -99,7 +99,7 @@ export const mobileAppShowcaseRows: AboutService[] = [
       "30 Days Support",
     ],
     duration: "Typically 4 to 8 Weeks",
-    video: "/videos/home-screen-app.mp4",
+    video: "/videos/mobile-app-new-box-vid.mp4",
     imagePosition: "right",
   },
 ];

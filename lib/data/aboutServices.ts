@@ -5,7 +5,8 @@ export type AboutService = {
   description: string;
   features: string[];
   duration: string;
-  video: string;
+  video?: string;
+  image?: string;
   imagePosition: "left" | "right";
   href?: string;
 };

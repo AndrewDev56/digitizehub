@@ -83,7 +83,7 @@ export const socialMediaMarketingShowcaseRows: AboutService[] = [
       "Monthly Report",
     ],
     duration: "Monthly Plan, No Lock-in",
-    video: "/videos/Social Media.mp4",
+    video: "/videos/social-media-management.mp4",
     imagePosition: "left",
   },
   {
@@ -99,7 +99,7 @@ export const socialMediaMarketingShowcaseRows: AboutService[] = [
       "Lead Tracking",
     ],
     duration: "Monthly Plan, Ad Spend Billed Separately",
-    video: "/videos/Social Media.mp4",
+    video: "/videos/paid-social-media-management.mp4",
     imagePosition: "right",
   },
 ];

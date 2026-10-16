@@ -91,7 +91,7 @@ export const uiUxShowcaseRows: AboutService[] = [
       "30 Days Support",
     ],
     duration: "Typically 3 to 6 Weeks",
-    video: "/videos/home-website-design-video.mp4",
+    video: "/videos/ui-ux-inner-second.mp4",
     imagePosition: "left",
   },
   {
@@ -107,7 +107,7 @@ export const uiUxShowcaseRows: AboutService[] = [
       "Developer Handoff",
     ],
     duration: "Typically 4 to 8 Weeks",
-    video: "/videos/home-screen-app.mp4",
+    video: "/videos/ui-ux-inner-first.mp4",
     imagePosition: "right",
   },
 ];

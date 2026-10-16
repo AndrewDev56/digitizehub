@@ -1,5 +1,6 @@
 import Image from "next/image";
-import LogoMarquee from "../home/LogoMarquee";
+// GUIDED: Uncomment after replacing placeholder logos in lib/data/clientLogos.ts.
+// import LogoMarquee from "../home/LogoMarquee";
 
 export default function Hero() {
   const tags = ["Websites", "Apps", "Deployment", "SEO", "Branding", "Social"];
@@ -69,9 +70,11 @@ export default function Hero() {
           ))}
         </div>
       </div>
-       <div className="mt-16 md:mt-20">
-              <LogoMarquee />
-            </div>
+      {/* GUIDED: Logo marquee hidden until real client logos replace the placeholder images.
+      <div className="mt-16 md:mt-20">
+        <LogoMarquee />
+      </div>
+      */}
     </section>
   );
 }

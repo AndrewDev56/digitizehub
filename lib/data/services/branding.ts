@@ -83,7 +83,7 @@ export const brandingShowcaseRows: AboutService[] = [
       "Full Ownership",
     ],
     duration: "Typically 1 to 2 Weeks",
-    video: "/videos/Branding-logo-design.mp4",
+    video: "/videos/logodesign-222.mp4",
     imagePosition: "left",
   },
   {
@@ -99,7 +99,7 @@ export const brandingShowcaseRows: AboutService[] = [
       "Full Ownership",
     ],
     duration: "Typically 2 to 4 Weeks",
-    video: "/videos/Branding-logo-design.mp4",
+    video: "/videos/brand-identity-main.mp4",
     imagePosition: "right",
   },
 ];
