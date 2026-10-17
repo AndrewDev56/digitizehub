@@ -2,6 +2,9 @@
 
 import { useState, type FormEvent } from "react";
 import Button from "@/components/ui/Button";
+import { inquiryError } from "@/lib/inquiry";
+import { sendInquiryViaEmailApi } from "@/lib/emailApi";
+import { formatUsPhoneInput } from "@/lib/phone";
 
 const budgets = ["$2,000 - $5,000", "$5,000 - $10,000", "$10,000 +"];
 const interests = ["Website", "SEO", "UI/UX", "Mobile App", "Web App", "Other"];
@@ -31,7 +34,7 @@ function PillGroup({
               type="button"
               aria-pressed={active}
               onClick={() => onToggle(item)}
-              className={`min-h-11 rounded-full px-4 font-body text-sm transition-colors sm:min-h-[52px] sm:px-8 sm:text-[15px] ${active ? "bg-brand-red text-black" : "bg-white/4 text-white hover:bg-brand-red hover:text-black"}`}
+              className={`min-h-11 rounded-full px-4 font-body text-sm transition-colors sm:min-h-[52px] sm:px-8 sm:text-[15px] ${active ? "bg-brand-red text-white" : "bg-white/4 text-white hover:bg-brand-red hover:text-black"}`}
             >
               {item}
             </button>
@@ -45,15 +48,54 @@ function PillGroup({
 export default function ServiceInquiryForm() {
   const [budget, setBudget] = useState("");
   const [selectedInterests, setSelectedInterests] = useState<string[]>(["UI/UX"]);
+  const [phone, setPhone] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState("");
 
   const toggleInterest = (interest: string) => {
     setSelectedInterests((current) => current.includes(interest) ? current.filter((item) => item !== interest) : [...current, interest]);
   };
 
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setSubmitted(true);
+    if (submitting) return;
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const payload = {
+      source: "service" as const,
+      name: String(data.get("name") || "").trim(),
+      email: String(data.get("email") || "").trim(),
+      phone,
+      company: String(data.get("company") || "").trim(),
+      designation: String(data.get("designation") || "").trim(),
+      hearAbout: String(data.get("referral") || "").trim(),
+      needs: selectedInterests,
+      budget,
+      details: String(data.get("message") || "").trim(),
+    };
+    const validationError = inquiryError(payload);
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
+    setError("");
+    setSubmitted(false);
+    setSubmitting(true);
+    try {
+      await sendInquiryViaEmailApi(payload);
+      setSubmitted(true);
+      setPhone("");
+      form.reset();
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Could not send just now. Email us at info@digitizehub.net.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -65,7 +107,7 @@ export default function ServiceInquiryForm() {
           Let&apos;s <span className="font-accent italic">Connect</span>
         </h2>
 
-        <form onSubmit={handleSubmit} className="mt-12 2xl:mt-[120px]">
+        <form noValidate onSubmit={handleSubmit} className="mt-12 2xl:mt-[120px]">
           <div className="grid grid-cols-1 gap-x-10 gap-y-8 sm:grid-cols-2">
             <label className="font-body text-[15px] text-white/75">
               Full Name
@@ -77,19 +119,30 @@ export default function ServiceInquiryForm() {
             </label>
             <label className="font-body text-[15px] text-white/75">
               Your Phone
-              <input name="phone" type="tel" autoComplete="tel" className={fieldClassName} />
+              <input
+                name="phone"
+                type="tel"
+                inputMode="numeric"
+                autoComplete="tel-national"
+                value={phone}
+                onChange={(event) => setPhone(formatUsPhoneInput(event.target.value))}
+                placeholder="(201) 555-0123"
+                maxLength={17}
+                required
+                className={fieldClassName}
+              />
             </label>
             <label className="font-body text-[15px] text-white/75">
               Your Company
-              <input name="company" autoComplete="organization" className={fieldClassName} />
+              <input name="company" autoComplete="organization" required className={fieldClassName} />
             </label>
             <label className="font-body text-[15px] text-white/75">
               Your Designation
-              <input name="designation" className={fieldClassName} />
+              <input name="designation" required className={fieldClassName} />
             </label>
             <label className="relative font-body text-[15px] text-white/75">
               How did you hear about us
-              <select name="referral" defaultValue="" className={`${fieldClassName} appearance-none`}>
+              <select name="referral" defaultValue="" required className={`${fieldClassName} appearance-none`}>
                 <option value="" disabled>Select an option</option>
                 <option>Google</option>
                 <option>Referral</option>
@@ -114,8 +167,15 @@ export default function ServiceInquiryForm() {
                 onToggle={(item) => setBudget((current) => (current === item ? "" : item))}
               />
               <div className="flex flex-col items-start gap-3">
-                <Button type="submit">Submit Now</Button>
-                <p role="status" className="font-body text-sm text-white/70">{submitted ? "Thanks. Your inquiry is ready to send." : ""}</p>
+                <Button type="submit">{submitting ? "Sending..." : "Submit Now"}</Button>
+                {submitted ? (
+                  <p role="status" className="font-body text-sm text-white/70">
+                    Thanks. We will reply within one business day.
+                  </p>
+                ) : null}
+                {error ? (
+                  <p role="alert" className="font-body text-sm text-brand-red">{error}</p>
+                ) : null}
               </div>
             </div>
           </div>

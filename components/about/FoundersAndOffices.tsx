@@ -64,7 +64,7 @@ export default function FoundersAndOffices() {
 
           <StaggerContainer
             staggerChildren={0.15}
-            className="mt-12 grid grid-cols-1 gap-6 md:mt-14 md:grid-cols-2 md:gap-8 max-w-[1200px] mx-auto"
+            className="mt-12 grid grid-cols-1 gap-6 md:mt-14 md:grid-cols-1 md:gap-8 max-w-[1200px] mx-auto"
           >
             {offices.map((office) => (
               <StaggerItem key={office.city}>

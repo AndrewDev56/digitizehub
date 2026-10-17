@@ -18,7 +18,7 @@ export default function Hero() {
         data-gsap-scale="1.12"
         data-gsap-opacity="0.95"
         data-gsap-duration="8"
-        className="pointer-events-none absolute -top-[60px] md:-top-[100px] -right-[60px] md:-right-[100px] z-0 w-[420px] sm:w-[580px] md:w-[750px] lg:w-[950px] select-none opacity-85"
+        className="pointer-events-none absolute -top-[60px] md:-top-[100px] -right-[60px] md:-right-[100px] z-0 w-[420px] sm:w-[580px] md:w-[750px] lg:w-[950px] select-none"
       >
         <Image
           src="/images/ellipse-top-right.png"

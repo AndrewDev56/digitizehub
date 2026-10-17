@@ -12,36 +12,36 @@ export default function OfficeCard({ office }: { office: Office }) {
           <span className="font-accent italic ">{office.city}</span> Office
         </h3>
 
-        <div className="mt-6 flex flex-col gap-5 md:gap-6">
-          <div className="flex items-center gap-4">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.08]">
-              <Image
+        <div className="mt-12 flex flex-col gap-5 md:gap-12">
+        <div className="flex items-center gap-8">
+        <span className="flex size-16 shrink-0 items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.08]">
+        <Image
                 src="/icons/telephone.png"
                 alt=""
-                width={16}
-                height={16}
-                className="size-4 opacity-80"
+                width={40}
+                height={40}
+                className="size-8 opacity-80"
               />
             </span>
             <a
-              href={`tel:${office.phone.replace(/[^0-9+]/g, "")}`}
-              className="font-body text-sm sm:text-lg font-normal text-white/80 transition-colors hover:text-white"
+              href={`tel:+19296216055`}
+              className="font-body text-xl sm:text-2xl font-normal text-white/80 transition-colors hover:text-white"
             >
-              {office.phone}
+              +1 (929) 621-6055
             </a>
           </div>
 
-          <div className="flex items-start gap-4">
-            <span className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.08]">
+          <div className="flex items-center gap-8">
+            <span className="flex size-16 shrink-0 items-center justify-center rounded-xl bg-white/[0.05] border border-white/[0.08]">
               <Image
                 src="/icons/message.png"
                 alt=""
-                width={16}
-                height={16}
-                className="size-4 opacity-80"
+                width={40}
+                height={40}
+                className="size-8 opacity-80"
               />
             </span>
-            <span className="font-body text-sm sm:text-lg font-normal leading-relaxed text-white/70 max-w-xs">
+            <span className="font-body text-xl sm:text-2xl font-normal leading-relaxed text-white/70 ">
               {office.address}
             </span>
           </div>
@@ -53,7 +53,7 @@ export default function OfficeCard({ office }: { office: Office }) {
           href={office.mapUrl || "#"}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-1.5 font-heading text-xs font-semibold text-brand-red transition-all duration-300  group-hover:translate-x-0.5"
+          className="inline-flex items-center gap-1.5 font-heading text-xl font-semibold text-brand-red transition-all duration-300  group-hover:translate-x-0.5"
         >
           <span>View on map</span>
           <span aria-hidden="true">&rarr;</span>

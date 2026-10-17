@@ -31,18 +31,22 @@ export const brandingContent: ServiceDetailContent = {
   processSteps: [
     {
       title: "Brand Discovery",
+      image: "/icons/process/rocket.svg",
       copy: "We learn your story, your customers, and your competitors through a short questionnaire and a discovery call. This tells us what your brand must say and how it should stand apart.",
     },
     {
       title: "Strategy & Moodboards",
+      image: "/icons/process/blueprint.svg",
       copy: "We define your brand personality and visual direction, then share moodboards so you approve the look and feel before any logo is drawn. No guessing, no wasted revision rounds.",
     },
     {
       title: "Logo & Identity Design",
+      image: "/icons/process/prototyping.svg",
       copy: "Our designers create original logo concepts, refine your favourite, and extend it into colours, typography, and supporting graphics that work on screen and in print.",
     },
     {
       title: "Guidelines & Handoff",
+      image: "/icons/process/blueprint.svg",
       copy: "You receive final files in every format you need, plus brand guidelines showing your team how to use the logo, colours, and fonts. Every file and right is yours.",
     },
   ],

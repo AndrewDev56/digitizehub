@@ -1,7 +1,6 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import Hero from "@/components/faq/Hero";
-import FaqList from "@/components/faq/FaqList";
+import Faq from "@/components/home/Faq";
 import CtaBanner from "@/components/home/CtaBanner";
 
 export default function FaqPage() {
@@ -9,8 +8,7 @@ export default function FaqPage() {
     <>
       <Header active="FAQ's" />
       <main className="overflow-x-clip">
-        <Hero />
-        <FaqList />
+        <Faq page />
         <CtaBanner />
       </main>
       <Footer />

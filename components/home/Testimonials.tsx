@@ -93,7 +93,7 @@ export default function Testimonials() {
             <div className="mt-8 sm:mt-10 md:mt-12 flex items-center justify-center gap-3.5 sm:gap-4">
               <span
                 aria-hidden
-                className="flex size-12 sm:size-14 shrink-0 items-center justify-center rounded-full font-heading text-base font-semibold text-white shadow-md select-none"
+                className="flex size-12 sm:size-16 shrink-0 items-center justify-center rounded-full font-heading text-base font-semibold text-white shadow-md select-none"
                 style={{ backgroundColor: testimonial.avatarColor }}
               >
                 {testimonial.initials}

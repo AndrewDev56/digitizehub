@@ -1,15 +1,17 @@
 "use client";
 
 import Image from "next/image";
-import Button from "@/components/ui/Button";
 import TrustBadges from "@/components/service-detail/TrustBadges";
 import type { AboutService } from "@/lib/data/aboutServices";
 import type { ServiceDetailContent } from "@/lib/data/serviceDetail";
 import {
+  portfolioHalves,
   portfolioLarge,
   portfolioMedium,
   portfolioWide,
 } from "@/lib/data/portfolio";
+import CaseStudyStack from "@/components/service-detail/CaseStudyStack";
+import ProcessScroll from "@/components/service-detail/ProcessScroll";
 import ServiceDetailFaq from "@/components/service-detail/ServiceDetailFaq";
 import ServiceInquiryForm from "@/components/service-detail/ServiceInquiryForm";
 import Testimonials from "@/components/home/Testimonials";
@@ -27,7 +29,7 @@ const industryGridPositions = [
   { row: 3, column: 3 },
 ];
 
-const caseStudies = [portfolioLarge, portfolioMedium, portfolioWide];
+const caseStudies = [portfolioLarge, portfolioMedium, portfolioWide, ...portfolioHalves];
 
 function TitleWithSegments({ lines }: { lines: ServiceDetailContent["servicesTitle"] }) {
   return (
@@ -74,10 +76,6 @@ function ServiceShowcaseRow({ service, reverse }: { service: AboutService; rever
             className="absolute inset-0 size-full  object-cover"
           />
         )}
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/45 to-transparent" />
-        {/* <Button href="/contact" className="absolute bottom-5 left-5 md:bottom-7 md:left-7">
-          Explore Service
-        </Button> */}
       </div>
 
       <div className={reverse ? "lg:order-1" : ""}>
@@ -161,27 +159,10 @@ export default function ServiceDetailSections({
         ))}
       </div>
 
-      <section className="relative bg-background pt-24 md:pt-32 2xl:mt-[200px] 2xl:pt-0">
-        <div aria-hidden className="pointer-events-none absolute top-[200px] -left-[150px] size-[400px] rounded-full bg-red-600/50 blur-[120px] 2xl:size-[600px] 2xl:blur-[160px]" />
-        <div className="relative mx-auto max-w-[1632px] px-4 md:px-9 2xl:px-0">
-          <h2 className="font-heading text-[28px] leading-[1.15] font-semibold tracking-[-0.01em] text-white sm:text-4xl md:text-6xl 2xl:text-[76px]">
-            <TitleWithSegments lines={content.processTitle} />
-          </h2>
-          <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6 2xl:mt-[52px] 2xl:gap-[60px]">
-            {content.processSteps.map((step) => (
-              <article key={step.title} className="flex flex-col rounded-[30px] border border-white/8 bg-white/4 p-7 md:p-10">
-                <div className="flex size-14 items-center justify-center rounded-2xl bg-white/10 md:size-16 2xl:size-[100px] 2xl:rounded-[14px]">
-                  <Image src="/icons/process/rocket.svg" alt="" width={50} height={50} className="size-7 md:size-8 2xl:size-[50px]" />
-                </div>
-                <div className="mt-8 md:mt-10">
-                  <h3 className="font-heading text-2xl font-semibold text-white md:text-[30px]">{step.title}</h3>
-                  <p className="mt-4 max-w-sm font-body text-base leading-7 text-white/65 md:text-[18px]">{step.copy}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <ProcessScroll
+        title={<TitleWithSegments lines={content.processTitle} />}
+        steps={content.processSteps}
+      />
 
       <section className="relative bg-background pt-24 md:pt-32 2xl:mt-[112px] 2xl:pt-0">
         <div aria-hidden className="pointer-events-none absolute top-[300px] -right-[150px] size-[400px] rounded-full bg-red-600/50 blur-[120px] 2xl:size-[600px] 2xl:blur-[160px]" />
@@ -225,21 +206,7 @@ export default function ServiceDetailSections({
           <h2 className="mx-auto text-center font-heading text-[32px] leading-[1.2] font-semibold tracking-[-0.01em] text-white sm:text-5xl md:text-7xl 2xl:text-[100px]">
             <TitleWithSegments lines={content.caseStudiesTitle} />
           </h2>
-          <div className="mt-16 flex flex-col gap-8 2xl:mt-[100px] 2xl:gap-[100px]">
-            {caseStudies.map((item, index) => (
-              <article key={`${item.image}-${index}`} className="group relative h-[240px] overflow-hidden rounded-[20px] border border-white/10 bg-[#111111] shadow-[0_0_0_1px_rgba(255,255,255,0.03)] sm:h-[360px] sm:rounded-[30px] md:h-[560px] 2xl:h-[900px]">
-                <Image src={item.image} alt={item.title} fill sizes="(min-width: 1660px) 1632px, 100vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.02]" />
-                <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/10 to-transparent" />
-                <div className="absolute inset-x-6 bottom-6 flex flex-wrap items-end justify-between gap-5 md:inset-x-12 md:bottom-12">
-                  <div>
-                    <p className="font-tag text-xs uppercase tracking-[0.08em] text-white/70">{item.tags.join(" · ")}</p>
-                    <h3 className="mt-2 font-heading text-xl font-semibold text-white sm:mt-3 sm:text-3xl md:text-5xl">{item.title}</h3>
-                  </div>
-                  <span aria-hidden className="flex size-12 items-center justify-center border border-white/50 text-2xl text-white">↗</span>
-                </div>
-              </article>
-            ))}
-          </div>
+          <CaseStudyStack items={caseStudies} />
         </div>
       </section>
 

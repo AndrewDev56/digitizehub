@@ -20,6 +20,8 @@ buildlog.txt
 # next.js
 /.next/
 /out/
+app/.api-export-skip/
+public/mail-config.php
 
 # production
 /build
@@ -36,6 +38,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # VS Code MCP config
 .vscode/mcp.json

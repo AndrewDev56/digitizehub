@@ -1,6 +1,6 @@
 export type TitleSegment = { text: string; italic?: boolean };
 
-export type ProcessStep = { title: string; copy: string };
+export type ProcessStep = { title: string; image: string; copy: string };
 
 export type ServiceDetailContent = {
   slug: string;

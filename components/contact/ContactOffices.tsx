@@ -10,7 +10,7 @@ export default function ContactOffices() {
           <span className="font-accent italic">Contacts</span> Info
         </h2>
 
-        <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-2">
+        <div className="mt-12 grid grid-cols-1 gap-6 md:mt-16 md:grid-cols-1">
           {offices.map((office) => (
             <OfficeCard key={office.city} office={office} />
           ))}

@@ -9,7 +9,7 @@ export default function PricingPlanCard({ plan }: { plan: PricingPlan }) {
         plan.featured
           ? "bg-white/[0.04] md:p-8"
           : plan.badge === undefined && plan.name === "Custom"
-            ? "bg-white/[0.02]"
+            ? "bg-white/[0.04] md:p-8"
             : "bg-white/5 md:p-10"
       }`}
       style={
@@ -44,9 +44,9 @@ export default function PricingPlanCard({ plan }: { plan: PricingPlan }) {
 
       <div className="mt-8 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between md:mt-11">
         <div>
-          <p className="font-heading text-sm font-light text-white/60">
+          {/* <p className="font-heading text-sm font-light text-white/60">
             Starting from
-          </p>
+          </p> */}
           <p className="font-heading text-3xl font-bold text-white md:text-[50px]">
             {plan.price}
           </p>

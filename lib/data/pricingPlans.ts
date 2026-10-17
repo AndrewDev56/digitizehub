@@ -6,7 +6,6 @@ export type PricingPlan = {
   features: string[];
   featured: boolean;
 };
-
 export const pricingPlans: PricingPlan[] = [
   {
     name: "Launch",

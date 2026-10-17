@@ -15,7 +15,7 @@ function CardItem({ item, index }: { item: GridItem; index: number }) {
     return (
       <div
         aria-hidden="true"
-        className={`shrink-0 rounded-[20px] border border-white/[0.08] bg-white/[0.04] backdrop-blur-md transition-colors duration-300 hover:border-white/15 ${
+        className={`shrink-0 rounded-[20px] border border-white/[0.08] bg-white/[0.04] backdrop-blur-md transition-colors duration-300  ${
           isWide
             ? "h-[130px] w-[270px] sm:h-[145px] sm:w-[305px] md:h-[160px] md:w-[340px]"
             : "size-[130px] sm:size-[145px] md:size-[160px]"
@@ -54,7 +54,7 @@ function SlidingRow({
   return (
     <div className="relative flex w-full overflow-hidden">
       <div
-        className={`flex w-max gap-3.5 sm:gap-4 md:gap-5 pause-on-hover ${animationClass}`}
+        className={`flex w-max gap-3.5 sm:gap-4 md:gap-5  ${animationClass}`}
       >
         {quadItems.map((item, idx) => (
           <CardItem key={`${item.id}-${idx}`} item={item} index={idx} />

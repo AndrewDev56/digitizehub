@@ -46,7 +46,7 @@ export default function Footer() {
                   Phone
                 </p>
                 <a
-                  href="tel:++19296216055"
+                  href="tel:+19296216055"
                   className="mt-2 block font-body text-base md:text-lg text-white/70 transition-colors hover:text-brand-red"
                 >
                   +1 929-621-6055

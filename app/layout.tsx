@@ -18,9 +18,14 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  title: "DigitizeHub — Web, Apps and SEO",
+  title: "Digital Marketing Agency in USA | Web Design, SEO & Branding | Digitize Hub",
   description:
-    "We design it, build it, launch it, and get it found. Web, Apps and SEO for businesses across Calgary and Georgia.",
+    "Digitize Hub is a digital marketing agency in USA offering web design, SEO services, branding, mobile app development, and social media marketing for business growth.",
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png" }],
+    shortcut: "/favicon.png",
+    apple: "/favicon.png",
+  },
 };
 
 export const viewport: Viewport = {

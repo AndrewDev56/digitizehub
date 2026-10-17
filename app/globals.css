@@ -74,6 +74,27 @@ html {
   max-width: 100%;
 }
 
+img,
+video,
+canvas,
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+img[class*="size-"],
+img[class*="h-"],
+video[class*="h-full"],
+video[class*="size-full"] {
+  height: unset;
+}
+
+video.h-full,
+video.size-full,
+img.size-full {
+  height: 100%;
+}
+
 body {
   background: var(--color-background);
   color: var(--color-foreground);
@@ -130,5 +151,14 @@ body {
 
 .pause-on-hover:hover {
   animation-play-state: paused;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 

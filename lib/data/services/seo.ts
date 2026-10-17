@@ -30,18 +30,22 @@ export const seoContent: ServiceDetailContent = {
   processSteps: [
     {
       title: "SEO Audit & Research",
+      image: "/icons/process/rocket.svg",
       copy: "We audit your site's technical health, content, and backlinks, then research the keywords your customers search and the competitors ranking for them. You see exactly where you stand.",
     },
     {
       title: "Strategy & Keyword Mapping",
+      image: "/icons/process/blueprint.svg",
       copy: "We build a clear plan that assigns target keywords to each page, sets priorities by revenue impact, and lists the fixes, content, and links needed to win each ranking.",
     },
     {
       title: "Optimization & Content",
+      image: "/icons/process/prototyping.svg",
       copy: "We fix technical issues, improve speed, optimize existing pages, and write new SEO content that answers your customers' questions better than the pages ranking above you today.",
     },
     {
       title: "Authority & Reporting",
+      image: "/icons/process/blueprint.svg",
       copy: "We earn quality backlinks, build citations, and strengthen your Google Business Profile. Every month you get a plain-English report on rankings, traffic, and leads.",
     },
   ],

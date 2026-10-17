@@ -27,7 +27,7 @@ export default function AppPricingPlans() {
         />
       </div>
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
-        <div className="flex justify-end">
+        {/* <div className="flex justify-end">
           <div className="flex items-center gap-3">
             <span
               className={`font-heading text-sm tracking-[-0.01em] ${
@@ -59,7 +59,7 @@ export default function AppPricingPlans() {
               Quarterly
             </span>
           </div>
-        </div>
+        </div> */}
 
         <div className="mt-8 grid grid-cols-1 gap-6 md:grid-cols-3">
           {appPricingPlans.map((plan) => (

@@ -5,6 +5,9 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 import FormPill from "@/components/ui/FormPill";
 import { projectNeedOptions, budgetOptions, hearAboutOptions } from "@/lib/data/contactOptions";
+import { inquiryError } from "@/lib/inquiry";
+import { sendInquiryViaEmailApi } from "@/lib/emailApi";
+import { formatUsPhoneInput } from "@/lib/phone";
 
 const inputClass =
   "w-full max-w-full bg-transparent text-left font-body text-base font-light tracking-[-0.01em] text-white outline-none placeholder:text-white/30 sm:text-lg md:w-[666px] md:text-right md:text-[30px]";
@@ -19,6 +22,9 @@ export default function ContactForm() {
   const [designation, setDesignation] = useState("");
   const [hearAbout, setHearAbout] = useState("");
   const [details, setDetails] = useState("");
+  const [submitting, setSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
 
   const toggleNeed = (option: string) => {
     setNeeds((prev) =>
@@ -26,13 +32,55 @@ export default function ContactForm() {
     );
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log({ needs, budget, company, name, email, phone, designation, hearAbout, details });
+    if (submitting) return;
+    const validationError = inquiryError({
+      source: "contact",
+      needs,
+      budget,
+      company,
+      name,
+      email,
+      phone,
+      designation,
+      hearAbout,
+      details,
+    });
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
+    setError("");
+    setSubmitted(false);
+    setSubmitting(true);
+    try {
+      await sendInquiryViaEmailApi({
+        source: "contact",
+        needs,
+        budget,
+        company,
+        name,
+        email,
+        phone,
+        designation,
+        hearAbout,
+        details,
+      });
+      setSubmitted(true);
+    } catch (err) {
+      setError(
+        err instanceof Error
+          ? err.message
+          : "Could not send just now. Email us at info@digitizehub.net.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
-    <form onSubmit={handleSubmit} className="relative isolate overflow-visible pb-16 md:pb-24">
+    <form noValidate onSubmit={handleSubmit} className="relative isolate overflow-visible pb-16 md:pb-24">
       <div
         aria-hidden="true"
         data-gsap-ambient
@@ -100,6 +148,7 @@ export default function ContactForm() {
             value={company}
             onChange={(e) => setCompany(e.target.value)}
             placeholder="Company name"
+            required
             className={inputClass}
           />
         </div>
@@ -116,6 +165,7 @@ export default function ContactForm() {
             value={name}
             onChange={(e) => setName(e.target.value)}
             placeholder="Full name"
+            required
             className={inputClass}
           />
         </div>
@@ -132,6 +182,7 @@ export default function ContactForm() {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Email address"
+            required
             className={inputClass}
           />
         </div>
@@ -145,9 +196,13 @@ export default function ContactForm() {
           </div>
           <input
             type="tel"
+            inputMode="numeric"
+            autoComplete="tel-national"
             value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            placeholder="Phone number"
+            onChange={(e) => setPhone(formatUsPhoneInput(e.target.value))}
+            placeholder="(201) 555-0123"
+            maxLength={17}
+            required
             className={inputClass}
           />
         </div>
@@ -164,6 +219,7 @@ export default function ContactForm() {
             value={designation}
             onChange={(e) => setDesignation(e.target.value)}
             placeholder="Designation"
+            required
             className={inputClass}
           />
         </div>
@@ -178,6 +234,7 @@ export default function ContactForm() {
           <select
             value={hearAbout}
             onChange={(e) => setHearAbout(e.target.value)}
+            required
             className={`${inputClass} appearance-none`}
           >
             <option value="" disabled className="bg-background">
@@ -202,13 +259,24 @@ export default function ContactForm() {
             value={details}
             onChange={(e) => setDetails(e.target.value)}
             placeholder="We're all ears! Dive deep into your project with us. Share your goals, expectations, success criteria, concerns, constraints, and any flexibility you have. The more you give us on the challenge, the better we can understand how to assist you."
-            rows={5}
-            className={`${inputClass} resize-none leading-[1.4]`}
+            rows={6}
+            required
+            className={`${inputClass} no-scrollbar resize-none overflow-y-auto leading-[1.4]`}
           />
         </div>
 
-        <div className="mt-8 flex justify-center">
-          <Button type="submit">Submit Request</Button>
+        <div className="mt-8 flex flex-col items-center gap-3">
+          <Button type="submit">{submitting ? "Sending..." : "Submit Request"}</Button>
+          {submitted ? (
+            <p role="status" className="font-body text-sm text-white/70">
+              Thanks. We will reply within one business day.
+            </p>
+          ) : null}
+          {error ? (
+            <p role="alert" className="font-body text-sm text-brand-red">
+              {error}
+            </p>
+          ) : null}
         </div>
       </div>
     </form>

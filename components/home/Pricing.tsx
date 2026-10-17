@@ -39,19 +39,19 @@ export default function Pricing() {
 
         <FadeIn direction="up">
           <div className="relative z-10 flex flex-col items-start justify-between gap-8 md:flex-row md:items-start">
-            <div className="max-w-3xl">
+            <div>
               <h2 className="font-heading text-[26px] leading-tight font-normal tracking-[-0.02em] text-white sm:text-4xl md:text-5xl lg:text-6xl">
                 Fixed <span className="font-accent font-normal italic text-white">Prices</span>. You see
                 them
                 <br className="hidden lg:block" /> before we{" "}
                 <span className="font-accent font-normal italic text-white">Get Started</span>.
               </h2>
-              <p className="mt-3 max-w-2xl font-body text-xs sm:text-sm md:text-base text-white/60">
+              <p className="mt-3 font-body text-xs sm:text-sm md:text-base text-white/60">
                 {service.tagline}
               </p>
             </div>
 
-            {service.showBilling && (
+            {/* {service.showBilling && (
               <button
                 type="button"
                 role="switch"
@@ -86,7 +86,7 @@ export default function Pricing() {
                   Quarterly
                 </span>
               </button>
-            )}
+            )} */}
           </div>
         </FadeIn>
 

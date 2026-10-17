@@ -24,26 +24,30 @@ export const mobileAppDesignContent: ServiceDetailContent = {
     [{ text: "UI & UX Design" }],
   ],
   captivatingBody:
-    "Looking for app designers who think beyond pretty screens? Our mobile UI/UX team designs native-feeling experiences for consumer apps, booking apps, marketplaces, and internal business tools, with every flow mapped, prototyped, and tested before developers write any code.",
+    "Looking for app designers who think beyond pretty screens? Our mobile UI/UX team designs native-feeling experiences for consumer apps, booking apps, marketplaces, and internal business tools, with every flow mapped, prototyped, and tested. We can then build it, or hand the files to your developers.",
   captivatingPills: ["App UI Design", "UX Research", "Prototyping", "Design Systems"],
   servicesTitle: [[{ text: "Our " }, { text: "Mobile App", italic: true }, { text: " Design Services" }]],
   processTitle: [[{ text: "Our " }, { text: "Mobile App", italic: true }, { text: " Design Process" }]],
   processSteps: [
     {
       title: "Discovery & Research",
+      image: "/icons/process/rocket.svg",
       copy: "We start by understanding your business, your users, and your competitors. Through stakeholder calls, user personas, and app store research, we define what your app must do and why people will choose it.",
     },
     {
       title: "User Flows & Wireframes",
+      image: "/icons/process/blueprint.svg",
       copy: "We map every journey, from onboarding to checkout, and turn it into wireframes. This blueprint keeps the app simple, removes extra steps, and makes new features easy to add later.",
     },
     {
       title: "UI Design & Prototype",
+      image: "/icons/process/prototyping.svg",
       copy: "We design high-fidelity screens in your brand style and link them into a clickable prototype, so you can try the app on your phone and share it with users or investors.",
     },
     {
       title: "Testing & Handoff",
-      copy: "We test the prototype with real users, refine anything confusing, and hand over organized Figma files, assets, and specs for iOS and Android so developers build exactly what was designed.",
+      image: "/icons/process/blueprint.svg",
+      copy: "We test the prototype with real users, refine anything confusing, and hand over organized Figma files, assets, and specs. We can also build the iOS and Android app so you are not stuck finding a separate developer.",
     },
   ],
   industriesTitle: [[{ text: "App Design", italic: true }, { text: " that Fits Your Industry" }]],
@@ -67,7 +71,7 @@ export const mobileAppDesignContent: ServiceDetailContent = {
     [{ text: "Website Audit", italic: true }, { text: " First." }],
   ],
   auditCtaBody:
-    "We go through your site page by page and send a plain English report: what is costing you customers, what to fix first, and what it should cost. Delivered in [X] business days for [Price]. If you hire us after, the fee comes off your project.",
+    "We go through your site page by page and send a plain English report: what is costing you customers, what to fix first, and what it should cost. If you hire us after, the audit fee comes off your project.",
 };
 
 export const mobileAppShowcaseRows: AboutService[] = [

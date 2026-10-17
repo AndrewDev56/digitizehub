@@ -1,25 +1,29 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import FaqCard from "@/components/ui/FaqCard";
 import { faqItems } from "@/lib/data/faq";
 import FadeIn from "@/components/animation/FadeIn";
 
-export default function Faq() {
+export default function Faq({ page = false }: { page?: boolean }) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const leftColItems = faqItems.slice(0, 3);
   const rightColItems = faqItems.slice(3, 6);
+  const Title = page ? "h1" : "h2";
 
   return (
-    <section className="relative isolate overflow-visible py-section">
+    <section
+      className={`relative isolate overflow-visible ${
+        page ? "pt-[140px] pb-section md:pt-[180px]" : "py-section"
+      }`}
+    >
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
         <FadeIn direction="up">
-          <h2 className="font-heading text-[28px] font-semibold tracking-[-0.02em] text-white sm:text-4xl md:text-6xl">
+          <Title className="font-heading text-[28px] font-semibold tracking-[-0.02em] text-white sm:text-4xl md:text-6xl">
             Frequently Asked{" "}
             <span className="font-accent italic ">Questions</span>
-          </h2>
+          </Title>
         </FadeIn>
 
         <FadeIn direction="up" delay={0.2}>

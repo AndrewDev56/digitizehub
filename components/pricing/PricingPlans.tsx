@@ -58,7 +58,7 @@ export default function PricingPlans() {
             })}
           </div>
 
-          {service.showBilling && (
+          {/* {service.showBilling && (
             <div className="flex items-center gap-3">
               <span
                 className={`font-heading text-sm tracking-[-0.01em] ${
@@ -91,7 +91,7 @@ export default function PricingPlans() {
                 Quarterly
               </span>
             </div>
-          )}
+          )} */}
         </div>
 
         <div

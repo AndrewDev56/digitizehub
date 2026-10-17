@@ -49,6 +49,12 @@ const contentBySlug: Record<string, ServiceEntry> = {
   },
 };
 
+export function generateStaticParams() {
+  return Object.keys(contentBySlug).map((slug) => ({ slug }));
+}
+
+export const dynamicParams = false;
+
 export default async function ServiceDetailPage({
   params,
 }: {

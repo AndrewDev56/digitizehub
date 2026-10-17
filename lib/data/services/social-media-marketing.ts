@@ -31,18 +31,22 @@ export const socialMediaMarketingContent: ServiceDetailContent = {
   processSteps: [
     {
       title: "Audit & Research",
+      image: "/icons/process/rocket.svg",
       copy: "We review your current profiles, competitors, and audience to see what works, what does not, and where your customers spend time online. You get a clear picture before any money is spent.",
     },
     {
       title: "Strategy & Content Plan",
+      image: "/icons/process/blueprint.svg",
       copy: "We set goals tied to your business, pick the right platforms, and build a monthly content calendar with themes, post formats, and campaign dates, all approved by you before anything goes live.",
     },
     {
       title: "Create & Publish",
+      image: "/icons/process/prototyping.svg",
       copy: "Our designers and writers produce posts, reels, and ad creatives in your brand style. We schedule them at the best times and manage comments and messages every day.",
     },
     {
       title: "Track & Improve",
+      image: "/icons/process/blueprint.svg",
       copy: "Every month you get a plain-English report on reach, engagement, leads, and cost per lead. We double down on what works and replace what does not.",
     },
   ],

@@ -14,7 +14,7 @@ export const uiUxDesignContent: ServiceDetailContent = {
   heroVideo: "/videos/website-that-sell.mp4",
   heroTitle: [
     [{ text: "Hire Top " }, { text: "UI / UX", italic: true }, { text: " Design" }],
-    [{ text: "Company in USA" }],
+    [{ text: "Company in Canada & the USA" }],
   ],
   heroBody:
     "Work with a UX design team that starts with your users, not trends. We plan, design, and test every screen so your website or product is easy to use and built to convert.",
@@ -35,18 +35,22 @@ export const uiUxDesignContent: ServiceDetailContent = {
   processSteps: [
     {
       title: "In-depth Research",
+      image: "/icons/process/rocket.svg",
       copy: "We begin by understanding your business, target audience, and competitors. Through stakeholder interviews, user personas, and market research, we identify the exact design challenges and opportunities.",
     },
     {
       title: "Planning & Blueprints",
+      image: "/icons/process/blueprint.svg",
       copy: "Based on the insights, we build user flows, sitemaps, and wireframes, the blueprint of your digital experience. This keeps the interface intuitive, conversion-friendly, and easy to scale.",
     },
     {
       title: "UI Design & Prototyping",
+      image: "/icons/process/prototyping.svg",
       copy: "We turn approved wireframes into high-fidelity screens in your brand style. Clickable prototypes let you test the real experience and lock decisions before a single line of code is written.",
     },
     {
       title: "Testing & Handoff",
+      image: "/icons/process/blueprint.svg",
       copy: "We test with real users, fix what slows them down, and deliver organized Figma files, a component library, and specs your developers can build from without guesswork.",
     },
   ],
