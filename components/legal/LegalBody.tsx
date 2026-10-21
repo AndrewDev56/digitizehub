@@ -50,7 +50,7 @@ export default function LegalBody({
                 key={section.number}
                 className="rounded-[20px] border border-white/10 bg-white/[0.04] p-6 backdrop-blur-md sm:p-8 md:rounded-[24px] md:p-10"
               >
-                <h2 className="flex items-baseline gap-3 font-heading text-xl font-semibold tracking-[-0.02em] text-white sm:gap-4 sm:text-2xl md:text-[28px]">
+                <h2 className="flex items-baseline gap-3 font-heading text-xl font-semibold tracking-[-0.02em] text-white sm:gap-4 sm:text-2xl md:text-[28px] flex-wrap">
                   <span className="font-accent text-lg italic text-brand-red sm:text-xl">
                     {section.number}.
                   </span>

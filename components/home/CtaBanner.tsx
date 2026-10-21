@@ -1,9 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import FadeIn from "@/components/animation/FadeIn";
 import Button from "../ui/Button";
+import { CALENDLY_URL } from "@/lib/calendly";
 
 export default function CtaBanner() {
   return (
@@ -51,8 +51,10 @@ export default function CtaBanner() {
           </p>
 
           <div className="relative z-10 mt-8 flex w-full flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:gap-4">
-            <Link
-              href="/contact"
+            <a
+              href={CALENDLY_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="group relative flex w-full max-w-xs items-center justify-center gap-3 overflow-hidden rounded-full bg-black py-3 pr-3 pl-5 font-heading text-sm font-semibold text-white shadow-xl transition-all duration-300 active:scale-95 sm:w-auto sm:py-3.5 sm:pr-3.5 sm:pl-7"
             >
               <span
@@ -71,7 +73,7 @@ export default function CtaBanner() {
                   className="h-[45%] w-[45%] invert transition-all duration-300 ease-out group-hover:invert-0 group-hover:-rotate-45 group-hover:scale-105"
                 />
               </span>
-            </Link>
+            </a>
 
             <Button
               href="/portfolio"

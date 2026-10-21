@@ -6,7 +6,7 @@ export type Founder = {
 };
 
 export const founderIntro =
-  "You will talk to the people doing the work. We are a 25 person team across Calgary and Atlanta, and someone replies to every inquiry within one business day.";
+  "You will talk to the people doing the work. We are a 25 person team across United States of America, and someone replies to every inquiry within one business day.";
 
 export const founders: Founder[] = [
   {

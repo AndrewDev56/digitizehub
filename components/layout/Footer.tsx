@@ -15,10 +15,31 @@ const socialIcons: Record<string, string> = {
 
 const socials = ["facebook", "instagram", "linkedin", "pinterest"];
 
-export default function Footer() {
+export default function Footer({ compact = false }: { compact?: boolean }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
+
+  if (compact) {
+    return (
+      <footer className="relative overflow-hidden border-t border-white/10 bg-background">
+        <div className="relative z-10 mx-auto max-w-[1632px] px-6 py-8 md:px-9">
+          <div className="flex md:flex-row flex-col justify-between items-center gap-2">
+          <p className="text-white/40">&copy; {new Date().getFullYear()} <span className="font-semibold text-brand-red">DigitizeHub</span>. All rights reserved.</p>
+          {/* icons */}
+          <div className="flex gap-3">
+            {socials.map((social) => (
+              <a key={social} href="#" aria-label={social} className="flex size-11 items-center justify-center rounded-full bg-white/10 transition-all hover:scale-110 hover:-translate-y-0.5 active:scale-95 hover:bg-brand-red">
+                <Image src={socialIcons[social]} alt="" width={20} height={20} className="size-5" />
+              </a>
+            ))}
+          </div>
+
+          </div>
+        </div>
+      </footer>
+    );
+  }
 
   return (
     <footer className="relative overflow-hidden border-t border-white/10 bg-background">
@@ -137,10 +158,7 @@ export default function Footer() {
           </div>
 
           <div className="mt-16 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-center sm:flex-row sm:text-left">
-            <p className="font-body text-sm md:text-base text-white/50">
-              All Rights Reserved <span aria-hidden="true">|</span> © 2026{" "}
-              <span className="font-semibold text-brand-red">DigitizeHub</span>.
-            </p>
+          <p className="text-white/40">&copy; {new Date().getFullYear()} <span className="font-semibold text-brand-red">DigitizeHub</span>. All rights reserved.</p>
             <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
               <Link href="/privacy" className="font-body text-sm md:text-base text-white/50 transition-colors hover:text-white">
                 Privacy Policy

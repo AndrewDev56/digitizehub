@@ -3,6 +3,8 @@ export type PricingPlan = {
   icon: string;
   badge?: string;
   price: string;
+  compareAt?: string;
+  tier?: string;
   features: string[];
   featured: boolean;
 };

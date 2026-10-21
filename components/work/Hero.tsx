@@ -44,7 +44,7 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-[1522px] px-6 text-center md:px-9">
         <p className="font-body text-sm tracking-[0.02em] text-white/70 md:text-xl">
-          Web, Apps and SEO&nbsp; · &nbsp;Calgary and Georgia
+          Web, Apps and SEO&nbsp; · &nbsp;United States of America
         </p>
 
         <h1 className="mt-6 font-heading text-[26px] leading-[1.2] font-semibold tracking-[-0.02em] text-white sm:text-[32px] md:text-5xl lg:text-[90px]">

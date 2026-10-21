@@ -7,7 +7,13 @@ import Image from "next/image";
 import Button from "@/components/ui/Button";
 import type { NavLink } from "@/lib/data/navLinks";
 
-export default function MobileNav({ links }: { links: NavLink[] }) {
+export default function MobileNav({
+  links,
+  onContact,
+}: {
+  links: NavLink[];
+  onContact?: () => void;
+}) {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
@@ -95,17 +101,20 @@ export default function MobileNav({ links }: { links: NavLink[] }) {
 
           <div className="relative z-10 mt-12 flex flex-col gap-6 border-t border-white/10 pt-8">
             <Button
-              href="/contact"
+              href={onContact ? undefined : "/contact"}
               size="md"
               className="w-full !justify-between !px-6 shadow-xl"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setOpen(false);
+                onContact?.();
+              }}
             >
               Contact Us
             </Button>
 
             <div className="flex flex-col gap-1 text-center font-body text-xs text-white/50">
               <p>Calgary &amp; Georgia · Full-Service Digital Agency</p>
-              <p className="text-white/40">&copy; {new Date().getFullYear()} DigitizeHub. All rights reserved.</p>
+              <p className="text-white/40">&copy; {new Date().getFullYear()} <span className="font-semibold text-brand-red">DigitizeHub</span>. All rights reserved.</p>
             </div>
           </div>
         </div>

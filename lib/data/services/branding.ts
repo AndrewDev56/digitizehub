@@ -9,9 +9,9 @@ export const brandingContent: ServiceDetailContent = {
     [{ text: "Design Services." }],
   ],
   heroSubtext:
-    "Digitize Hub is a branding and logo design agency in Calgary and Atlanta helping businesses across Canada and the USA look as good as they really are. We design logos, colour palettes, and complete brand identities that people recognize, remember, and trust.",
+    "Digitize Hub is a branding and logo design agency in Calgary and Atlanta helping businesses across USA look as good as they really are. We design logos, colour palettes, and complete brand identities that people recognize, remember, and trust.",
   heroImageAlt: "Branding and logo design services showing a brand identity system by Digitize Hub",
-  heroVideo: "/videos/Branding-logo-design.mp4",
+  heroVideo: "/videos/branding-logo-design2.mp4",
   heroTitle: [
     [{ text: "Hire a Top " }, { text: "Branding", italic: true }, { text: " Agency" }],
     // [{ text: "Agency" }],

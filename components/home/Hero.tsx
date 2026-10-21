@@ -3,6 +3,7 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Tag from "@/components/ui/Tag";
+import { CALENDLY_URL } from "@/lib/calendly";
 // GUIDED: Uncomment after replacing placeholder logos in lib/data/clientLogos.ts.
 // import LogoMarquee from "@/components/home/LogoMarquee";
 import { trustColumns } from "@/lib/data/heroTrust";
@@ -49,7 +50,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-[1632px] px-6 md:px-9">
         <FadeIn direction="down" delay={0.1}>
           <p className="text-center font-body text-sm tracking-[0.01em] text-white/70 md:text-[18px]">
-            Web, Apps and SEO&nbsp; · &nbsp;Calgary and Georgia
+            Web, Apps and SEO&nbsp; · &nbsp;United States of America
           </p>
         </FadeIn>
 
@@ -69,13 +70,13 @@ export default function Hero() {
             , & Get it Found.
         </h1>
 
-        <StaggerContainer staggerChildren={0.15} delayChildren={0.4} className="mt-8 grid grid-cols-1 gap-12 md:mt-12 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
+        <StaggerContainer staggerChildren={0.15} delayChildren={0.4} className="mt-8 grid grid-cols-1 gap-12 md:mt-32 md:grid-cols-2 lg:grid-cols-3 lg:gap-8">
           {trustColumns.map((column) => (
             <StaggerItem
               key={column.lines[0]}
               className="flex flex-col items-start gap-6"
             >
-              <div className="flex items-start gap-2 self-stretch">
+              <div className="flex items-center gap-2 self-stretch md:items-start justify-center md:justify-start">
                 <Image
                   src="/icons/star.png"
                   alt=""
@@ -92,7 +93,7 @@ export default function Hero() {
                 </p>
               </div>
 
-              <div className="flex w-full flex-wrap justify-start gap-[6px]">
+              <div className="flex w-full flex-wrap justify-center md:justify-start gap-[6px]">
                 {column.tags.map((tag) => (
                   <Tag key={tag}>{tag}</Tag>
                 ))}
@@ -101,7 +102,7 @@ export default function Hero() {
           ))}
 
           <StaggerItem className="flex flex-col items-center gap-10 md:col-span-2 lg:col-span-1 lg:items-end lg:gap-[40px]">
-            <div className="flex items-center gap-[18px]">
+            {/* <div className="flex items-center gap-[18px]">
               <Image
                 src="/images/Trustpilot_Logo.png"
                 alt="Trustpilot"
@@ -117,9 +118,9 @@ export default function Hero() {
                 height={26}
                 className="h-[22px] w-auto md:h-[26px] transition-transform hover:scale-105"
               />
-            </div>
+            </div> */}
 
-            <Button href="/contact">Book A Call</Button>
+            <Button href={CALENDLY_URL} className=" py-3 px-6">Book A Call</Button>
           </StaggerItem>
         </StaggerContainer>
       </div>
@@ -137,7 +138,7 @@ export default function Hero() {
         }}
         data-gsap-bob
         aria-label="Scroll to next section"
-        className="group relative mx-auto mt-10 flex flex-col items-center gap-2 cursor-pointer transition-transform duration-300 hover:scale-105 active:scale-95 focus:outline-none md:mt-[30px]"
+        className="group relative mx-auto mt-10 flex flex-col items-center gap-2 cursor-pointer transition-transform duration-300 hover:scale-105 active:scale-95 focus:outline-none md:mt-[100px]"
       >
         <span className="font-heading text-sm tracking-[0.1em] text-white/56 uppercase transition-colors duration-200 group-hover:text-white md:text-base">
           Discover

@@ -138,7 +138,7 @@ export default function ServiceDetailHero({
                   (content.slug === "mobile-app-design"
                     ? "/videos/home-screen-app.mp4"
                     : content.slug === "branding"
-                    ? "/videos/Branding-logo-design.mp4"
+                    ? "/videos/branding-logo-design2.mp4"
                     : content.slug === "seo"
                     ? "/videos/seo.mp4"
                     : content.slug === "social-media-marketing"

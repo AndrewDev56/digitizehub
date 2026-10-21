@@ -10,10 +10,17 @@ export async function sendInquiryViaEmailApi(payload: InquiryPayload) {
       <p><strong>Designation:</strong> ${payload.designation}</p>
       <p><strong>How they heard about us:</strong> ${payload.hearAbout}</p>
       <p><strong>Budget:</strong> ${payload.budget}</p>
-      <p><strong>Services:</strong> ${payload.needs.join(", ")}</p>
+      <p><strong>Services:</strong> ${payload.needs.join(", ") || "Not selected"}</p>
+      <p><strong>Selected Package:</strong> ${payload.selectedPackage || "Not selected"}</p>
       <p><strong>Message / Project Info:</strong> ${payload.details}</p>
       <hr />
-      <p><strong>Source Page:</strong> ${payload.source === "service" ? "Service page form" : "Contact page"}</p>
+      <p><strong>Source Page:</strong> ${
+        payload.source === "service"
+          ? "Service page form"
+          : payload.source === "landing"
+            ? "Landing page (/launch)"
+            : "Contact page"
+      }</p>
     `;
 
   const res = await fetch("https://for-send-email-moeed.vercel.app/api/send", {

@@ -109,6 +109,7 @@ export default function PricingPlans() {
                   icon: plan.icon,
                   badge: plan.badge,
                   price: tierLabel[plan.name] ?? plan.price,
+                  tier: tierLabel[plan.name],
                   features: plan.features,
                   featured: plan.featured,
                 }}

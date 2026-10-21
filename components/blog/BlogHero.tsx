@@ -23,7 +23,7 @@ export default function BlogHero() {
 
      
 
-      <div className="relative mx-auto max-w-4xl px-6">
+      <div className="relative mx-auto max-w-6xl px-6">
         <h1 className="font-heading text-[36px] leading-[1.1] font-normal tracking-[-0.02em] text-white sm:text-6xl lg:text-[90px]">
           Explore Topics That Matter To Your{" "}
           <span className="font-accent italic">Business</span>

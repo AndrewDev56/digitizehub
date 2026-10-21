@@ -9,7 +9,7 @@ export const socialMediaMarketingContent: ServiceDetailContent = {
     [{ text: "Marketing Services." }],
   ],
   heroSubtext:
-    "Digitize Hub is a social media marketing agency in Calgary and Atlanta helping brands across Canada and the USA turn attention into customers. We plan, design, publish, and run paid campaigns on Instagram, Facebook, and LinkedIn, and we report in leads, not likes.",
+    "Digitize Hub is a social media marketing agency in United States of America helping brands across USA turn attention into customers. We plan, design, publish, and run paid campaigns on Instagram, Facebook, and LinkedIn, and we report in leads, not likes.",
   heroImageAlt: "Social media marketing services showing branded Instagram and Facebook posts by Digitize Hub",
   heroVideo: "/videos/Social Media.mp4",
   heroTitle: [

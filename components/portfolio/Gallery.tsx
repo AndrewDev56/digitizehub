@@ -17,7 +17,7 @@ import {
   type PortfolioCategory,
 } from "@/lib/data/portfolioGallery";
 
-export default function Gallery() {
+export default function Gallery({ onDiscuss }: { onDiscuss?: () => void }) {
   const [active, setActive] = useState<"all" | PortfolioCategory>("all");
 
   const items = useMemo(
@@ -87,7 +87,7 @@ export default function Gallery() {
 
         <div className="mt-12 grid grid-cols-1 gap-10 md:mt-16 md:grid-cols-[280px_1fr] md:items-start md:gap-12 lg:grid-cols-[300px_1fr] lg:gap-16">
           <FadeIn direction="right" className="md:sticky md:top-24">
-            <GallerySidebar active={active} onChange={setActive} />
+            <GallerySidebar active={active} onChange={setActive} onDiscuss={onDiscuss} />
           </FadeIn>
 
           <StaggerContainer

@@ -72,7 +72,7 @@ export default function Stats() {
                   onMouseLeave={() => setHoveredCol(null)}
                   className="w-full flex flex-col items-center"
                 >
-                  <div className="mb-5 flex h-14 w-full items-center justify-center lg:hidden">
+                  <div className="mb-5 flex h-14 w-full items-center justify-center lg:hidden gap-10 md:gap-0">
                     {chips.map((chip, chipIndex) => (
                       <div
                         key={`${chip.label}-${chipIndex}`}

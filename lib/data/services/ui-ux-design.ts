@@ -9,7 +9,7 @@ export const uiUxDesignContent: ServiceDetailContent = {
     [{ text: "Design Services." }],
   ],
   heroSubtext:
-    "Digitize Hub is a UI/UX design agency in Calgary and Atlanta helping startups, SMEs, and enterprises across Canada and the USA design digital products people enjoy using. From websites to SaaS dashboards, our research-led UX design turns confused visitors into confident customers.",
+    "Digitize Hub is a UI/UX design agency in United States of America helping startups, SMEs, and enterprises across USA design digital products people enjoy using. From websites to SaaS dashboards, our research-led UX design turns confused visitors into confident customers.",
   heroImageAlt: "UI/UX design services by Digitize Hub showing a website and dashboard interface",
   heroVideo: "/videos/website-that-sell.mp4",
   heroTitle: [

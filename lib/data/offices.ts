@@ -9,8 +9,8 @@ export const offices: Office[] = [
   {
     city: "US",
     phone: "+1 (929) 621-6055",
-    address: "767 5th Ave, New York, NY 10153, United States",
-    mapUrl: "https://maps.google.com/?q=21+Panorama+Hills+Gdns+NW+Calgary+AB+T3K+4N3",
+    address: "215 W 54th St, New York, NY 11220, USA",
+    mapUrl: "https://maps.app.goo.gl/P3Mp2Quw8pJ5QGGW6",
   },
   // {
   //   city: "Georgia",

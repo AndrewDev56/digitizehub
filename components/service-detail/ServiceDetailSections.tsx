@@ -123,9 +123,9 @@ export default function ServiceDetailSections({
               <h2 className="max-w-[720px] font-heading text-[32px] leading-[1.15] font-semibold text-white sm:text-[44px] md:text-6xl 2xl:text-[76px]">
                 <TitleWithSegments lines={content.captivatingTitle} />
               </h2>
-              <div>
+              {/* <div>
                 <TrustBadges />
-              </div>
+              </div> */}
             </div>
 
             <div className="flex flex-col space-y-10 lg:pt-16 2xl:pt-24">

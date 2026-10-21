@@ -67,7 +67,7 @@ export const aboutServices: AboutService[] = [
       "Social Media Brand Assets",
     ],
     duration: "Typically 2 to 4 Weeks",
-    video: "/videos/branding-logo-design.mp4",
+    video: "/videos/branding-logo-design2.mp4",
     imagePosition: "left",
     href: "/services/branding",
   },

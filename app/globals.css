@@ -162,3 +162,36 @@ body {
   display: none;
 }
 
+.package-features {
+  scrollbar-width: thin;
+  scrollbar-color: #ff0036 transparent;
+}
+
+.package-features::-webkit-scrollbar {
+  width: 6px;
+}
+
+.package-features::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.package-features::-webkit-scrollbar-thumb {
+  background: #ff0036;
+  border-radius: 999px;
+}
+
+@keyframes landing-popup-in {
+  from {
+    opacity: 0;
+    transform: scale(0.94) translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.landing-popup-in {
+  animation: landing-popup-in 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+

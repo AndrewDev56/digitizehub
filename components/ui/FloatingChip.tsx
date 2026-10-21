@@ -15,12 +15,12 @@ export default function FloatingChip({
     <span
       data-gsap-reveal
       data-gsap-scale="0.8"
-      className={`inline-flex items-center gap-1.5 md:gap-[9px] rounded-full bg-white/95 px-2.5 py-1 md:px-[10px] md:py-[6px] font-tag text-xs sm:text-sm md:text-base font-semibold tracking-[-0.02em] text-black backdrop-blur-[8px] shadow-lg ${className}`}
+      className={`inline-flex items-center gap-1.5 md:gap-[9px] rounded-full bg-white/95 px-2.5 py-1 md:px-[10px] md:pr-[20px] md:py-[6px] font-tag text-xs sm:text-sm md:text-base font-semibold tracking-[-0.02em] text-black backdrop-blur-[8px] shadow-lg ${className}`}
       style={style}
     >
       <span className="flex size-5 sm:size-6 md:size-[34px] shrink-0 items-center justify-center rounded-full bg-black">
         <svg className="size-3 sm:size-3.5 md:size-[23px]" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_138_86)">
+<g clipPath="url(#clip0_138_86)">
 <path d="M12.2133 11.4394L14.7517 11.0827C14.9414 11.056 15.1168 11.1882 15.1435 11.3779L15.5002 13.9163C15.5269 14.106 15.3947 14.2814 15.205 14.3081L12.6666 14.6649C12.4769 14.6915 12.3014 14.5593 12.2748 14.3696L11.918 11.8312C11.8914 11.6415 12.0235 11.4661 12.2133 11.4394Z" fill="white"/>
 <path d="M11.6089 7.13875L14.1473 6.782C14.337 6.75533 14.5124 6.88752 14.5391 7.07724L14.8959 9.61565C14.9225 9.80537 14.7903 9.98078 14.6006 10.0074L12.0622 10.3642C11.8725 10.3909 11.6971 10.2587 11.6704 10.069L11.3137 7.53055C11.287 7.34083 11.4192 7.16541 11.6089 7.13875Z" fill="white"/>
 <path d="M7.91267 12.0438L10.4511 11.687C10.6408 11.6604 10.8162 11.7925 10.8429 11.9823L11.1996 14.5207C11.2263 14.7104 11.0941 14.8858 10.9044 14.9125L8.36598 15.2692C8.17626 15.2959 8.00084 15.1637 7.97418 14.974L7.61743 12.4356C7.59077 12.2459 7.72295 12.0704 7.91267 12.0438Z" fill="white"/>

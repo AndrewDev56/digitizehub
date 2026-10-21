@@ -1,0 +1,125 @@
+"use client";
+
+import { useState } from "react";
+import Image from "next/image";
+import { services } from "@/lib/data/services";
+import FadeIn from "@/components/animation/FadeIn";
+import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerContainer";
+
+const hrefToPackage: Record<string, string> = {
+  "/services/ui-ux-design": "responsive-website",
+  "/services/mobile-app-design": "combo",
+  "/services/branding": "logo-design",
+  "/services/social-media-marketing": "social-media-marketing",
+  "/services/seo": "seo",
+};
+
+export default function LandingServices({
+  onSelectService,
+}: {
+  onSelectService: (packageId: string) => void;
+}) {
+  const [activeHref, setActiveHref] = useState(services[0].href);
+  const active = services.find((service) => service.href === activeHref) ?? services[0];
+
+  const select = (href: string) => {
+    setActiveHref(href);
+    const packageId = hrefToPackage[href];
+    if (packageId) onSelectService(packageId);
+  };
+
+  return (
+    <section id="landing-services" className="relative isolate overflow-visible scroll-mt-28 py-20 md:py-28 lg:py-32">
+      <div
+        aria-hidden="true"
+        data-gsap-ambient
+        data-gsap-scale="1.1"
+        data-gsap-opacity="0.85"
+        data-gsap-duration="10"
+        className="pointer-events-none absolute -top-[120px] md:-top-[180px] -left-[100px] sm:-left-[140px] md:-left-[180px] z-0 w-[420px] sm:w-[580px] md:w-[750px] lg:w-[920px] select-none opacity-80"
+      >
+        <Image
+          src="/images/ellipse-left.png"
+          alt=""
+          width={950}
+          height={950}
+          className="h-auto w-full object-contain pointer-events-none"
+        />
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-[1632px] px-6 md:px-9">
+        <FadeIn direction="up">
+          <div className="text-center">
+            <h2 className="font-heading text-3xl sm:text-5xl md:text-7xl font-normal tracking-[-0.02em] text-white">
+              What We <span className="font-accent font-normal italic text-white">Do</span>
+            </h2>
+            <p className="mt-2 font-body text-xs sm:text-sm text-white/70 font-normal">
+              One team from first sketch to still running two years later
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="mt-14 grid grid-cols-1 items-center gap-12 md:mt-20 lg:grid-cols-2 lg:gap-16">
+          <StaggerContainer staggerChildren={0.1} className="flex flex-col">
+            {services.map((service) => {
+              const isActive = service.href === active.href;
+              return (
+                <StaggerItem key={service.href} className="border-b border-white/10">
+                  <button
+                    type="button"
+                    onMouseEnter={() => setActiveHref(service.href)}
+                    onFocus={() => setActiveHref(service.href)}
+                    onClick={() => select(service.href)}
+                    className="group flex w-full items-center justify-between py-5 text-left transition-all duration-300 md:py-7"
+                  >
+                    <span
+                      className={`text-left font-heading text-xl sm:text-2xl md:text-[28px] transition-colors duration-300 ${
+                        isActive
+                          ? "font-medium text-white"
+                          : "font-normal text-white/40 group-hover:text-white"
+                      }`}
+                    >
+                      {service.title}
+                    </span>
+                    <span
+                      className={`ml-4 shrink-0 text-2xl leading-none transition-all duration-300 md:text-3xl ${
+                        isActive
+                          ? "-rotate-45 text-white opacity-100"
+                          : "rotate-0 text-white/30 opacity-60 group-hover:-rotate-45 group-hover:text-white group-hover:opacity-100"
+                      }`}
+                    >
+                      →
+                    </span>
+                  </button>
+                </StaggerItem>
+              );
+            })}
+          </StaggerContainer>
+
+          <FadeIn direction="left" delay={0.2}>
+            <button
+              type="button"
+              onClick={() => select(active.href)}
+              className="group relative block aspect-[4/3] w-full cursor-pointer overflow-hidden rounded-[24px] border border-white/10 shadow-2xl transition-transform duration-300 hover:scale-[1.01] sm:aspect-[13/11] sm:rounded-[36px] md:rounded-[44px]"
+            >
+              <video
+                key={active.video}
+                src={active.video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                preload="metadata"
+                className="absolute inset-0 size-full object-cover transition-transform duration-700 group-hover:scale-105"
+              />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"
+              />
+            </button>
+          </FadeIn>
+        </div>
+      </div>
+    </section>
+  );
+}

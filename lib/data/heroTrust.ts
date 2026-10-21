@@ -7,7 +7,7 @@ export const trustColumns: TrustColumn[] = [
   {
     lines: [
       "Websites, Apps, and search rankings",
-      "for businesses across Canada and the USA",
+      "for businesses across USA",
     ],
     tags: ["Saas", "Apps", "Web 3.0"],
   },

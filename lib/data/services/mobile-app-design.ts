@@ -9,7 +9,7 @@ export const mobileAppDesignContent: ServiceDetailContent = {
     [{ text: "Design Services." }],
   ],
   heroSubtext:
-    "Digitize Hub designs mobile apps people keep on their home screen. From our Calgary and Atlanta offices, we help startups and growing businesses across Canada and the USA plan, design, and prototype iOS and Android apps that are simple to use and built to grow.",
+    "Digitize Hub designs mobile apps people keep on their home screen. From our United States of America offices, we help startups and growing businesses across USA plan, design, and prototype iOS and Android apps that are simple to use and built to grow.",
   heroImageAlt: "Mobile app design services showing iOS and Android app screens by Digitize Hub",
   heroVideo: "/videos/home-screen-app.mp4",
   heroTitle: [

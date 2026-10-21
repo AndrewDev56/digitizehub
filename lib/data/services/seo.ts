@@ -9,7 +9,7 @@ export const seoContent: ServiceDetailContent = {
     [{ text: "Optimization Services." }],
   ],
   heroSubtext:
-    "Digitize Hub is an SEO agency in Calgary and Atlanta helping businesses across Canada and the USA get found by customers who are already searching. We combine technical SEO, on-page optimization, and off-page authority building to grow rankings, traffic, and real enquiries.",
+    "Digitize Hub is an SEO agency in United States of America helping businesses across USA get found by customers who are already searching. We combine technical SEO, on-page optimization, and off-page authority building to grow rankings, traffic, and real enquiries.",
   heroImageAlt: "SEO services dashboard showing ranking and organic traffic growth by Digitize Hub",
   heroVideo: "/videos/seo.mp4",
   heroTitle: [

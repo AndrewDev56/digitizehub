@@ -1,7 +1,7 @@
 import { parseUsPhone, US_PHONE_MESSAGE } from "@/lib/phone";
 
 export type InquiryPayload = {
-  source: "contact" | "service";
+  source: "contact" | "service" | "landing";
   name: string;
   email: string;
   phone: string;
@@ -11,6 +11,7 @@ export type InquiryPayload = {
   needs: string[];
   budget: string;
   details: string;
+  selectedPackage?: string;
 };
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -26,7 +27,7 @@ function asStringArray(value: unknown) {
 
 export function parseInquiry(body: Record<string, unknown>): InquiryPayload {
   return {
-    source: body.source === "service" ? "service" : "contact",
+    source: body.source === "service" ? "service" : body.source === "landing" ? "landing" : "contact",
     name: asString(body.name),
     email: asString(body.email),
     phone: asString(body.phone),
@@ -36,11 +37,28 @@ export function parseInquiry(body: Record<string, unknown>): InquiryPayload {
     needs: asStringArray(body.needs),
     budget: asString(body.budget),
     details: asString(body.details),
+    selectedPackage: asString(body.selectedPackage) || undefined,
   };
 }
 
+export function landingHeroError(payload: Pick<InquiryPayload, "name" | "email" | "phone" | "details">) {
+  if (payload.name.length < 2) {
+    return "Please enter your full name.";
+  }
+  if (!emailPattern.test(payload.email)) {
+    return "Please provide a valid email address.";
+  }
+  if (!parseUsPhone(payload.phone)) {
+    return US_PHONE_MESSAGE;
+  }
+  if (!payload.details) {
+    return "Please add a short note about your project.";
+  }
+  return "";
+}
+
 export function inquiryError(payload: InquiryPayload) {
-  if (payload.needs.length === 0) {
+  if (payload.needs.length === 0 && !payload.selectedPackage) {
     return "Please select at least one service you need.";
   }
   if (!payload.budget) {

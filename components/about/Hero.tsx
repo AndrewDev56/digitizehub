@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Button from "@/components/ui/Button";
+import { CALENDLY_URL } from "@/lib/calendly";
 // GUIDED: Uncomment after replacing placeholder logos in lib/data/clientLogos.ts.
 // import LogoMarquee from "@/components/home/LogoMarquee";
 import FadeIn from "@/components/animation/FadeIn";
@@ -47,7 +48,7 @@ export default function Hero() {
       <div className="relative mx-auto max-w-[1100px] px-6 text-center md:px-9">
         <FadeIn direction="down">
           <p className="font-body text-sm tracking-[0.01em] text-white/70 md:text-[18px]">
-            Web, Apps and SEO&nbsp; · &nbsp;Calgary and Georgia
+            Web, Apps and SEO&nbsp; · &nbsp;United States of America
           </p>
         </FadeIn>
 
@@ -59,13 +60,13 @@ export default function Hero() {
         </FadeIn>
 
         <FadeIn direction="up" delay={0.25}>
-          <p className="mx-auto mt-6 max-w-lg font-body text-sm text-white/60 md:text-base">
-            Digitize Hub is a full service digital agency with offices in Calgary and Georgia.
+          <p className="mx-auto mt-6 font-body text-sm text-white/60 md:text-base">
+            Digitize Hub is a full service digital agency with offices in United States of America.
           </p>
         </FadeIn>
 
         <FadeIn direction="up" delay={0.35} className="mt-10 flex justify-center">
-          <Button href="/contact">Tell Us About Your Project</Button>
+          <Button href="https://calendly.com/digitizehub-info/30min">Tell Us About Your Project</Button>
         </FadeIn>
       </div>
 

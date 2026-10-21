@@ -8,9 +8,11 @@ import {
 export default function GallerySidebar({
   active,
   onChange,
+  onDiscuss,
 }: {
   active: "all" | PortfolioCategory;
   onChange: (id: "all" | PortfolioCategory) => void;
+  onDiscuss?: () => void;
 }) {
   return (
     <div
@@ -58,7 +60,8 @@ export default function GallerySidebar({
 
       <div className="mt-8 flex justify-center">
         <Button
-          href="/contact"
+          href={onDiscuss ? undefined : "/contact"}
+          onClick={onDiscuss}
           size="md"
           className="w-full !h-[50px] !pl-4 !pr-2 !gap-2 !text-[13px] sm:!text-[14px] !justify-between shadow-lg"
         >

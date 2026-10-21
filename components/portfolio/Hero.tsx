@@ -51,7 +51,7 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-[1522px] px-6 text-center md:px-9">
         <p className="font-body text-sm tracking-[0.02em] text-white/70 md:text-xl">
-          Web, Apps and SEO&nbsp; · &nbsp;Calgary and Georgia
+          Web, Apps and SEO&nbsp; · &nbsp;United States of America
         </p>
 
         <h1 className="mt-6 font-heading text-[32px] leading-[1.1] font-semibold tracking-[-0.02em] text-white sm:text-5xl lg:text-[90px]">
@@ -61,7 +61,7 @@ export default function Hero() {
 
         <p className="mx-auto mt-6 max-w-2xl font-body text-sm text-white/80 md:text-xl">
           Websites, branding, logos, social creatives, and mobile apps built
-          for businesses across Canada and the USA.
+          for businesses across USA.
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-1.5">
