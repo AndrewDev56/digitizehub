@@ -14,7 +14,7 @@ export const seoContent: ServiceDetailContent = {
   heroVideo: "/videos/seo.mp4",
   heroTitle: [
     [{ text: "Hire a Top " }, { text: "SEO", italic: true }, { text: " Company" }],
-    [{ text: "in Canada & the USA" }],
+    [{ text: "in USA" }],
   ],
   heroBody:
     "Ranking on page two is almost the same as not ranking at all. We find the keywords your customers use, fix what holds your site back, and build the authority Google needs to trust you.",

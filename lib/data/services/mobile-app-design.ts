@@ -15,7 +15,7 @@ export const mobileAppDesignContent: ServiceDetailContent = {
   heroTitle: [
     [{ text: "Hire a Top " }, { text: "Mobile App", italic: true }],
     [{ text: "Design Company" }],
-    [{ text: "in Canada & the USA" }],
+    [{ text: "in USA" }],
   ],
   heroBody:
     "Your app has seconds to earn a place on someone's phone. We design every tap, swipe, and screen around real user behavior, so people sign up, come back, and recommend it.",

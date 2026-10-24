@@ -113,7 +113,7 @@ export default function MobileNav({
             </Button>
 
             <div className="flex flex-col gap-1 text-center font-body text-xs text-white/50">
-              <p>Calgary &amp; Georgia · Full-Service Digital Agency</p>
+              <p>United States of America · Full-Service Digital Agency</p>
               <p className="text-white/40">&copy; {new Date().getFullYear()} <span className="font-semibold text-brand-red">DigitizeHub</span>. All rights reserved.</p>
             </div>
           </div>

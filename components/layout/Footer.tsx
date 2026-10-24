@@ -10,10 +10,47 @@ const socialIcons: Record<string, string> = {
   facebook: "/icons/facebook.png",
   instagram: "/icons/insta.png",
   linkedin: "/icons/linkedin-white.png",
-  pinterest: "/icons/pinterest.png",
+  // pinterest: "/icons/pinterest.png",
 };
 
-const socials = ["facebook", "instagram", "linkedin", "pinterest"];
+const socialLinks: Record<string, string | null> = {
+  facebook: "https://www.facebook.com/share/1Bg6mpdx7X/?mibextid=wwXIfr",
+  instagram: "https://www.instagram.com/digitizehubllc",
+  linkedin: "https://www.linkedin.com/company/digitize-hub/"
+  // pinterest: null,
+};
+
+const socials = ["facebook", "instagram", "linkedin"] as const;
+
+const socialIconClassName =
+  "flex size-11 items-center justify-center rounded-full bg-white/10 transition-all hover:scale-110 hover:-translate-y-0.5 active:scale-95 hover:bg-brand-red";
+
+function SocialIcon({ social }: { social: (typeof socials)[number] }) {
+  const href = socialLinks[social];
+  const icon = (
+    <Image src={socialIcons[social]} alt="" width={20} height={20} className="size-5" />
+  );
+
+  if (!href) {
+    return (
+      <span aria-label={social} className={`${socialIconClassName} cursor-default opacity-70`}>
+        {icon}
+      </span>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label={social}
+      className={socialIconClassName}
+    >
+      {icon}
+    </a>
+  );
+}
 
 export default function Footer({ compact = false }: { compact?: boolean }) {
   const scrollToTop = () => {
@@ -29,9 +66,7 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
           {/* icons */}
           <div className="flex gap-3">
             {socials.map((social) => (
-              <a key={social} href="#" aria-label={social} className="flex size-11 items-center justify-center rounded-full bg-white/10 transition-all hover:scale-110 hover:-translate-y-0.5 active:scale-95 hover:bg-brand-red">
-                <Image src={socialIcons[social]} alt="" width={20} height={20} className="size-5" />
-              </a>
+              <SocialIcon key={social} social={social} />
             ))}
           </div>
 
@@ -88,20 +123,7 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
 
               <div className="mt-8 flex gap-3">
                 {socials.map((social) => (
-                  <a
-                    key={social}
-                    href="#"
-                    aria-label={social}
-                    className="flex size-11 items-center justify-center rounded-full bg-white/10 transition-all hover:scale-110 hover:-translate-y-0.5 active:scale-95 hover:bg-brand-red"
-                  >
-                    <Image
-                      src={socialIcons[social]}
-                      alt=""
-                      width={20}
-                      height={20}
-                      className="size-5"
-                    />
-                  </a>
+                  <SocialIcon key={social} social={social} />
                 ))}
               </div>
             </div>

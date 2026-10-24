@@ -15,7 +15,7 @@ export const socialMediaMarketingContent: ServiceDetailContent = {
   heroTitle: [
     [{ text: "Hire a Top " }, { text: "Social Media", italic: true }],
     [{ text: "Marketing Agency" }],
-    [{ text: "in Canada & the USA" }],
+    [{ text: "in USA" }],
   ],
   heroBody:
     "Posting every day means nothing if nobody buys. We build social media strategies tied to your sales goals, so every post, story, and ad has a clear job to do.",

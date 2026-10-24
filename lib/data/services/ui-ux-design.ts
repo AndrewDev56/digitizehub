@@ -14,7 +14,7 @@ export const uiUxDesignContent: ServiceDetailContent = {
   heroVideo: "/videos/website-that-sell.mp4",
   heroTitle: [
     [{ text: "Hire Top " }, { text: "UI / UX", italic: true }, { text: " Design" }],
-    [{ text: "Company in Canada & the USA" }],
+    [{ text: "Company in USA" }],
   ],
   heroBody:
     "Work with a UX design team that starts with your users, not trends. We plan, design, and test every screen so your website or product is easy to use and built to convert.",

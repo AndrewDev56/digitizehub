@@ -42,8 +42,8 @@ export const testimonials: Testimonial[] = [
   {
     initials: "sw",
     avatarColor: "#caa23d",
-    name: "Sarah Williams",
-    role: "CEO - XYZ Company",
+    name: "Brenda J. Smith",
+    role: "CEO - Vision AI",
     quote:
       "Thank you, Digitize Hub, for turning our vision into reality. Your team’s creativity and commitment made all the difference. The final product is exactly what we were hoping for.",
     rating: "5.0",

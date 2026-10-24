@@ -15,7 +15,7 @@ export const brandingContent: ServiceDetailContent = {
   heroTitle: [
     [{ text: "Hire a Top " }, { text: "Branding", italic: true }, { text: " Agency" }],
     // [{ text: "Agency" }],
-    [{ text: "in Canada & the USA" }],
+    [{ text: "in USA" }],
   ],
   heroBody:
     "A strong brand makes every ad, website, and sales call work harder. We build brand identities with strategy behind them, so your business looks consistent and credible everywhere it shows up.",

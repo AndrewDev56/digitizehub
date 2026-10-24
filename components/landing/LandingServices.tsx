@@ -7,10 +7,10 @@ import FadeIn from "@/components/animation/FadeIn";
 import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerContainer";
 
 const hrefToPackage: Record<string, string> = {
-  "/services/ui-ux-design": "responsive-website",
-  "/services/mobile-app-design": "combo",
-  "/services/branding": "logo-design",
-  "/services/social-media-marketing": "social-media-marketing",
+  "/services/ui-ux-design": "website-design",
+  "/services/mobile-app-design": "ecommerce",
+  "/services/branding": "custom-logo-design",
+  "/services/social-media-marketing": "ad-management",
   "/services/seo": "seo",
 };
 

@@ -20,7 +20,7 @@ export const faqItems: FaqItem[] = [
   {
     question: "Do you work outside the United States?",
     answer:
-      "Yes. Our main base is in the Atlanta area, and we also have an office in Calgary, so we serve clients across the US and Canada. We work with businesses worldwide too, with calls scheduled around your time zone.",
+      "Yes. Our main base is in the Atlanta area, and we also have an office in Calgary, so we serve clients across the US. We work with businesses worldwide too, with calls scheduled around your time zone.",
     confirmed: true,
   },
   {

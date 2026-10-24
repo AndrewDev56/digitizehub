@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
+import Script from "next/script";
 import SiteAnimations from "@/components/animation/SiteAnimations";
 import TawkTo from "@/components/layout/TawkTo";
 import WhatsAppChat from "@/components/layout/WhatsAppChat";
@@ -43,6 +44,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${montserrat.variable} antialiased`}>
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`(function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "xfwgxk3g5l");`}
+        </Script>
         <SiteAnimations>{children}</SiteAnimations>
         <TawkTo />
         <WhatsAppChat />

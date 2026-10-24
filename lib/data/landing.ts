@@ -57,17 +57,17 @@ export const landingServices = [
   {
     title: "Website Design & Development",
     copy: "Custom web design and development for businesses that need responsive, SEO-friendly, conversion-focused websites built to perform.",
-    packageId: "responsive-website",
+    packageId: "website-design",
   },
   {
     title: "Branding & Logo Designing",
     copy: "Professional branding and logo design that help your business create a strong, consistent identity across digital platforms.",
-    packageId: "logo-design",
+    packageId: "custom-logo-design",
   },
   {
     title: "Mobile App Design & Development",
     copy: "User-friendly mobile app design and development for businesses that want smoother digital experiences and stronger engagement.",
-    packageId: "combo",
+    packageId: "ecommerce",
   },
   {
     title: "Search Engine Optimization",
@@ -77,7 +77,7 @@ export const landingServices = [
   {
     title: "Social Media Marketing",
     copy: "Strategic social campaigns that build awareness, connect with the right audience, and grow engagement online.",
-    packageId: "social-media-marketing",
+    packageId: "ad-management",
   },
 ];
 
