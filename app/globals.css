@@ -318,12 +318,12 @@ html.has-custom-cursor .cursor-pointer {
   .site-cursor-glow {
     width: 54px;
     height: 54px;
-    background: radial-gradient(
+    /* background: radial-gradient(
       circle,
       rgba(255, 0, 54, 0.22) 0%,
       rgba(255, 0, 54, 0.22) 45%,
       rgba(255, 0, 54, 0.22) 70%
-    );
+    ); */
     transition:
       width 0.35s ease,
       height 0.35s ease,

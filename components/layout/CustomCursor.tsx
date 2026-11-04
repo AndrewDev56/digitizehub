@@ -18,7 +18,7 @@ export default function CustomCursor() {
     const ring = ringRef.current;
     const dot = dotRef.current;
     const glow = glowRef.current;
-    if (!ring || !dot || !glow) return;
+    if (!ring || !dot) return;
 
     document.documentElement.classList.add("has-custom-cursor");
 
@@ -34,21 +34,21 @@ export default function CustomCursor() {
       visible = true;
       ring.style.opacity = "1";
       dot.style.opacity = "1";
-      glow.style.opacity = "1";
+      if (glow) glow.style.opacity = "1";
     };
 
     const hide = () => {
       visible = false;
       ring.style.opacity = "0";
       dot.style.opacity = "0";
-      glow.style.opacity = "0";
+      if (glow) glow.style.opacity = "0";
     };
 
     const setHover = (on: boolean) => {
       hovering = on;
       ring.classList.toggle("is-hover", on);
       dot.classList.toggle("is-hover", on);
-      glow.classList.toggle("is-hover", on);
+      glow?.classList.toggle("is-hover", on);
     };
 
     const onMove = (event: PointerEvent) => {
@@ -83,7 +83,7 @@ export default function CustomCursor() {
       }`;
 
       ring.style.transform = transformRing;
-      glow.style.transform = transformRing;
+      if (glow) glow.style.transform = transformRing;
       dot.style.transform = transformDot;
 
       raf = requestAnimationFrame(tick);
@@ -92,8 +92,8 @@ export default function CustomCursor() {
     window.addEventListener("pointermove", onMove, { passive: true });
     window.addEventListener("pointerdown", onDown, { passive: true });
     window.addEventListener("pointerup", onUp, { passive: true });
-    window.addEventListener("pointerleave", hide);
-    window.addEventListener("pointerenter", show);
+    document.addEventListener("mouseleave", hide);
+    document.addEventListener("mouseenter", show);
     raf = requestAnimationFrame(tick);
 
     return () => {
@@ -102,14 +102,14 @@ export default function CustomCursor() {
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("pointerdown", onDown);
       window.removeEventListener("pointerup", onUp);
-      window.removeEventListener("pointerleave", hide);
-      window.removeEventListener("pointerenter", show);
+      document.removeEventListener("mouseleave", hide);
+      document.removeEventListener("mouseenter", show);
     };
   }, []);
 
   return (
     <div aria-hidden="true" className="site-cursor">
-      {/* <div ref={glowRef} className="site-cursor-glow" /> */}
+      <div ref={glowRef} className="site-cursor-glow" />
       <div ref={ringRef} className="site-cursor-ring" />
       <div ref={dotRef} className="site-cursor-dot" />
     </div>
