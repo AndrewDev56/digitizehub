@@ -237,11 +237,11 @@ export default function ContactForm() {
             required
             className={`${inputClass} appearance-none`}
           >
-            <option value="" disabled className="bg-background">
+            <option value="" disabled className=" ">
               How did you hear about us
             </option>
             {hearAboutOptions.map((option) => (
-              <option key={option} value={option} className="bg-background">
+              <option key={option} value={option} className=" ">
                 {option}
               </option>
             ))}

@@ -2,7 +2,10 @@ import type { Metadata, Viewport } from "next";
 import { Inter, Montserrat } from "next/font/google";
 import Script from "next/script";
 import SiteAnimations from "@/components/animation/SiteAnimations";
-import SiteBackgroundVideo from "@/components/layout/SiteBackgroundVideo";
+import SiteAmbientBackground from "@/components/layout/SiteAmbientBackground";
+import CustomCursor from "@/components/layout/CustomCursor";
+import SmoothScroll from "@/components/layout/SmoothScroll";
+// import SiteBackgroundVideo from "@/components/layout/SiteBackgroundVideo";
 import TawkTo from "@/components/layout/TawkTo";
 import WhatsAppChat from "@/components/layout/WhatsAppChat";
 import "./globals.css";
@@ -52,7 +55,10 @@ export default function RootLayout({
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "xfwgxk3g5l");`}
         </Script>
-        <SiteBackgroundVideo />
+        {/* <SiteBackgroundVideo /> */}
+        <SiteAmbientBackground />
+        <SmoothScroll />
+        <CustomCursor />
         <SiteAnimations>{children}</SiteAnimations>
         <TawkTo />
         <WhatsAppChat />

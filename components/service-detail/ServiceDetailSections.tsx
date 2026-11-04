@@ -116,7 +116,7 @@ export default function ServiceDetailSections({
 }) {
   return (
     <>
-      <section className="relative bg-background py-20 md:py-28 lg:py-32 2xl:py-36">
+      <section className="relative   py-20 md:py-28 lg:py-32 2xl:py-36">
         <div className="relative mx-auto max-w-[1632px] px-4 md:px-9 2xl:px-0">
           <div className="grid grid-cols-1 items-start gap-12 lg:grid-cols-2 lg:gap-16 2xl:gap-24">
             <div className="flex flex-col justify-between space-y-12 md:space-y-16 2xl:space-y-24">
@@ -164,7 +164,7 @@ export default function ServiceDetailSections({
         steps={content.processSteps}
       />
 
-      <section className="relative bg-background pt-24 md:pt-32 2xl:mt-[112px] 2xl:pt-0">
+      <section className="relative   pt-24 md:pt-32 2xl:mt-[112px] 2xl:pt-0">
         <div aria-hidden className="pointer-events-none absolute top-[300px] -right-[150px] size-[400px] rounded-full bg-red-600/50 blur-[120px] 2xl:size-[600px] 2xl:blur-[160px]" />
         <div className="relative mx-auto max-w-[1632px] px-4 md:px-9 2xl:px-0">
           <h2 className="font-heading text-[32px] leading-[1.15] font-semibold tracking-[-0.01em] text-white sm:text-5xl md:text-7xl 2xl:text-[100px]">
@@ -201,7 +201,7 @@ export default function ServiceDetailSections({
         </div>
       </section>
 
-      <section className="bg-background pt-24 md:pt-32 2xl:mt-[160px] 2xl:pt-0">
+      <section className="  pt-24 md:pt-32 2xl:mt-[160px] 2xl:pt-0">
         <div className="mx-auto max-w-[1632px] px-4 md:px-9 2xl:px-0">
           <h2 className="mx-auto text-center font-heading text-[32px] leading-[1.2] font-semibold tracking-[-0.01em] text-white sm:text-5xl md:text-7xl 2xl:text-[100px]">
             <TitleWithSegments lines={content.caseStudiesTitle} />

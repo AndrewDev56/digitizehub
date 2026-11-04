@@ -60,7 +60,7 @@ export default function ProcessScroll({
     <section
       ref={sectionRef}
       data-gsap-ignore
-      className="relative overflow-hidden bg-background"
+      className="relative overflow-hidden  "
     >
       <div
         aria-hidden

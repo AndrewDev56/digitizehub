@@ -99,7 +99,7 @@ export default function ServiceInquiryForm() {
   };
 
   return (
-    <section aria-labelledby="service-contact-title" className="relative bg-background 2xl:mt-[160px]">
+    <section aria-labelledby="service-contact-title" className="relative   2xl:mt-[160px]">
       <div aria-hidden className="pointer-events-none absolute top-[500px] -left-[150px] size-[400px] rounded-full bg-accent-to/50 blur-[120px] 2xl:size-[600px] 2xl:blur-[160px]" />
       <div aria-hidden className="pointer-events-none absolute top-[900px] -right-[150px] size-[400px] rounded-full bg-accent-to/40 blur-[120px] 2xl:size-[600px] 2xl:blur-[160px]" />
       <div className="relative mx-auto max-w-[1632px] px-6 md:px-9 2xl:px-0">

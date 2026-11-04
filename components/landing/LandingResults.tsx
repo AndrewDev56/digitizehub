@@ -161,7 +161,7 @@ export default function LandingResults() {
   return (
     <section
       ref={sectionRef}
-      className="relative flex min-h-0 flex-col justify-start overflow-hidden bg-background py-20 md:min-h-screen md:pt-28 md:pb-10"
+      className="relative flex min-h-0 flex-col justify-start overflow-hidden   py-20 md:min-h-screen md:pt-28 md:pb-10"
     >
       <div
         aria-hidden="true"

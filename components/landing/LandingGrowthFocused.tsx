@@ -7,7 +7,7 @@ import { landingGrowthFocused } from "@/lib/data/landing";
 export default function LandingGrowthFocused() {
   return (
     <section className="relative isolate overflow-visible pb-16 md:pb-24">
-      <div
+      {/* <div
         aria-hidden="true"
         data-gsap-ambient
         data-gsap-scale="1.1"
@@ -22,7 +22,7 @@ export default function LandingGrowthFocused() {
           height={780}
           className="pointer-events-none h-auto w-full object-contain"
         />
-      </div>
+      </div> */}
 
       <div className="relative mx-auto max-w-[1632px] px-6 md:px-9">
         <div className="grid items-start gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16">

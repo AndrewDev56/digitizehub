@@ -14,7 +14,7 @@ export default function ServiceDetailFaq() {
   const rightColItems = items.slice(half);
 
   return (
-    <section aria-labelledby="service-faq-title" className="relative isolate overflow-visible py-section bg-background">
+    <section aria-labelledby="service-faq-title" className="relative isolate overflow-visible py-section  ">
       <div className="mx-auto max-w-[1632px] px-6 md:px-9 2xl:px-0">
         <FadeIn direction="up">
           <h2

@@ -3,7 +3,7 @@ import { blogPosts } from "@/lib/data/blogPosts";
 
 export default function BlogsSection() {
   return (
-    <section className="relative isolate overflow-hidden bg-background pb-24 md:pb-32">
+    <section className="relative isolate overflow-hidden   pb-24 md:pb-32">
       <div
         aria-hidden
         className="pointer-events-none absolute left-[-300px] top-[300px] size-[600px] rounded-full bg-accent-to/15 blur-[120px]"

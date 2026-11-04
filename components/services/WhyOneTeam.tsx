@@ -47,7 +47,7 @@ export default function WhyOneTeam() {
   const words = paragraphText.split(" ");
 
   return (
-    <section ref={containerRef} className="bg-background py-24 md:py-32">
+    <section ref={containerRef} className="py-24 md:py-32">
       <div className="mx-auto max-w-[1356px] px-6 text-center md:px-9">
         <h2 className="font-heading text-3xl font-normal tracking-[-0.02em] text-white md:text-7xl">
           Why <span className="font-accent italic">One Team</span> For All

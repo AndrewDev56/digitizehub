@@ -16,7 +16,7 @@ export default function Pricing() {
     pricingServices[0];
 
   return (
-    <section className="relative isolate overflow-visible bg-background px-4 py-20 md:px-8 md:py-28 lg:px-14">
+    <section className="relative isolate overflow-visible px-4 py-20 md:px-8 md:py-28 lg:px-14">
 
       <div
              aria-hidden="true"

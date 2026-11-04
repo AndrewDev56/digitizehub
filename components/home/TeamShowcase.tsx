@@ -66,7 +66,7 @@ function SlidingRow({
 
 export default function TeamShowcase() {
   return (
-    <section className="relative isolate overflow-visible bg-background py-24 md:py-32">
+    <section className="relative isolate overflow-visible py-24 md:py-32">
       <div
         aria-hidden="true"
         data-gsap-ambient

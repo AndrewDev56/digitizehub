@@ -24,11 +24,11 @@ export default function SiteBackgroundVideo() {
   return (
     <div
       aria-hidden="true"
-      className="pointer-events-none fixed inset-0 z-[5] overflow-hidden"
+      className="pointer-events-none fixed inset-0 -z-10 overflow-hidden"
     >
       <video
         ref={videoRef}
-        className="h-full w-full object-cover opacity-[0.18] mix-blend-screen"
+        className="h-full w-full object-cover"
         src="/videos/digi-bg-vid.mp4"
         autoPlay
         muted
@@ -36,6 +36,7 @@ export default function SiteBackgroundVideo() {
         playsInline
         preload="metadata"
       />
+      <div className="absolute inset-0 bg-black/70" />
     </div>
   );
 }

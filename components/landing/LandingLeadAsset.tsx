@@ -7,7 +7,7 @@ import FadeIn from "@/components/animation/FadeIn";
 export default function LandingLeadAsset({ onStart }: { onStart: () => void }) {
   return (
     <section className="relative isolate overflow-visible py-16 md:py-24">
-      <div
+      {/* <div
         aria-hidden="true"
         data-gsap-ambient
         data-gsap-scale="1.1"
@@ -22,7 +22,7 @@ export default function LandingLeadAsset({ onStart }: { onStart: () => void }) {
           height={780}
           className="h-auto w-full object-contain pointer-events-none"
         />
-      </div>
+      </div> */}
 
       <div className="relative mx-auto grid max-w-[1632px] items-center gap-10 px-6 md:px-9 lg:grid-cols-2 lg:gap-16">
         <FadeIn direction="right" distance={40} scale={0.96} className="order-1">

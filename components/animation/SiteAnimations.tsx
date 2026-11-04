@@ -168,5 +168,9 @@ export default function SiteAnimations({ children }: { children: ReactNode }) {
     { scope: root, dependencies: [pathname], revertOnUpdate: true },
   );
 
-  return <div ref={root}>{children}</div>;
+  return (
+    <div ref={root} className="relative z-10">
+      {children}
+    </div>
+  );
 }

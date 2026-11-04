@@ -67,7 +67,7 @@ export default async function ServiceDetailPage({
   return (
     <>
       <Header active="Services" />
-      <main className="overflow-x-clip bg-background">
+      <main className="overflow-x-clip ">
         <ServiceDetailHero content={entry.content} />
         <ServiceDetailSections content={entry.content} showcaseRows={entry.showcaseRows} />
         <CtaBanner />

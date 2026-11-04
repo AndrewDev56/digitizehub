@@ -9,7 +9,7 @@ import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerCon
 export default function ProjectTimeline() {
   return (
     <section className="relative isolate overflow-visible py-10 md:py-10">
-      <div
+      {/* <div
         aria-hidden="true"
         data-gsap-ambient
         data-gsap-scale="1.1"
@@ -24,7 +24,7 @@ export default function ProjectTimeline() {
           height={950}
           className="h-auto w-full object-contain pointer-events-none"
         />
-      </div>
+      </div> */}
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
         <FadeIn direction="up">
           <h2 className="text-center font-heading text-[28px] font-semibold tracking-[-0.02em] text-white sm:text-4xl md:text-6xl">

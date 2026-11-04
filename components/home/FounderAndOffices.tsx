@@ -7,7 +7,7 @@ import StaggerContainer, { StaggerItem } from "@/components/animation/StaggerCon
 
 export default function FounderAndOffices() {
   return (
-    <section className="bg-background ">
+    <section className="  ">
       <div className="mx-auto max-w-[1632px] px-6 md:px-9">
         <FadeIn direction="up">
           <h2 className="font-heading text-3xl font-semibold tracking-[-0.02em] text-white sm:text-5xl md:text-6xl">

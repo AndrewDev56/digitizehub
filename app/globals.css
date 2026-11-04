@@ -72,6 +72,7 @@
 html {
   overflow-x: clip;
   max-width: 100%;
+  background: #000000;
 }
 
 img,
@@ -96,7 +97,7 @@ img.size-full {
 }
 
 body {
-  background: var(--color-background);
+  background: transparent;
   color: var(--color-foreground);
   font-family: var(--font-body);
   overflow-x: clip;
@@ -193,5 +194,216 @@ body {
 
 .landing-popup-in {
   animation: landing-popup-in 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.site-ambient-orb {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(72px);
+  will-change: transform;
+}
+
+.site-ambient-orb-a {
+  top: -12%;
+  left: -8%;
+  width: min(56vw, 640px);
+  height: min(56vw, 640px);
+  background: radial-gradient(circle, rgba(255, 0, 54, 0.28) 0%, transparent 70%);
+  animation: site-ambient-drift-a 22s ease-in-out infinite alternate;
+}
+
+.site-ambient-orb-b {
+  right: -10%;
+  bottom: 8%;
+  width: min(48vw, 520px);
+  height: min(48vw, 520px);
+  background: radial-gradient(circle, rgba(255, 82, 119, 0.2) 0%, transparent 72%);
+  animation: site-ambient-drift-b 28s ease-in-out infinite alternate;
+}
+
+.site-ambient-orb-c {
+  top: 38%;
+  left: 42%;
+  width: min(36vw, 420px);
+  height: min(36vw, 420px);
+  background: radial-gradient(circle, rgba(255, 0, 54, 0.12) 0%, transparent 70%);
+  animation: site-ambient-drift-c 18s ease-in-out infinite alternate;
+}
+
+.site-ambient-cursor {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    480px circle at var(--spot-x, 50%) var(--spot-y, 35%),
+    rgba(255, 0, 54, 0.16),
+    rgba(255, 82, 119, 0.06) 28%,
+    transparent 58%
+  );
+  transition: opacity 0.4s ease;
+}
+
+@keyframes site-ambient-drift-a {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(12%, 18%, 0) scale(1.12);
+  }
+}
+
+@keyframes site-ambient-drift-b {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-14%, -10%, 0) scale(1.18);
+  }
+}
+
+@keyframes site-ambient-drift-c {
+  from {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  to {
+    transform: translate3d(-8%, 12%, 0) scale(0.92);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-ambient-orb-a,
+  .site-ambient-orb-b,
+  .site-ambient-orb-c {
+    animation: none;
+  }
+
+  .site-ambient-cursor {
+    opacity: 0;
+  }
+}
+
+html.has-custom-cursor,
+html.has-custom-cursor body,
+html.has-custom-cursor a,
+html.has-custom-cursor button,
+html.has-custom-cursor [role="button"],
+html.has-custom-cursor .cursor-pointer {
+  cursor: none !important;
+}
+
+.site-cursor {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .site-cursor {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+  }
+
+  .site-cursor-ring,
+  .site-cursor-dot,
+  .site-cursor-glow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 9999px;
+    opacity: 0;
+    will-change: transform;
+    pointer-events: none;
+  }
+
+  .site-cursor-glow {
+    width: 54px;
+    height: 54px;
+    background: radial-gradient(
+      circle,
+      rgba(255, 0, 54, 0.22) 0%,
+      rgba(255, 0, 54, 0.22) 45%,
+      rgba(255, 0, 54, 0.22) 70%
+    );
+    transition:
+      width 0.35s ease,
+      height 0.35s ease,
+      opacity 0.25s ease;
+  }
+
+  .site-cursor-ring {
+    width: 34px;
+    height: 34px;
+    border: 1.5px solid #ff00376c;
+    box-shadow:
+      0 0 0 1px rgba(255, 0, 54, 0.12),
+      0 0 18px rgba(255, 0, 54, 0.18);
+    mix-blend-mode: difference;
+    transition:
+      width 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      height 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      border-color 0.25s ease,
+      background-color 0.25s ease,
+      opacity 0.25s ease,
+      box-shadow 0.25s ease;
+  }
+
+  .site-cursor-dot {
+    width: 6px;
+    height: 6px;
+    background: #ff0036;
+    box-shadow: 0 0 12px rgba(255, 0, 54, 0.75);
+    transition:
+      width 0.25s ease,
+      height 0.25s ease,
+      opacity 0.2s ease,
+      background-color 0.2s ease;
+  }
+
+  .site-cursor-ring.is-hover {
+    width: 58px;
+    height: 58px;
+    border-color: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 0, 54, 0.08);
+    box-shadow:
+      0 0 0 1px rgba(255, 0, 54, 0.25),
+      0 0 28px rgba(255, 0, 54, 0.35);
+  }
+
+  .site-cursor-glow.is-hover {
+    width: 90px;
+    height: 90px;
+    opacity: 1;
+  }
+
+  .site-cursor-dot.is-hover {
+    width: 4px;
+    height: 4px;
+    background: #ffffff;
+  }
+
+  .site-cursor-ring.is-press {
+    width: 28px;
+    height: 28px;
+  }
+
+  .site-cursor-dot.is-press {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-cursor {
+    display: none !important;
+  }
+
+  html.has-custom-cursor,
+  html.has-custom-cursor body,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button,
+  html.has-custom-cursor [role="button"],
+  html.has-custom-cursor .cursor-pointer {
+    cursor: auto !important;
+  }
 }
 

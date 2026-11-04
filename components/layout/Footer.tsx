@@ -59,7 +59,7 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
 
   if (compact) {
     return (
-      <footer className="relative overflow-hidden border-t border-white/10 bg-background">
+      <footer className="relative overflow-hidden border-t border-white/10  ">
         <div className="relative z-10 mx-auto max-w-[1632px] px-6 py-8 md:px-9">
           <div className="flex md:flex-row flex-col justify-between items-center gap-2">
           <p className="text-white/40">&copy; {new Date().getFullYear()} <span className="font-semibold text-brand-red">DigitizeHub</span>. All rights reserved.</p>
@@ -77,7 +77,7 @@ export default function Footer({ compact = false }: { compact?: boolean }) {
   }
 
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-background">
+    <footer className="relative overflow-hidden border-t border-white/10  ">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute right-0 bottom-0 h-[28rem] w-[36rem] sm:w-[48rem] max-w-full bg-[radial-gradient(ellipse_at_bottom_right,rgba(255,0,54,0.18)_0%,rgba(255,0,54,0.06)_42%,transparent_75%)]"

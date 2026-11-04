@@ -7,7 +7,7 @@ import { CALENDLY_URL } from "@/lib/calendly";
 
 export default function CtaBanner() {
   return (
-    <section className="relative isolate overflow-visible bg-background px-4 py-16 sm:px-6 sm:py-24 md:px-9 md:py-32">
+    <section className="relative isolate overflow-visible  px-4 py-16 sm:px-6 sm:py-24 md:px-9 md:py-32">
       <div
         aria-hidden="true"
         data-gsap-ambient
